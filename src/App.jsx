@@ -1,8 +1,8 @@
 import "./App.css";
 import "./crt.css";
-import Navbar from "./components/navbar/Navbar.jsx";
+import Navbar from "./components/navbar/Navbar";
 import { useState } from "react";
-import BootScreen from "./components/BootScreen/BootScreen.jsx";
+import BootScreen from "./components/BootScreen/BootScreen";
 
 function App() {
   const [bootDone, setBootDone] = useState(false);
