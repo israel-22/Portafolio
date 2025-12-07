@@ -1,0 +1,130 @@
+/* FOOTER RETRO TIPO MONITOR */
+.retro-footer {
+    width: 100%;
+    position: relative;  /* ya no fixed */
+    margin-top: 20px;    /* separación del contenido */
+    padding: 20px 40px;
+
+    background: #e7e3d5;
+    border-top: 6px solid #c7c3b0;
+    border-bottom: 10px solid #b1ae9a;
+
+    box-shadow:
+        0 -6px 0 #fff inset,
+        0 -10px 0 #d4d0c4 inset,
+        0 8px 20px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    font-family: "Courier New", monospace;
+    z-index: 20;
+}
+
+
+/* BLOQUE IZQUIERDO */
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* TÍTULO Y LOGO */
+.footer-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #3a3020;
+    text-shadow: 0 1px #fff;
+}
+
+.footer-logo {
+    width: 65px;
+    image-rendering: pixelated;
+}
+
+.footer-subtext {
+    font-size: 0.8rem;
+    color: #5b5440;
+}
+
+/* BOTONERA */
+.footer-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.retro-btn {
+    width: 50px;
+    height: 50px;
+
+    background: #d4d0c4;
+    border: 2px solid #9c9784;
+    box-shadow:
+        0 3px 0 #8c8877,
+        0 0 10px rgba(255,140,0,0.4);
+
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.retro-btn:hover {
+    background: #e5e1d5;
+    box-shadow:
+        0 3px 0 #8c8877,
+        0 0 14px rgba(255,170,0,0.7);
+}
+
+.retro-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 #8c8877;
+}
+
+/* ICONOS TIPO STICKER */
+.sticker-icon {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: saturate(120%);
+}
+
+/* BLOQUE DERECHO - LED */
+.footer-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.led {
+    width: 15px;
+    height: 15px;
+    background: orange;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 150, 0, 1);
+    animation: blinkLed 1s infinite;
+}
+
+.status-text {
+    font-weight: bold;
+    color: #3a3020;
+}
+
+@keyframes blinkLed {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* RESPONSIVE - pantallas pequeñas */
+@media (max-width: 700px) {
+    .retro-footer {
+        flex-direction: column; /* Apila los bloques verticalmente en móviles */
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+    }
+}

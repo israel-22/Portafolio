@@ -1,23 +1,20 @@
 import "./App.css";
-import "./crt.css";
-import Navbar from "./components/navbar/Navbar";
 import { useState } from "react";
 import BootScreen from "./components/BootScreen/BootScreen";
+import Layout from "./layout/Layout";
+import Home from "./pages/Home";
 
 function App() {
   const [bootDone, setBootDone] = useState(false);
 
   return (
     <>
-      {!bootDone && (
+      {!bootDone ? (
         <BootScreen onFinish={() => setBootDone(true)} />
-      )}
-
-      {bootDone && (
-        <>
-          <Navbar />
-          {/* Aquí agregarás tus páginas */}
-        </>
+      ) : (
+        <Layout>
+          <Home />
+        </Layout>
       )}
     </>
   );

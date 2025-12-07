@@ -1,0 +1,17 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+ 
+}
+
+.main-content {
+  flex: 1; /* Ocupa todo el espacio disponible entre navbar y footer */
+  overflow-y: auto;
+  background: #000; /* Fondo negro del CRT */
+  color: #00ff66;
+  font-family: "Courier New", monospace;
+  padding: 20px;
+   padding-bottom: 80px; /* espacio extra para evitar tapar footer */
+}
+

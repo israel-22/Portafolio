@@ -1,116 +1,58 @@
-.retro-nav {
+/* NAVBAR CRT SUPERIOR */
+.crt-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: #e5e5d8;          /* carcasa beige */
-    border-bottom: 4px solid #c9c9b8;
-    box-shadow: 0 4px 0 #bfbfaf inset;
+
+    background: rgba(0, 20, 0, 0.9);
+    border-bottom: 2px solid rgba(0, 255, 0, 0.4);
     padding: 10px 20px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+    color: #00ff66;
     font-family: "Courier New", monospace;
-   position: fixed;
-top: 0;
-left: 0;/
-}
-
-.nav-title {
     font-size: 1.1rem;
-    font-weight: bold;
-    color: #222;
-    text-shadow: 0 1px #fff;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.8);
 
-     display: flex;
-    flex-direction: column; /* LOGO ARRIBA, TEXTO ABAJO */
-    align-items: center;
-    justify-content: center;
-    gap: 4px; /* separación elegante */
-    font-size: 1.6rem;
-    font-weight: bold;
-    
-    margin-bottom: 10px;
-}
-
-/* Logo sin efectos */
-.nav-title .icon {
-    width: 70px;
-    height: auto;
-    display: block;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .nav-title {
-        font-size: 1.2rem;
-    }
-
-    .nav-title .icon {
-        width: 40px;
-    }
-}
-
-/* Botones estilo monitor viejo */
-.retro-btn {
-    background: #d6d6c8;
-    border: 2px solid #a9a99b;
-    padding: 6px 14px;
-    margin: 0 5px;
-    cursor: pointer;
-
-    color: #111;
-    font-size: 0.9rem;
-    font-family: "Courier New";
-
-    box-shadow: 0 2px 0 #8b8b7a;
-}
-
-.retro-btn:active {
-    box-shadow: 0 0 0 #8b8b7a;
-    position: relative;
-    top: 2px;
-}
-
-/* LED Naranja */
-.nav-status {
     display: flex;
-    align-items: center;
-    gap: 6px;
+    justify-content: center;
+    z-index: 9999;
 }
 
-.led {
-    width: 14px;
-    height: 14px;
-    background: orange;
-    border-radius: 50%;
-    box-shadow: 0 0 6px rgba(255, 140, 0, 0.9);
-    animation: blinkLed 1s infinite;
+/* Lista horizontal */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
 }
 
-@keyframes blinkLed {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 1; }
+/* Cada tecla tipo F1, F2, F3 */
+.nav-item {
+    cursor: pointer;
+    padding: 4px 8px;
+
+    border: 1px solid rgba(0, 255, 0, 0.4);
+    background: rgba(0, 50, 0, 0.1);
+
+    transition: 0.15s ease;
 }
 
-.status-text {
-    color: #222;
-    font-weight: bold;
+/* Hover verde brillante */
+.nav-item:hover {
+    background: rgba(0, 255, 0, 0.15);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+    border-color: rgba(0, 255, 0, 0.7);
 }
 
-/* Luz naranja detrás del botón cuando hay hover */
-.retro-btn:hover {
-    background: #e0dfd0;
-    box-shadow:
-        0 2px 0 #8b8b7a,
-        0 0 12px rgba(255, 140, 0, 0.6); /* glow naranja */
-    border-color: #c5a37b;
+/* Click tipo "tecla presionada" */
+.nav-item:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 4px rgba(0, 255, 0, 0.5);
 }
 
-/* Luz más intensa cuando se hace clic */
-.retro-btn.flash {
-    box-shadow:
-        0 2px 0 #8b8b7a,
-        0 0 18px rgba(255, 140, 0, 1),
-        0 0 30px rgba(255, 100, 0, 0.8);
+/* Para evitar que se sobreponga el contenido */
+body {
+    padding-top: 55px; /* Altura del navbar */
 }
-
