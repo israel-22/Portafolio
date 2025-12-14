@@ -1,3 +1,4 @@
+/*INDEX.CSS*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,12 +19,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: #000; /* Fondo dominante */
-}
+
 
 /* Enlaces */
 a {
@@ -37,30 +33,6 @@ a:hover {
 
 /* ----------------- LAYOUT GENERAL ----------------- */
 
-.app-shell {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: #000;
-}
-
-/* NAVBAR fijo arriba */
-.navbar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-}
-
-/* FOOTER fijo abajo */
-.footer-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-}
 
 /* Área central entre navbar & footer */
 .crt-wrapper {

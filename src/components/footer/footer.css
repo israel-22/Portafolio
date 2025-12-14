@@ -1,9 +1,10 @@
 /* FOOTER RETRO TIPO MONITOR */
 .retro-footer {
     width: 100%;
-    position: relative;  /* ya no fixed */
-    margin-top: 20px;    /* separación del contenido */
-    padding: 20px 40px;
+    box-sizing: border-box;
+    padding: 20px 40px 22px 40px;
+
+    min-height: 80px; /* asegura altura visible, evita que se achique */
 
     background: #e7e3d5;
     border-top: 6px solid #c7c3b0;
@@ -21,8 +22,27 @@
     gap: 20px;
 
     font-family: "Courier New", monospace;
+
+    position: relative; /* si quieres fijo: fixed; bottom: 0; */
+    left: 0;
+    top: auto;
     z-index: 20;
+
+    animation: slideFooter 0.5s ease-out;
 }
+
+@keyframes slideFooter {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+
+/* position: relative;
+    width: 226%;    
+    left: -63%;              
+    top: auto;             
+    z-index: 20;
+    animation: slideFooter 0.5s ease-out;*/
 
 
 /* BLOQUE IZQUIERDO */
@@ -84,6 +104,12 @@
     transform: translateY(2px);
     box-shadow: 0 0 0 #8c8877;
 }
+.retro-btn.flash {
+    box-shadow:
+        0 2px 0 #8b8b7a,
+        0 0 18px rgba(255, 140, 0, 1),
+        0 0 30px rgba(255, 100, 0, 0.8);
+}
 
 /* ICONOS TIPO STICKER */
 .sticker-icon {
@@ -126,5 +152,7 @@
         gap: 16px;
         align-items: center;
         text-align: center;
+         padding: 15px 20px 17px 20px;  
+        
     }
 }

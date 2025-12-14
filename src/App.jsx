@@ -1,8 +1,7 @@
-import "./App.css";
 import { useState } from "react";
 import BootScreen from "./components/BootScreen/BootScreen";
 import Layout from "./layout/Layout";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [bootDone, setBootDone] = useState(false);

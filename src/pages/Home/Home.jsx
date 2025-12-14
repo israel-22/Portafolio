@@ -1,13 +1,16 @@
 import React from "react";
-import IconPipboy from "../components/iconPipBoy/IconPipboy.jsx";
-import "../styles/home.css";
+//import IconPipboy from "../components/iconPipBoy/IconPipboy.jsx";
+import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
+import "./home.css";
 
 
-import ibmLogo from "../assets/icons/ibm.png";
-import atomCurrency from "../assets/icons/FO76_Atom_Currency_2.webp";
-import pistolIcon from "../assets/icons/FO76_iconwheel_pistol.webp";
-import briefcaseIcon from "../assets/icons/FO76NW_icons_briefcase.webp";
-import specialIcon from "../assets/icons/FO76_special_Endurance.webp";
+
+///import ibmLogo from "../assets/icons/ibm.png";
+import ibmLogo from "../../assets/icons/ibm.png";
+import atomCurrency from "../../assets/icons/FO76_Atom_Currency_2.webp";
+import pistolIcon from "../../assets/icons/FO76_iconwheel_pistol.webp";
+import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
+import specialIcon from "../../assets/icons/FO76_special_Endurance.webp";
 
 function Home() {
   return (

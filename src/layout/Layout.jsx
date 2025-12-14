@@ -4,25 +4,18 @@ import "./layout.css";
 
 export default function Layout({ children }) {
   return (
-    <div className="layout-container"> 
-    <div className="crt-screen">
+    <div className="layout-container">
       <Navbar />
 
-      <main className="terminal-content">
-        {children}
-      </main>
+      <div className="crt-wrapper">
+        <div className="crt-screen">
+          <main className="terminal-content">
+            {children}
+          </main>
+        </div>
+      </div>
 
-    
-       
+      <Footer />
     </div>
-    <Footer />
-    </div>
-    
-    
-    
-      
-   
   );
-  
-  
 }

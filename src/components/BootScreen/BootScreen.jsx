@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./bootScreen.css";
 
+
+
 export default function BootScreen({ onFinish }) {
   const messages = [
     "WELCOME TO THE VINTAGE CRT TERMINAL",
@@ -9,6 +11,7 @@ export default function BootScreen({ onFinish }) {
     "ALL SYSTEMS OPERATIONAL",
     "ENJOY THE RETRO EXPERIENCE!"
   ];
+
 
   const [messageIndex, setMessageIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -36,6 +39,7 @@ export default function BootScreen({ onFinish }) {
         return prev - 1;
       });
     }, isDeleting ? 50 : 100);
+    
 
     return () => clearTimeout(timeout);
   }, [isDeleting, messageIndex, charIndex]);  // ← FIX: incluye charIndex
@@ -58,21 +62,35 @@ export default function BootScreen({ onFinish }) {
   }, [onFinish]);
 
   return (
-    <div className="crt-screen scanlines" style={{ opacity }}>
-      <canvas id="static-canvas"></canvas>
-      <div className="glow"></div>
+  <div className="boot-layout">
+    
+    {/* Columna izquierda (icono) */}
+    
 
-      <div className="terminal-window">
-        <div className="boot terminal-text">
-          {">"} SYSTEM BOOTING... <br />
-          {">"} MEMORY CHECK OK ... <br />
-          {">"} INITIALIZING DISK DRIVE ... <br />
-          {">"} LOADING OPERATING SYSTEM ... <br />
-          {">"} WELCOME TO VINTAGE OS 1.0 <br />
-          {">"} {messages[messageIndex].substring(0, charIndex)}
-          <span className="cursor"></span>
+    {/* Pantalla CRT */}
+    <div className="boot-crt">
+       
+      <div className="crt-screen scanlines" style={{ opacity }}>
+        <canvas id="static-canvas"></canvas>
+       
+        <div className="glow"></div>
+  
+        <div className="terminal-window">
+          <div className="boot terminal-text">
+            {">"} SYSTEM BOOTING... <br />
+            {">"} MEMORY CHECK OK ... <br />
+            {">"} INITIALIZING DISK DRIVE ... <br />
+            {">"} LOADING OPERATING SYSTEM ... <br />
+            {">"} WELCOME TO VINTAGE OS 1.0 <br />
+            {">"} {messages[messageIndex].substring(0, charIndex)}
+            <span className="cursor"></span>
+          </div>
+        
         </div>
       </div>
     </div>
-  );
+
+  </div>
+);
+
 }
