@@ -7,7 +7,7 @@ export default function Navbar() {
     
             <ul className="nav-list">
            <li className="nav-item">[F1] HOME</li>
-           <li className="nav-item">[F2] ABOUT-ME</li>
+           <li className="nav-item" >[F2] ABOUT-ME</li>
            <li className="nav-item">[F3] PROJECTS</li>
            <li className="nav-item">[F4] CONTACT</li> 
             </ul>

@@ -11,15 +11,13 @@
 
   color-scheme: light dark;
   color: rgba(0, 255, 128, 0.9); /* Verde terminal */
-  background-color: #000;       /* Fondo negro total */
+  background-color: #000; /* Fondo negro total */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
 
 /* Enlaces */
 a {
@@ -29,20 +27,6 @@ a {
 }
 a:hover {
   color: #00cc55;
-}
-
-/* ----------------- LAYOUT GENERAL ----------------- */
-
-
-/* Área central entre navbar & footer */
-.crt-wrapper {
-  flex: 1;
-  margin-top: 70px;     /* Ajustar según altura real del navbar */
-  margin-bottom: 60px;  /* Ajustar según altura real del footer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 /* ----------------- TEMPLATE ORIGINAL ----------------- */
@@ -62,5 +46,3 @@ a:hover {
     background-color: #fff;
   }
 }
-
-

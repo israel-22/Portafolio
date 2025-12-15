@@ -2,6 +2,7 @@ import { useState } from "react";
 import BootScreen from "./components/BootScreen/BootScreen";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home/Home";
+import About from "./pages/About/AboutMe";
 
 function App() {
   const [bootDone, setBootDone] = useState(false);
@@ -13,6 +14,7 @@ function App() {
       ) : (
         <Layout>
           <Home />
+          <About />
         </Layout>
       )}
     </>

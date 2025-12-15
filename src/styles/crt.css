@@ -130,6 +130,9 @@
     50% { opacity: 0; }
 }
 
-
-
+.terminal-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
 
