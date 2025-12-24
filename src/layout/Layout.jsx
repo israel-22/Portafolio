@@ -4,10 +4,10 @@ import "./layout.css";
 
 
 
-export default function Layout({ children }) {
+export default function Layout({ children, onOpenPDA }) {
   return (
     <div className="layout-container">
-      <Navbar />
+      <Navbar/>
 
       <div className="crt-wrapper">
         <div className="crt-screen">
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         </div>
       </div>
 
-      <Footer />
+      <Footer onOpenPDA={onOpenPDA} />
     </div>
   );
 }

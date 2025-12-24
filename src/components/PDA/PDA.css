@@ -1,0 +1,86 @@
+/* Fondo que cubre la pantalla (no empuja layout) */
+.pda-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Activado */
+.pda-overlay.open {
+  pointer-events: auto;
+}
+
+/* Dispositivo PDA */
+.pda-device {
+  position: absolute;
+  top: 50%;
+  right: -420px;
+  transform: translateY(-50%);
+  width: 360px;
+  height: 520px;
+  background: #2a2a2a;
+  border: 4px solid #555;
+  border-radius: 14px;
+  box-shadow: inset 0 0 10px #000, 0 0 25px rgba(0,0,0,0.7);
+  transition: right 0.6s ease;
+}
+
+/* Cuando está abierto */
+.pda-overlay.open .pda-device {
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+/* Header */
+.pda-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #1a1a1a;
+  border-bottom: 2px solid #444;
+  font-family: monospace;
+  font-size: 12px;
+  color: #9cff9c;
+}
+
+/* Botón cerrar */
+.pda-close {
+  background: #400;
+  color: #f55;
+  border: 1px solid #800;
+  cursor: pointer;
+}
+
+/* Pantalla CRT (placeholder) */
+.pda-screen {
+  margin: 20px;
+  height: 260px;
+  background: #001a00;
+  border: 3px solid #0f0;
+  color: #7dff7d;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 15px #0f0;
+}
+
+/* Controles */
+.pda-controls {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.pda-button {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border: 2px solid #666;
+  border-radius: 50%;
+}

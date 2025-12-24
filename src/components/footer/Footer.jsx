@@ -10,7 +10,7 @@ import whatsappIcon from "../../assets/icons/whatsapp-retro.png";
 
 
 
-function Footer() {
+function Footer({onOpenPDA}) {
 const [hours, setHours] = useState("00");
 const [minutes, setMinutes] = useState("00");
 const [blink, setBlink] = useState(true);
@@ -75,7 +75,7 @@ useEffect(() => {
         </button>
         </a>
         {/*BOTON ESPECIAL CV */}
-        <button className="retro-btn cv-btn">
+        <button className="retro-btn cv-btn" onClick={onOpenPDA}>
           DOWNLOAD CV
         </button>
 
