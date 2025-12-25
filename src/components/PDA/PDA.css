@@ -1,86 +1,165 @@
-/* Fondo que cubre la pantalla (no empuja layout) */
+/* OVERLAY */
 .pda-overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 200;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   pointer-events: none;
-  z-index: 999;
 }
 
-/* Activado */
-.pda-overlay.open {
+.pda-overlay.show {
   pointer-events: auto;
 }
 
-/* Dispositivo PDA */
-.pda-device {
-  position: absolute;
-  top: 50%;
-  right: -420px;
-  transform: translateY(-50%);
-  width: 360px;
-  height: 520px;
-  background: #2a2a2a;
-  border: 4px solid #555;
+/* PDA CONTAINER */
+.pda-container {
+  width: 460px;
+  height: 620px;
+
+  transform: translateX(120%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  background: #e7e3d5;
+  border: 6px solid #b1ae9a;
   border-radius: 14px;
-  box-shadow: inset 0 0 10px #000, 0 0 25px rgba(0,0,0,0.7);
-  transition: right 0.6s ease;
+
+  box-shadow:
+    inset 0 0 0 4px #fff,
+    0 12px 30px rgba(0,0,0,0.6);
+
+  font-family: "Courier New", monospace;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-/* Cuando está abierto */
-.pda-overlay.open .pda-device {
-  right: 50%;
-  transform: translate(50%, -50%);
+.pda-overlay.show .pda-container {
+  transform: translateX(0);
+}
+.pda-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
-/* Header */
+/* HEADER */
 .pda-header {
+  padding: 12px 16px;
+  font-weight: bold;
+  gap:8px;
+  color: #3a3020;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background: #1a1a1a;
-  border-bottom: 2px solid #444;
-  font-family: monospace;
-  font-size: 12px;
-  color: #9cff9c;
+  text-shadow: 0 1px #fff;
 }
 
-/* Botón cerrar */
-.pda-close {
-  background: #400;
-  color: #f55;
-  border: 1px solid #800;
-  cursor: pointer;
+.pda-model {
+  font-size: 0.8rem;
 }
 
-/* Pantalla CRT (placeholder) */
-.pda-screen {
-  margin: 20px;
-  height: 260px;
-  background: #001a00;
-  border: 3px solid #0f0;
-  color: #7dff7d;
-  font-family: monospace;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 15px #0f0;
+/* LINEA BLANCA TECNICA */
+.pda-divider {
+  height: 4px;
+  background: linear-gradient(to bottom, #fff, #cfcab5);
 }
 
-/* Controles */
-.pda-controls {
-  display: flex;
-  justify-content: space-around;
+/* BODY */
+.pda-body {
+  flex: 1;
+  position: relative;
   padding: 20px;
 }
 
-.pda-button {
-  width: 40px;
-  height: 40px;
-  background: #333;
-  border: 2px solid #666;
+/* CRT PLACEHOLDER */
+.pda-crt-placeholder {
+  height: 100%;
+  background: #001a00;
+  border: 4px inset #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00ff66;
+  text-shadow: 0 0 8px #00ff66;
+}
+
+/* VENTILACION */
+.vent {
+  position: absolute;
+  top: 30px;
+  width: 10px;
+  height: 200px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #8c8877 0px,
+    #8c8877 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.vent-left {
+  left: 4px;
+}
+
+.vent-right {
+  right: 4px;
+}
+
+/* FOOT */
+.pda-footer {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LED */
+.pda-led {
+  width: 14px;
+  height: 14px;
+  background: orange;
   border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,150,0,1);
+  animation: blinkLed 1s infinite;
+}
+
+/* BOTON FISICO */
+.pda-btn {
+  padding: 8px 16px;
+  background: #d4d0c4;
+  border: 2px solid #9c9784;
+  box-shadow: 0 3px 0 #8c8877;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.pda-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+@keyframes blinkLed {
+  0%,100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+.robco-logo {
+  height: 28px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.robco-slogan {
+  height: 35px;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.85;
 }

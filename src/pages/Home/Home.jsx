@@ -32,6 +32,7 @@ function Home() {
          repudiandae esse autem ratione accusamus vero tempora! Neque, 
          ipsum. Quidem soluta illo totam doloremque quae perferendis id est reprehenderit voluptates!
       </p>
+      
     </div>
   
   );
