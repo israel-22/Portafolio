@@ -76,19 +76,27 @@
   flex: 1;
   position: relative;
   padding: 20px;
-}
 
-/* CRT PLACEHOLDER */
-.pda-crt-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* MARCO DEL CRT (VIDRIO) */
+.pda-crt-frame {
+  width: 100%;
   height: 100%;
+
   background: #001a00;
   border: 4px inset #333;
+  border-radius: 6px;
+
+  overflow: hidden;
+  position: relative;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #00ff66;
-  text-shadow: 0 0 8px #00ff66;
 }
+
+
 
 /* VENTILACION */
 .vent {
