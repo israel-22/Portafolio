@@ -31,11 +31,7 @@ export default function PDA({ isOpen, onClose }) {
         {/* BODY */}
         <div className="pda-body">
           | <Display key={displayResetKey}  onClose={onClose}/>
-           ¿
-
-          {/* CRT Display REAL  <Display mode={displayMode} onCancel={onClose} />*/}
-          
-         
+      
 
           {/* Ventilación */}
           <div className="vent vent-left"></div>

@@ -1,23 +1,95 @@
-/*LAYOUT.CSS*/
-/* ====== REPARACIÓN GLOBAL DEL BODY ====== */
-
+/* CONTENEDOR GENERAL */
 .layout-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  background: black;
 }
 
-
-.crt-wrapper {
-  flex: 1; /* ocupa todo el espacio entre navbar y footer */
+/* ZONA CENTRAL ENTRE NAV Y FOOTER */
+.content-area {
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  align-items: center;      /* ← centra vertical */
+  justify-content: center;  /* ← centra horizontal */
+  padding: 1cm 0;           /* ← espacio superior e inferior */
 }
 
-/* main dentro de CRT */
-/*.terminal-content {
+/* ENVOLTURA DEL CRT */
+.crt-wrapper {
+   width: 100%;
+  padding: 0 0.5cm;          /* margen físico lateral */
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;            /* ← 2cm izquierda y derecha */
+}
+
+/* PANTALLA CRT */
+.crt-screen {
   width: 100%;
-  max-width: 800px; 
-}*/
+  max-width: none;
+
+
+  min-height: 65vh;
+  box-sizing: border-box;
+
+  border: 3px solid rgba(0, 255, 0, 0.25);
+  border-radius: 12px;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 30, 0, 0.95),
+    rgba(0, 0, 0, 0.98)
+  );
+
+  box-shadow:
+    0 0 40px rgba(0, 255, 0, 0.25),
+    inset 0 0 25px rgba(0, 255, 0, 0.15);
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* Scanlines */
+.crt-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 255, 0, 0.08) 0.1em, transparent 0.1em);
+  background-size: 100% 0.2em;
+  pointer-events: none;
+}
+
+.crt-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 255, 0, 0.02);
+  animation: flicker 0.15s infinite;
+  pointer-events: none;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.95;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  15% {
+    opacity: 0.92;
+  }
+  20% {
+    opacity: 0.98;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

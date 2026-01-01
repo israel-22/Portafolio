@@ -85,7 +85,7 @@ export default function Display({ onClose }) {
                   className="display-btn"
                   onClick={() => selectFormat("word")}
                 >
-                  [F1] WORD
+                  [F1].DOCX 
                 </button>
                 <button
                   className="display-btn"

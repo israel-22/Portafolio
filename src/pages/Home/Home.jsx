@@ -15,7 +15,7 @@ function Home() {
   return (
  
     <div className="home-container">
-       <div class="glow"></div>
+       <div className="glow"></div>
       <h1>Mi Portafolio Retro</h1>
 
       <div className="icon-grid">

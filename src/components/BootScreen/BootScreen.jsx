@@ -60,37 +60,26 @@ export default function BootScreen({ onFinish }) {
 
     return () => clearTimeout(timer);
   }, [onFinish]);
-
-  return (
-  <div className="boot-layout">
-    
-    {/* Columna izquierda (icono) */}
-    
-
-    {/* Pantalla CRT */}
-    <div className="boot-crt">
-       
-      <div className="crt-screen scanlines" style={{ opacity }}>
-        <canvas id="static-canvas"></canvas>
-       
-        <div className="glow"></div>
   
-        <div className="terminal-window">
-          <div className="boot terminal-text">
-            {">"} SYSTEM BOOTING... <br />
-            {">"} MEMORY CHECK OK ... <br />
-            {">"} INITIALIZING DISK DRIVE ... <br />
-            {">"} LOADING OPERATING SYSTEM ... <br />
-            {">"} WELCOME TO VINTAGE OS 1.0 <br />
-            {">"} {messages[messageIndex].substring(0, charIndex)}
-            <span className="cursor"></span>
-          </div>
-        
+return (
+  <div className="boot-layout">
+    <div className="boot-crt" style={{ opacity }}>
+      <canvas id="static-canvas"></canvas>
+
+      <div className="terminal-window">
+        <div className="boot terminal-text">
+          {">"} SYSTEM BOOTING... <br />
+          {">"} MEMORY CHECK OK ... <br />
+          {">"} INITIALIZING DISK DRIVE ... <br />
+          {">"} LOADING OPERATING SYSTEM ... <br />
+          {">"} WELCOME TO VINTAGE OS 1.0 <br />
+          {">"} {messages[messageIndex].substring(0, charIndex)}
+          <span className="cursor"></span>
         </div>
       </div>
     </div>
-
   </div>
 );
+
 
 }

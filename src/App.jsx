@@ -2,7 +2,6 @@ import { useState } from "react";
 import BootScreen from "./components/BootScreen/BootScreen";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home/Home";
-import About from "./pages/About/AboutMe";
 import PDA from "./components/PDA/PDA";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
       ) : (
         <Layout onOpenPDA={() => setOpen(true)}>
           <Home />
-          <About />
         </Layout>
       )}
       {open && (
