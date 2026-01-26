@@ -11,12 +11,13 @@ import pistolIcon from "../../assets/icons/FO76_iconwheel_pistol.webp";
 import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
 import specialIcon from "../../assets/icons/FO76_special_Endurance.webp";
 
+
 function Home() {
   return (
  
     <div className="home-container">
        <div className="glow"></div>
-      <h1>Mi Portafolio Retro</h1>
+      <h1 >Mi Portafolio Retro</h1>
 
       <div className="icon-grid">
         

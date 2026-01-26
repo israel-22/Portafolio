@@ -47,3 +47,10 @@ a:hover {
   }
 }
 
+:crt {
+  --crt-font: "VT323", monospace;
+}
+
+body {
+  font-family: var(--crt-font);
+}

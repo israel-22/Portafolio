@@ -10,6 +10,7 @@ import whatsappIcon from "../../assets/icons/whatsapp-retro.png";
 
 
 
+
 function Footer({onOpenPDA}) {
 const [hours, setHours] = useState("00");
 const [minutes, setMinutes] = useState("00");

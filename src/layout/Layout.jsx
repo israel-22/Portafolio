@@ -1,6 +1,8 @@
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import "./layout.css";
+import "./typography/leters-crt.css";
+
 
 export default function Layout({ children, onOpenPDA }) {
   return (

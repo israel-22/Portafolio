@@ -28,10 +28,14 @@
     margin: 0;
 }
 
-/* Cada tecla tipo F1, F2, F3 */
+/* NAVLINK ES EL BOTÓN */
 .nav-item {
+    display: block;              
+    padding: 6px 14px;
     cursor: pointer;
-    padding: 4px 8px;
+
+    text-decoration: none;
+    color: #00ff66;
 
     border: 1px solid rgba(0, 255, 0, 0.4);
     background: rgba(0, 50, 0, 0.1);
@@ -39,18 +43,20 @@
     transition: 0.15s ease;
 }
 
-/* Hover verde brillante */
+/* Hover */
 .nav-item:hover {
     background: rgba(0, 255, 0, 0.15);
     box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
     border-color: rgba(0, 255, 0, 0.7);
 }
 
-/* Click tipo "tecla presionada" */
+/* Click */
 .nav-item:active {
     transform: translateY(2px);
     box-shadow: 0 0 4px rgba(0, 255, 0, 0.5);
 }
+
+
 
 /* Para evitar que se sobreponga el contenido */
 body {

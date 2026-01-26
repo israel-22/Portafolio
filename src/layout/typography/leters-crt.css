@@ -1,0 +1,45 @@
+/* ===============================
+   TERMINAL TYPOGRAPHY SYSTEM
+   Scope: .terminal-content
+================================ */
+
+.terminal-content {
+  font-family: "VT323", monospace;
+  font-size: 18px;              /* base real */
+  line-height: 1.4;
+  color: #00ff66;
+  text-shadow: 0 0 4px rgba(0, 255, 0, 0.6);
+  letter-spacing: 0.04em;
+}
+
+/* Jerarquía */
+.terminal-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.9);
+}
+
+.terminal-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.terminal-content h3 {
+  font-size: 1.6rem;
+  opacity: 0.9;
+}
+
+.terminal-content p {
+  font-size: 1.3rem;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+/* Texto secundario */
+.terminal-muted {
+  opacity: 0.6;
+}
+
+.terminal-mono {
+  letter-spacing: 0.08em;
+}
