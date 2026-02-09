@@ -7,8 +7,7 @@
   font-family: "VT323", monospace;
   font-size: 18px;              /* base real */
   line-height: 1.4;
-  color: #00ff66;
-  text-shadow: 0 0 4px rgba(0, 255, 0, 0.6);
+  
   letter-spacing: 0.04em;
 }
 

@@ -135,8 +135,10 @@ export default function Display({ onClose }) {
               </button>
             </div>
           )}
-
-          <span className="cursor"></span>
+            
+              <span className="cursor"></span>
+            
+          
         </div>
 
         {/* DERECHA */}

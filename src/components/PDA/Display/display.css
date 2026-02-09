@@ -154,7 +154,7 @@
 }
 
 .download-center {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   transform: translateX(50px);
@@ -226,4 +226,21 @@
     hue-rotate(-20deg)
     saturate(2)
     drop-shadow(0 0 10px #ff5555);
+}
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+ 
+
+  background-color: var(--crt-color);
+  box-shadow: 0 0 6px var(--crt-color);
+  margin-top: 3px;
+  margin-left: 6px;
+  animation: cursorBlink 1s steps(1) infinite;
+}
+@keyframes cursorBlink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
 }
