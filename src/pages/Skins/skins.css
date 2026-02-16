@@ -1,3 +1,70 @@
-.skins-page {
+
+
+CSS 
+
+/*HOME.CSS*/
+/* iconPipboy.css ya lo tienes, solo agregamos container grid */
+
+.home {
   padding: 1rem;
+  color: #00ff66;
+}
+
+.home-container {
+  position:relative;
+ padding: 20px;
+ min-height: calc(100vh - 120px); /* ajusta según navbar+footer */
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 20px;
+ overflow-y: auto;
+}
+
+/* Grid de iconos */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Scroll CRT */
+.home-container::-webkit-scrollbar {
+  width: 8px;
+}
+.home-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 0, 0.4);
+}
+
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .icon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 12px;
+    }
+
+    .home-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-container p {
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+
+
+
+
+@keyframes flicker {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.1; }
 }

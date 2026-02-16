@@ -7,10 +7,10 @@
     /* Verde Fallout CRT */
     filter:
         grayscale(100%)
-        brightness(1.4)
-        sepia(100%)
+        brightness(0.90)
+        sepia(80%)
         hue-rotate(80deg)
-        saturate(900%)
+        saturate(450%)
         drop-shadow(0 0 8px #00ff66);
 
     transition: 0.2s ease;
@@ -20,10 +20,10 @@
 .pipboy-icon:hover {
     filter:
         grayscale(100%)
-        brightness(2)
+        brightness(0.75)
         sepia(100%)
         hue-rotate(80deg)
-        saturate(1500%)
+        saturate(450%)
         drop-shadow(0 0 14px #00ff99);
     transform: scale(1.05);
 }

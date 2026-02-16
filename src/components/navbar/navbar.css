@@ -55,10 +55,42 @@
     transform: translateY(2px);
     box-shadow: 0 0 4px rgba(0, 255, 0, 0.5);
 }
+@media (max-width: 1000px) {
+  .nav-list {
+    gap: 20px;
+  }
 
-
-
-/* Para evitar que se sobreponga el contenido */
-body {
-    padding-top: 55px; /* Altura del navbar */
+  .nav-item {
+    padding: 6px 10px;
+    font-size: 1rem;
+  }
 }
+
+@media (max-width: 950px) {
+  .nav-list {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .crt-nav {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .nav-list {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-item {
+    padding: 4px 8px;
+  }
+}
+
+
+

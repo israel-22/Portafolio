@@ -1,41 +1,43 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import "./home.css";
 
-
-
-import ibmLogo from "../../assets/icons/ibm.png";
-import atomCurrency from "../../assets/icons/FO76_Atom_Currency_2.webp";
-import pistolIcon from "../../assets/icons/FO76_iconwheel_pistol.webp";
-import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
-import specialIcon from "../../assets/icons/FO76_special_Endurance.webp";
-
+import fondoII from "../../assets/icons/fondoII.jpg";
+import signalIcon from "../../assets/icons/FO76_Quest_Signal_Repeater.webp";
 
 function Home() {
   return (
- 
     <div className="home-container">
-       <div className="glow"></div>
-      <h1 >Mi Portafolio Retro</h1>
+      <div className="home-split">
+        {/* TEXTO */}
+        <div className="home-text">
+          <h1>C:\\ SANTOS-ISRAEL</h1>
 
-      <div className="icon-grid">
-        
-        <IconPipboy src={atomCurrency} alt="Atom Currency" />
-        <IconPipboy src={pistolIcon} alt="Pistol Icon" />
-        <IconPipboy src={ibmLogo} alt="IBM Logo" />
-        <IconPipboy src={briefcaseIcon} alt="Briefcase Icon" />
-        <IconPipboy src={specialIcon} alt="Special Icon" />
+             {/* ICONOS (aquí SÍ va IconPipboy) */}
+          <div className="icon-grid">
+            <IconPipboy src={signalIcon} alt="Signal Icon" />
+            {/* otros iconos aquí */}
+          </div>
+
+          <p>
+            &gt;PORTFOLIO v1.0
+            <br />
+            &gt; TECNOLOGO: DESARROLO-SOFTWARE
+            <br />
+            &gt; ESTADO: DESARROLLADOR-JUNIOR
+          </p>
+          <NavLink to="/about" className="nav-item home-btn">
+            &gt; [F2] ABOUT-ME
+          </NavLink>
+        </div>
+
+        {/* IMAGEN CRT GRANDE */}
+        <div className="home-image">
+          <img src={fondoII} alt="CRT Projection" />
+        </div>
       </div>
-
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, obcaecati
-         repudiandae esse autem ratione accusamus vero tempora! Neque, 
-         ipsum. Quidem soluta illo totam doloremque quae perferendis id est reprehenderit voluptates!
-      </p>
-      
     </div>
-  
   );
 }
 

@@ -30,19 +30,10 @@
 
     animation: slideFooter 0.5s ease-out;
 }
-
-@keyframes slideFooter {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+.retro-footer > * {
+  min-width: 0;
 }
 
-
-/* position: relative;
-    width: 226%;    
-    left: -63%;              
-    top: auto;             
-    z-index: 20;
-    animation: slideFooter 0.5s ease-out;*/
 
 
 /* BLOQUE IZQUIERDO */
@@ -145,17 +136,7 @@
     50% { opacity: 1; }
 }
 
-/* RESPONSIVE - pantallas pequeñas */
-@media (max-width: 700px) {
-    .retro-footer {
-        flex-direction: column; /* Apila los bloques verticalmente en móviles */
-        gap: 16px;
-        align-items: center;
-        text-align: center;
-         padding: 15px 20px 17px 20px;  
-        
-    }
-}
+
 
 .cv-btn {
   width: auto;
@@ -182,7 +163,10 @@
 .digital-clock {
   margin-left: 12px;
   padding: 4px 10px;
-  width: 72px;              /* 🔒 ancho fijo */
+  min-width: 64px;
+max-width: 80px;
+flex-shrink: 1;
+             
   text-align: center;
 
   background: #000;
@@ -214,4 +198,94 @@
   opacity: 1;
 }
 
+@media (max-width: 950px) {
+  .nav-list {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    justify-content: center;
+  }
+}
 
+@media (max-width: 900px) {
+  .digital-clock {
+    width: auto;
+    min-width: 60px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .retro-footer {
+    flex-direction: column;
+    gap: 14px;
+    padding: 12px 16px;
+  }
+
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  .footer-logo {
+    width: 50px;
+  }
+
+  .footer-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  .digital-clock {
+    width: auto;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}
+@keyframes slideFooter {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* RESPONSIVE - pantallas pequeñas */
+@media (max-width: 700px) {
+    .retro-footer {
+        flex-direction: column; /* Apila los bloques verticalmente en móviles */
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+         padding: 15px 20px 17px 20px;  
+        
+    }
+}
+
+@media (max-width: 960px) and (min-width: 820px) {
+  .footer-status {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .digital-clock {
+    margin-left: 0;
+  }
+}
+.footer-status {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 960px) {
+  .retro-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-buttons {
+    order: 1;
+  }
+
+  .footer-status {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
