@@ -4,7 +4,7 @@ import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import "./home.css";
 
 import fondoII from "../../assets/icons/fondoII.jpg";
-import signalIcon from "../../assets/icons/FO76_Quest_Signal_Repeater.webp";
+import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
 
 function Home() {
   return (
@@ -19,13 +19,13 @@ function Home() {
             <IconPipboy src={signalIcon} alt="Signal Icon" />
             {/* otros iconos aquí */}
           </div>
-
+                 
           <p>
-            &gt;PORTFOLIO v1.0
+            &gt; PORTFOLIO v1.0
             <br />
-            &gt; TECNOLOGO: DESARROLO-SOFTWARE
+            &gt; TITLE: SOFTWARE DEVELOPMENT TECHNOLOGIST
             <br />
-            &gt; ESTADO: DESARROLLADOR-JUNIOR
+            &gt; POSITION: JUNIOR DEVELOPER
           </p>
           <NavLink to="/about" className="nav-item home-btn">
             &gt; [F2] ABOUT-ME

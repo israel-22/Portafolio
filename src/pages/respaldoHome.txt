@@ -111,3 +111,18 @@ CSS
     50% { opacity: 0.2; }
     100% { opacity: 0.1; }
 }
+
+
+
+
+/*fondo de pantalla*/
+.home-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: min(90vw, 1500px);
+  height: min(80vh, 800px);
+
+  gap: 120px;
+}

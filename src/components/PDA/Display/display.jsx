@@ -91,7 +91,7 @@ export default function Display({ onClose }) {
                   className="display-btn"
                   onClick={() => selectFormat("pdf")}
                 >
-                  [F2] PDF
+                  [F2].PDF
                 </button>
               </div>
             </>
