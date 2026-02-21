@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
+import IconPipboy from "../../components/IconPipBoy/IconPipboy.jsx";
 import "./home.css";
 
 import fondoII from "../../assets/icons/fondoII.jpg";

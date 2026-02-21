@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./aboutMe.css";
-import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
+import IconPipboy from "../../components/IconPipBoy/IconPipboy.jsx";
 
 import S from "../../assets/icons/FO76_S.webp";
 import P from "../../assets/icons/FO76_P.webp";

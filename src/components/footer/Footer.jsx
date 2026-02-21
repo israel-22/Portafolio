@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./footer.css";
+import "./footer.effects"; // side-effects (flash LED)
 import ibmLogo from "../../assets/icons/ibm.png";
 import githubIcon from "../../assets/icons/github-retro.png";
 import linkedinIcon from "../../assets/icons/linkedin-retro.png";

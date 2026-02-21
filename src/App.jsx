@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+console.log("APP MOUNTED");
 import BootScreen from "./components/BootScreen/BootScreen";
 import Layout from "./layout/Layout";
 import PDA from "./components/PDA/PDA";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
+import IconPipboy from "../../components/IconPipBoy/IconPipboy.jsx";
 import "./skins.css";
 
 

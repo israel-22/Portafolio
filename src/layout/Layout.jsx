@@ -1,5 +1,5 @@
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer.jsx";
 import "./layout.css";
 import "./typography/leters-crt.css";
 
