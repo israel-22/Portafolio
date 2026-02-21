@@ -36,12 +36,12 @@ export default function Display({ onClose }) {
     //  Archivos reales
     const fileMap = {
       pdf: {
-        es: "/cv/cv_desarrollador_es.pdf",
-        en: "/cv/cv_desarrollador_en.pdf",
+        es: "/src/assets/cv/cv_desarrollador_es.pdf",
+        en: "/src/assets/cv/cv_desarrollador_en.pdf",
       },
       word: {
-        es: "/cv/cv_desarrollador_es.docx",
-        en: "/cv/cv_desarrollador_en.docx",
+        es: "/src/assets/cv/cv_desarrollador_es.docx",
+        en: "/src/assets/cv/cv_desarrollador_en.docx",
       },
     };
 

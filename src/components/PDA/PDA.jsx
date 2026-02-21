@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./PDA.css";
-import Display from "./Display/display.jsx";
+import Display from "./Display/Display.jsx";
 
 import RobCoLogo from "../../assets/icons/Robco_Logo.webp";
 import RobCoSlogan from "../../assets/icons/RobCo_MDBP.webp";
