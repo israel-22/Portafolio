@@ -1,3 +1,50 @@
-.about-page {
-  padding: 1rem;
+.about-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.about-frame {
+  width: min(90vw, 1650px);
+  min-height: 80vh;
+  padding: 1cm;
+  box-sizing: border-box;
+
+  color: #00ff66;
+  font-family: monospace;
+}
+
+/* HEADER */
+.about-header {
+  margin-bottom: 1rem;
+}
+
+/* MAIN GRID */
+.about-content {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.2rem;
+}
+
+/* SPECIAL COLUMN */
+.special-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* INFO */
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* SECTIONS */
+.about-info section {
+  padding: 0.6rem;
+  border-left: 2px solid rgba(0, 255, 0, 0.3);
+}
+
