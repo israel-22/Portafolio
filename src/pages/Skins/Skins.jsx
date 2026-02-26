@@ -17,7 +17,7 @@ function Skins() {
  
     <div className="home-container">
        <div className="glow"></div>
-      <h1 >Mi Portafolio Retro</h1>
+      <h1 >C:\\ Mi Portafolio Retro</h1>
 
       <div className="icon-grid">
         

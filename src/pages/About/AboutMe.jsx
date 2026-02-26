@@ -13,17 +13,21 @@ import I from "../../assets/icons/FO76_I.webp";
 import A from "../../assets/icons/FO76_A.webp";
 import L from "../../assets/icons/FO76_L.webp";
 import Character from "../../assets/icons/FO76_character.webp";
+import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";  
 
  function About() {
   return (
     <div className="about-container">
+     
       <div className="about-frame">
 
         {/* HEADER */}
         <header className="about-header">
           <div className="about-header-content">
-             <h1>C:\\ ABOUT_ME</h1>
+             <h1>C:\\ ABOUT-ME</h1>
           <IconPipboy src={Character} alt="Character Icon" />
+
+          <IconPipboy src={Selfie} alt="Selfie Icon" />
           </div>
           
         </header>

@@ -9,16 +9,14 @@
   width: min(90vw, 1650px);
   min-height: 80vh;
   padding: 1cm;
-  box-sizing: border-box;
-
-  color: #00ff66;
-  font-family: monospace;
+  line-height: 1.4;
 }
 
 /* HEADER */
 .about-header {
   margin-bottom: 1rem;
 }
+
 
 /* MAIN GRID */
 .about-content {
@@ -44,10 +42,35 @@
 
 /* SECTIONS */
 .about-info section {
-  padding: 0.6rem;
+  padding: 0.45rem 0.6rem;
   border-left: 2px solid rgba(0, 255, 0, 0.3);
 }
 
+
+
 .proyects-page {
   padding: 1rem;
+}
+
+/* SPECIAL COLUMN */
+.special-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 👇 controla el tamaño del icono aquí */
+.special-column img {
+  width: 42px;
+  height: 42px;
+  opacity: 0.85;
+ 
+}
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
 }
