@@ -12,15 +12,15 @@ import A from "../../assets/icons/FO76_A.webp";
 import L from "../../assets/icons/FO76_L.webp";
 import Character from "../../assets/icons/FO76_character.webp";
 
-export default function AboutMe() {
+ function About() {
   return (
     <div className="about-container">
       <div className="about-frame">
 
         {/* HEADER */}
         <header className="about-header">
-          <div className="home-text">
-             <h1>&gt; ABOUT_ME</h1>
+          <div className="about-header-content">
+             <h1>C:\\ ABOUT_ME</h1>
           <IconPipboy src={Character} alt="Character Icon" />
           </div>
           
@@ -75,3 +75,4 @@ export default function AboutMe() {
     </div>
   );
 }
+ export default About
