@@ -3,8 +3,6 @@ import React from "react";
 import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import "./aboutMe.css";
 
-
-
 import S from "../../assets/icons/FO76_S.webp";
 import P from "../../assets/icons/FO76_P.webp";
 import E from "../../assets/icons/FO76_E.webp";
@@ -12,63 +10,88 @@ import C from "../../assets/icons/FO76_C.webp";
 import I from "../../assets/icons/FO76_I.webp";
 import A from "../../assets/icons/FO76_A.webp";
 import L from "../../assets/icons/FO76_L.webp";
+import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
 import Character from "../../assets/icons/FO76_character.webp";
-import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";  
+import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";
 
- function About() {
+function About() {
   return (
     <div className="about-container">
-     
       <div className="about-frame">
-
         {/* HEADER */}
         <header className="about-header">
-          <div className="about-header-content">
-             <h1>C:\\ ABOUT-ME</h1>
-          <IconPipboy src={Character} alt="Character Icon" />
+          <h1>C:\ ABOUT_ME</h1>
 
-          <IconPipboy src={Selfie} alt="Selfie Icon" />
+          <div className="about-header-row">
+            <span>&gt; NAME: Israel Santos</span>
+            <span>&gt; ROLE: Junior Developer</span>
+
+            <div className="about-header-icons">
+              <IconPipboy src={signalIcon} alt="Signal Icon" />
+            </div>
           </div>
-          
+
+          <p className="terminal-muted">/ Software Development Technologist</p>
         </header>
 
         {/* CONTENT */}
-        <section className="about-content">
+        <section className="special-stats">
+          <div className="special-row">
+            <IconPipboy src={S} alt="Strength" />
+            <h3>&gt; STRENGTH</h3>
+          </div>
 
-          {/* SPECIAL BAR */}
-          <aside className="special-column">
-            {/* aquí luego van los 7 iconos SPECIAL */}
-            <IconPipboy src={S} alt="Special Icon S" />
-            <IconPipboy src={P} alt="Special Icon P" />
-            <IconPipboy src={E} alt="Special Icon E" />
-            <IconPipboy src={C} alt="Special Icon C" />
-            <IconPipboy src={I} alt="Special Icon I" />
-            <IconPipboy src={A} alt="Special Icon A" />
-            <IconPipboy src={L} alt="Special Icon L" />
-          </aside>
+          <div className="special-row">
+            <IconPipboy src={P} alt="Perception" />
+            <h3>&gt; PERCEPTION</h3>
+          </div>
 
-          {/* INFO */}
-          <main className="about-info">
+          <div className="special-row">
+            <IconPipboy src={E} alt="Endurance" />
+            <h3>&gt; ENDURANCE</h3>
+          </div>
 
-            <section className="about-profile">
-              <h2>&gt; NAME: Israel Santos</h2>
-              <p>&gt; ROLE: Junior Developer</p>
-              <p>&gt; TITLE: Software Development Technologist</p>
-            </section>
+          <div className="special-row">
+            <IconPipboy src={C} alt="Charisma" />
+            <h3>&gt; CHARISMA</h3>
+          </div>
 
-            <section className="about-skills">
-              <h3>&gt; SKILLS</h3>
-            </section>
+          <div className="special-row">
+            <IconPipboy src={I} alt="Intelligence" />
+            <h3>&gt; INTELLIGENCE</h3>
+          </div>
 
-            <section className="about-learning">
-              <h3>&gt; LEARNING</h3>
-            </section>
+          <div className="special-row">
+            <IconPipboy src={A} alt="Agility" />
+            <h3>&gt; AGILITY</h3>
+          </div>
 
-            <section className="about-projects">
-              <h3>&gt; PROJECTS</h3>
-            </section>
+          <div className="special-row">
+            <IconPipboy src={L} alt="Luck" />
+            <h3>&gt; LUCK</h3>
+          </div>
 
-          </main>
+          {/* PANEL INFO */}
+          <div className="special-display">
+            <div>
+              <h2>&gt; Select a SPECIAL attribute</h2>
+
+              <p>
+                Each attribute represents a personal strength in my development
+                journey.
+              </p>
+
+              <p>
+                NOTA ANCELMO_ arreglar el css del nav list esta super feo pero bueno, terminar de colocar las imagenes y los contenidos SPECIAL
+              </p>
+
+              <p>Select one to display more information.</p>
+            </div>
+
+            <div className="special-image-card">
+              <IconPipboy src={Character} alt="Vault Boy" />
+            </div>
+          </div>
         </section>
 
         {/* TECH CAROUSELS */}
@@ -76,9 +99,8 @@ import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";
           <div className="tech-dominant"></div>
           <div className="tech-learning"></div>
         </section>
-
       </div>
     </div>
   );
 }
- export default About
+export default About;

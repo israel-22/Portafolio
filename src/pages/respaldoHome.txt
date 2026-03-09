@@ -126,3 +126,43 @@ CSS
 
   gap: 120px;
 }
+
+
+
+        {/* CONTENT */}
+        <section className="special-stats">
+          <div className="special-row">
+            <IconPipboy src={S} alt="Strength" />
+            <h3>&gt; STRENGTH</h3>
+          </div>
+
+          <div className="special-row">
+            <IconPipboy src={P} alt="Perception" />
+            <h3>&gt; PERCEPTION</h3>
+          </div>
+
+          <div className="special-row">
+            <IconPipboy src={E} alt="Endurance" />
+            <h3>&gt; ENDURANCE</h3>
+          </div>
+
+          <div className="special-row">
+            <IconPipboy src={C} alt="Charisma" />
+            <h3>&gt; CHARISMA</h3>
+          </div>
+
+          <div className="special-row">
+            <IconPipboy src={I} alt="Intelligence" />
+            <h3>&gt; INTELLIGENCE</h3>
+          </div>
+
+          <div className="special-row">
+            <IconPipboy src={A} alt="Agility" />
+            <h3>&gt; AGILITY</h3>
+          </div>
+
+          <div className="special-row">
+            <IconPipboy src={L} alt="Luck" />
+            <h3>&gt; LUCK</h3>
+          </div>
+        </section>

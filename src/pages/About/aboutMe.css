@@ -14,9 +14,38 @@
 
 /* HEADER */
 .about-header {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,255,100,0.25);
 }
 
+.about-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* bloque texto */
+.about-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* iconos a la derecha */
+.about-header-icons {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* tamaño iconos */
+.about-header-icons img {
+  width: 100px;
+  height: 100px;
+  opacity: 0.9;
+}
 
 /* MAIN GRID */
 .about-content {
@@ -73,4 +102,67 @@
   gap: 20px;
   width: 100%;
   max-width: 800px;
+}
+
+.special-stats{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:20px;
+}
+
+.special-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.special-display{
+  grid-column:2;
+  grid-row:1 / span 7;
+
+  display:grid;
+  grid-template-columns:1fr 200px;
+  gap:20px;
+  align-items:start;
+}
+.special-image-card{
+  border:1px solid rgba(0,255,120,.25);
+  padding:10px;
+}
+
+.special-image-card img{
+  width:100%;
+}
+
+/* tamaño iconos */
+.special-row img {
+  width: 40px;
+  height: 40px;
+}
+
+/* estilo terminal */
+.special-row h3 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.special-row:hover {
+  color: #00ff66;
+  transform: translateX(4px);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.special-display{
+  display:grid;
+  grid-template-columns:1fr 220px;
+  gap:20px;
+}
+.special-image-card{
+  border:1px solid rgba(0,255,100,.2);
+  padding:10px;
+}
+
+.special-image-card img{
+  width:100%;
 }
