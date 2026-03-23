@@ -10,7 +10,7 @@ import C from "../../assets/icons/FO76_C.webp";
 import I from "../../assets/icons/FO76_I.webp";
 import A from "../../assets/icons/FO76_A.webp";
 import L from "../../assets/icons/FO76_L.webp";
-import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
+/*import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";*/
 import Character from "../../assets/icons/FO76_character.webp";
 import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";
 
@@ -20,18 +20,31 @@ function About() {
       <div className="about-frame">
         {/* HEADER */}
         <header className="about-header">
-          <h1>C:\ ABOUT_ME</h1>
+          <h1>C:\\ ABOUT_ME</h1>
 
-          <div className="about-header-row">
-            <span>&gt; NAME: Israel Santos</span>
-            <span>&gt; ROLE: Junior Developer</span>
+          <div className="about-header-content">
+            {/* IZQUIERDA */}
+            <div className="about-header-text">
+              <span>&gt; NAME: Santos Israel</span>
+              <span>&gt; AGE: 30 years </span>
+              <span>&gt; GENDER: Male </span>
+              <span>&gt; ROLE: Junior Developer</span>
+              <span>&gt; NATIONALITY: Ecuadorian </span>  
+              <p className="terminal-muted">
+                / Software Development Technologist
+              </p>
+            </div>
 
-            <div className="about-header-icons">
-              <IconPipboy src={signalIcon} alt="Signal Icon" />
+            {/* DERECHA */}
+            <div className="about-header-right">
+
+              <div className="about-header-photo">
+                <IconPipboy src={Selfie} alt="Profile" />
+              </div>
+
+              
             </div>
           </div>
-
-          <p className="terminal-muted">/ Software Development Technologist</p>
         </header>
 
         {/* CONTENT */}
@@ -82,7 +95,8 @@ function About() {
               </p>
 
               <p>
-                NOTA ANCELMO_ arreglar el css del nav list esta super feo pero bueno, terminar de colocar las imagenes y los contenidos SPECIAL
+                NOTA ANCELMO_ cambiar la imagen del header por una foto tuya
+                , terminar de colocar las imagenes y los contenidos SPECIAL eso es importante
               </p>
 
               <p>Select one to display more information.</p>
