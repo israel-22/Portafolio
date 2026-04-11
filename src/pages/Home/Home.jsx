@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import "./home.css";
-
 import fondoII from "../../assets/icons/fondoII.jpg";
 import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
 
@@ -20,7 +19,8 @@ function Home() {
             {/* otros iconos aquí */}
           </div>
                  
-          <p>
+          <p >
+            
             &gt; PORTFOLIO v1.0
             <br />
             &gt; TITLE: SOFTWARE DEVELOPMENT TECHNOLOGIST
