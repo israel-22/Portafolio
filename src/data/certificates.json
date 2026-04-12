@@ -1,0 +1,29 @@
+{"meta":{
+    "total": 21,
+    "focus": "Software Development"
+  },
+  "datas":[
+    
+  {
+    "id": 1,
+    "title": "Software Development",
+    "institution": "BYU Idaho",
+    "year": 2025,
+    "category": "WEB",
+    "desc": "Focused on web and software development fundamentals.",
+    "skills": ["JavaScript", "React", "Databases"],
+    "image": "/certs/byu.webp",
+    "link": "https://tu-link-certificado.com"
+  },
+  {
+    "id": 2,
+    "title": "React Native",
+    "institution": "Online Course",
+    "year": 2025,
+    "category": "MOBILE",
+    "desc": "Mobile app development using React Native and Expo.",
+    "skills": ["React Native", "Expo", "Firebase"],
+    "image": "/certs/react-native.webp",
+    "link": "https://tu-link-certificado.com"
+  }
+]}
