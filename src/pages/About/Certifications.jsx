@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./certifications.css";
 import certificatesData from "../../data/certificates.json";
+import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
+/*import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";*/
 function Certifications() {
   const data = certificatesData.datas;
+  
 
   const [selectedCert, setSelectedCert] = useState(
     data.length > 0 ? data[0] : null
@@ -15,10 +18,11 @@ function Certifications() {
       ? data
       : data.filter((c) => c.category === filter);
 
+    
   return (
     <section className="cert-container">
       
-      <h2>&gt; CERTIFICATIONS.LOG ({certificatesData.meta.total})</h2>
+      <h2>&gt; CERTIFICATIONS.LOG ({filteredData.length})</h2>
 
       {/* FILTER */}
       <div className="cert-filter">
@@ -51,7 +55,7 @@ function Certifications() {
               selectedCert?.id === cert.id ? "active" : ""
             }`}
             onClick={() => setSelectedCert(cert)}
-            onMouseEnter={() => setSelectedCert(cert)}
+           
           >
             &gt; {cert.year} | {cert.institution} - {cert.title}
           </div>
@@ -61,43 +65,65 @@ function Certifications() {
       {/* DETALLE */}
       {selectedCert && (
         <div className="cert-detail">
-          <h3>&gt; CERTIFICATE DETAILS</h3>
+  <h3>&gt; CERTIFICATE DETAILS</h3>
 
-          <p><strong>Title:</strong> {selectedCert.title}</p>
-          <p><strong>Institution:</strong> {selectedCert.institution}</p>
-          <p><strong>Year:</strong> {selectedCert.year}</p>
-          <p>{selectedCert.desc}</p>
+  <div className="cert-content">
+    
+    {/* IZQUIERDA */}
+    <div className="cert-text">
+      <p><strong>Title:</strong> {selectedCert.title}</p>
+      <p><strong>Institution:</strong> {selectedCert.institution}</p>
+      <p><strong>Year:</strong> {selectedCert.year}</p>
+      <p>{selectedCert.desc}</p>
 
-          <p>
-            <strong>Skills:</strong>{" "}
-            {selectedCert.skills?.join(", ")}
-          </p>
+      <p>
+        <strong>Skills:</strong>{" "}
+        {selectedCert.skills?.join(", ")}
+      </p>
 
-          <div className="cert-actions">
-            <button onClick={() => setShowModal(true)}>
-              VIEW CERTIFICATE
-            </button>
+      <div className="cert-actions">
+        <button onClick={() => setShowModal(true)}>
+          VIEW CERTIFICATE
+        </button>
 
-            <a
-              href={selectedCert.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OPEN LINK
-            </a>
-          </div>
-        </div>
+       
+      </div>
+    </div>
+
+    {/* DERECHA */}
+    <div className="special-image-certification">
+      <img src={selectedCert.image} alt={selectedCert.title} />
+    </div>
+
+  </div>
+</div>
+        
       )}
 
       {/* MODAL */}
-      {showModal && selectedCert && (
-        <div className="cert-modal">
-          <div className="cert-modal-content">
-            <button onClick={() => setShowModal(false)}>X</button>
-            <img src={selectedCert.image} alt={selectedCert.title} />
-          </div>
-        </div>
-      )}
+      {/* MODAL */}
+{showModal && selectedCert && (
+  <div 
+    className="cert-modal"
+    onClick={() => setShowModal(false)} 
+  >
+    <div 
+      className="cert-modal-content"
+      onClick={(e) => e.stopPropagation()} 
+    >
+
+      <button 
+        className="cert-close-btn"
+        onClick={() => setShowModal(false)}
+      >
+        ✖
+      </button>
+
+      <img src={selectedCert.image} alt={selectedCert.title} />
+
+    </div>
+  </div>
+)}
 
     </section>
   );

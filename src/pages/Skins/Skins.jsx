@@ -12,6 +12,8 @@ import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
 import specialIcon from "../../assets/icons/FO76_vaultboy_endurance.webp";
 
 
+
+
 function Skins() {
   return (
  
@@ -26,6 +28,7 @@ function Skins() {
         <IconPipboy src={ibmLogo} alt="IBM Logo" />
         <IconPipboy src={briefcaseIcon} alt="Briefcase Icon" />
         <IconPipboy src={specialIcon} alt="Special Icon" />
+        
       </div>
 
       <p>
