@@ -23,6 +23,7 @@ function Certifications() {
     <section className="cert-container">
       
       <h2>&gt; CERTIFICATIONS.LOG ({filteredData.length})</h2>
+      <p className="filter-label">&gt; FILTER:</p>
 
       {/* FILTER */}
       <div className="cert-filter">

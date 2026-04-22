@@ -1,80 +1,113 @@
-{"meta":{
+{
+  "meta": {
     "focus": "Software Development"
   },
-  "datas":[
-    
-  {
-    "id": 1,
-    "title": "Software Development",
-    "institution": "Instituto Tecnológico Quito Metropolitano",
-    "year": 2025,
-    "category": "WEB",
-    "desc": "Focused on web and software development fundamentals.",
-    "skills": ["Backend", "Frontend", "Databases", "Mobile Development", "UI/UX Design"],
-    "image":  "/certs/titulo.jpg"
-    
-  },
-  {
-    "id": 2,
-    "title": "Pathway Connect",
-    "institution": "BYU-Pathway Worldwide",
-    "year": 2024,
-    "category": "OTHER",
-    "desc": "pre-university and software development.",
-    "skills": ["Python", "English", "Math", "Soft Skills"],
-    "image": "/certs/pathway.jpg"
-    
-  },
-  {
-  "id": 3,
-  "title": "Python Essentials",
-  "institution": "Cisco Networking Academy",
-  "year": 2023,
-  "category": "WEB",
-  "desc": "Fundamentals of Python programming, problem solving and scripting.",
-  "skills": ["Python", "Programming Logic", "Data Structures Basics"],
-  "image": "/certs/python.jpg"
-},
-  {
-    "id": 4,
-    "title": "Professional Ethics",
-    "institution": "Instituto Tecnológico Quito Metropolitano",
-    "year": 2024,
-    "category": "OTHER",
-    "desc": "treatment, behavior, and good practices in professional settings",
-    "skills": ["Ethical Decision-Making", "Professional Conduct", "Workplace Ethics", "Communication Skills"],
-    "image": "/certs/etica.jpg"
-  },
-  {
-    "id": 5,
-    "title": "ACTFL English Proficiency B2",
-    "institution": "American Council on the Teaching of Foreign Languages",
-    "year": 2019,
-    "category": "OTHER",
-    "desc": "English language proficiency at the B2 level.",
-    "skills": ["Reading", "Writing", "Listening", "Speaking"],
-    "image": "/certs/ingles.jpg"
-  },
-  {
-    "id": 6,
-    "title": "database administrator",
-    "institution": "Fundacion Carlos Slim",
-    "year": 2026,
-    "category": "DATABASE",
-    "desc": "Proficiency in database management and administration.",
-    "skills": ["Database Design", "SQL", "Data Modeling", "Performance Tuning"],
-    "image": "/certs/administradorDB.jpg"
-  },
-  {
-    "id": 7,
-    "title": "Data Analyst",
-    "institution": "Fundacion Carlos Slim",
-    "year": 2026,
-    "category": "DATABASE",
-    "desc": "Proficiency in data analysis and interpretation.",
-    "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-    "image": "/certs/analistaDatos.jpg"
-  },
+  "datas": [
+    {
+      "id": 1,
+      "title": "Software Development",
+      "institution": "Instituto Tecnológico Quito Metropolitano",
+      "year": 2025,
+      "category": "WEB",
+      "desc": "Focused on web and software development fundamentals.",
+      "skills": [
+        "Backend",
+        "Frontend",
+        "Databases",
+        "Mobile Development",
+        "UI/UX Design"
+      ],
+      "image": "/certs/titulo.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Pathway Connect",
+      "institution": "BYU-Pathway Worldwide",
+      "year": 2024,
+      "category": "OTHER",
+      "desc": "pre-university and software development.",
+      "skills": [
+        "Python",
+        "English",
+        "Math",
+        "Soft Skills"
+      ],
+      "image": "/certs/pathway.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Python Essentials",
+      "institution": "Cisco Networking Academy",
+      "year": 2023,
+      "category": "WEB",
+      "desc": "Fundamentals of Python programming, problem solving and scripting.",
+      "skills": [
+        "Python",
+        "Programming Logic",
+        "Data Structures Basics"
+      ],
+      "image": "/certs/python.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Professional Ethics",
+      "institution": "Instituto Tecnológico Quito Metropolitano",
+      "year": 2024,
+      "category": "OTHER",
+      "desc": "treatment, behavior, and good practices in professional settings",
+      "skills": [
+        "Ethical Decision-Making",
+        "Professional Conduct",
+        "Workplace Ethics",
+        "Communication Skills"
+      ],
+      "image": "/certs/etica.jpg"
+    },
+    {
+      "id": 5,
+      "title": "ACTFL English Proficiency B2",
+      "institution": "American Council on the Teaching of Foreign Languages",
+      "year": 2019,
+      "category": "OTHER",
+      "desc": "English language proficiency at the B2 level.",
+      "skills": [
+        "Reading",
+        "Writing",
+        "Listening",
+        "Speaking"
+      ],
+      "image": "/certs/ingles.jpg"
+    },
+    {
+      "id": 6,
+      "title": "database administrator",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in database management and administration.",
+      "skills": [
+        "Database Design",
+        "SQL",
+        "Data Modeling",
+        "Performance Tuning"
+      ],
+      "image": "/certs/administradorDB.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Data Analyst",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in data analysis and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/analistaDatos.jpg"
+    },
     {
       "id": 8,
       "title": "NoSQL database administrator",
@@ -82,7 +115,12 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in NoSQL database management and administration.",
-      "skills": ["MongoDB", "CouchDB", "Redis", "Cassandra"],
+      "skills": [
+        "MongoDB",
+        "CouchDB",
+        "Redis",
+        "Cassandra"
+      ],
       "image": "/certs/administradorNoSQL.jpg"
     },
     {
@@ -92,7 +130,11 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in cloud management and administration.",
-      "skills": ["AWS", "Azure", "Google Cloud"],
+      "skills": [
+        "AWS",
+        "Azure",
+        "Google Cloud"
+      ],
       "image": "/certs/administradorNube.jpg"
     },
     {
@@ -102,7 +144,11 @@
       "year": 2025,
       "category": "DATABASE",
       "desc": "Proficiency in server management and administration.",
-      "skills": ["Linux", "Windows", "Unix"],
+      "skills": [
+        "Linux",
+        "Windows",
+        "Unix"
+      ],
       "image": "/certs/administradorServidores.jpg"
     },
     {
@@ -112,19 +158,29 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in SQL database management and administration.",
-      "skills": ["MySQL", "PostgreSQL", "Microsoft SQL Server"],
-      "image": "/certs/administradorSQL.jpg"    
+      "skills": [
+        "MySQL",
+        "PostgreSQL",
+        "Microsoft SQL Server"
+      ],
+      "image": "/certs/administradorSQL.jpg"
     },
-   {
-  "id": 12,
-  "title": "CCNA: Introduction to Networks",
-  "institution": "Cisco Networking Academy",
-  "year": 2023,
-  "category": "DATABASE",
-  "desc": "Fundamentals of networking, including IP addressing, protocols, and network architecture.",
-  "skills": ["Networking", "IPv4/IPv6", "Routing", "Switching", "OSI Model"],
-  "image": "/certs/CCNA.jpg"
-},
+    {
+      "id": 12,
+      "title": "CCNA: Introduction to Networks",
+      "institution": "Cisco Networking Academy",
+      "year": 2023,
+      "category": "DATABASE",
+      "desc": "Fundamentals of networking, including IP addressing, protocols, and network architecture.",
+      "skills": [
+        "Networking",
+        "IPv4/IPv6",
+        "Routing",
+        "Switching",
+        "OSI Model"
+      ],
+      "image": "/certs/CCNA.jpg"
+    },
     {
       "id": 13,
       "title": "Business Analyst",
@@ -132,7 +188,12 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in business analysis and data interpretation.",
-      "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
       "image": "/certs/businesAnalytics.jpg"
     },
     {
@@ -142,7 +203,12 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in data conversion and interpretation.",
-      "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
       "image": "/certs/curadorDatos.jpg"
     },
     {
@@ -152,7 +218,12 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in data structures and interpretation.",
-      "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
       "image": "/certs/estructuraDatos.jpg"
     },
     {
@@ -162,7 +233,12 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in process evaluation and interpretation.",
-      "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
       "image": "/certs/evaluadorProcesos.jpg"
     },
     {
@@ -172,94 +248,161 @@
       "year": 2026,
       "category": "DATABASE",
       "desc": "Proficiency in data analysis and interpretation.",
-      "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
       "image": "/certs/interpreteDatos.jpg"
     },
-     {
-  "id": 18,
-  "title": "KPI Evaluator",
-  "institution": "Fundacion Carlos Slim",
-  "year": 2026,
-  "category": "DATABASE",
-  "desc": "Evaluation of key performance indicators and business metrics.",
-  "skills": ["KPIs", "Data Analysis", "Performance Metrics"],
-  "image": "/certs/KPI.jpg"
-},
-      {
-        "id": 19,
-        "title": "BI Project Analyst",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "DATABASE",
-        "desc": "Proficiency in BI project analysis and interpretation.",
-        "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-        "image": "/certs/proyectosBI.jpg"
-        
-      },
-      {
-        "id": 20,
-        "title": "IT security technician (Servers)",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "DATABASE",
-        "desc": "Proficiency in IT security and interpretation.",
-        "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-        "image": "/certs/seguridadInfoServidores.jpg"
-        
-      },
-      {
-        "id": 21,
-        "title": "Cloud Security Technician",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "DATABASE",
-        "desc": "Proficiency in cloud security and interpretation.",
-        "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-        "image": "/certs/seguridadNube.jpg"
-        
-      },
-      {
-        "id": 22,
-        "title": "Cloud infrastructure services consultant",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "DATABASE",
-        "desc": "Proficiency in cloud infrastructure services and interpretation.",
-        "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-        "image": "/certs/serviciosNube.jpg"
-        
-      },
-      {
-        "id": 23,
-        "title": "BI Solutions Integrator",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "DATABASE",
-        "desc": "Proficiency in BI solutions integration and interpretation.",
-        "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-        "image": "/certs/solucionesBI.jpg"
-        
-      },
-      {
-        "id": 24,
-        "title": "Cell Phone and Tablet Repair Technician",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "MOBILE",
-        "desc": "Proficiency in cell phone and tablet repair and interpretation.",
-        "skills": ["Data Visualization", "Statistical Analysis", "Data Cleaning", "Data Interpretation"],
-        "image": "/certs/telefoniaMovil.jpg"
-        
-      },
-     {
-        "id": 25,
-        "title": "Risk Analyst",
-        "institution": "Fundacion Carlos Slim",
-        "year": 2026,
-        "category": "DATABASE",
-       "desc": "Proficiency in risk analysis, evaluation, and decision-making processes.",
-      "skills": ["Risk Assessment", "Data Analysis", "Decision Making"],
+    {
+      "id": 18,
+      "title": "KPI Evaluator",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Evaluation of key performance indicators and business metrics.",
+      "skills": [
+        "KPIs",
+        "Data Analysis",
+        "Performance Metrics"
+      ],
+      "image": "/certs/KPI.jpg"
+    },
+    {
+      "id": 19,
+      "title": "BI Project Analyst",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in BI project analysis and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/proyectosBI.jpg"
+    },
+    {
+      "id": 20,
+      "title": "IT security technician (Servers)",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in IT security and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/seguridadInfoServidores.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Cloud Security Technician",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in cloud security and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/seguridadNube.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Cloud infrastructure services consultant",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in cloud infrastructure services and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/serviciosNube.jpg"
+    },
+    {
+      "id": 23,
+      "title": "BI Solutions Integrator",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in BI solutions integration and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/solucionesBI.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Cell Phone and Tablet Repair Technician",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "MOBILE",
+      "desc": "Proficiency in cell phone and tablet repair and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/telefoniaMovil.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Risk Analyst",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in risk analysis, evaluation, and decision-making processes.",
+      "skills": [
+        "Risk Assessment",
+        "Data Analysis",
+        "Decision Making"
+      ],
       "image": "/certs/analistaRiesgos.jpg"
+    },
+    {
+      "id":26,
+      "title": "Data Mining Technician",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in data mining techniques and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/tecnicoMineríaDatos.jpg"
+    },
+    {
+      "id":27,
+      "title": "Big Data Visualizer",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in big data visualization techniques and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/visualizadorBigData.jpg"
+    }
+  ]
 }
-      
-]}

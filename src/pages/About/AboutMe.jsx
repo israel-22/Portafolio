@@ -4,6 +4,9 @@ import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import Typewriter from "../../components/typewriter/Typewriter.jsx";
 import "./aboutMe.css";
 import Certifications from "./Certifications.jsx";
+import TechCarousel from "./TechCarousel.jsx";
+
+/*-------------------------- ICONS----------------------------------- */
 import S from "../../assets/icons/FO76_S.webp";
 import P from "../../assets/icons/FO76_P.webp";
 import E from "../../assets/icons/FO76_E.webp";
@@ -11,9 +14,9 @@ import C from "../../assets/icons/FO76_C.webp";
 import I from "../../assets/icons/FO76_I.webp";
 import A from "../../assets/icons/FO76_A.webp";
 import L from "../../assets/icons/FO76_L.webp";
-/*import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";*/
+import SignalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
 import Character from "../../assets/icons/FO76_character.webp";
-/*import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";*/
+import Selfie from "../../assets/icons/FO76_menusprite_photogallery.webp";
 import Personal from "../../assets/icons/personal.png";
 import Strenght from "../../assets/icons/FO76_vaultboy_strength.webp";
 import Perception from "../../assets/icons/FO76_vaultboy_perception.webp";
@@ -22,6 +25,34 @@ import Charisma from "../../assets/icons/FO76_vaultboy_charisma.webp";
 import Intelligence from "../../assets/icons/FO76_vaultboy_intelligence.webp";
 import Agility from "../../assets/icons/FO76_vaultboy_agility.webp";
 import Luck from "../../assets/icons/FO76_vaultboy_luck.webp";
+/*logos especialidades */
+import Angular from "../../assets/icons/angular.webp";
+import Bootstrap from "../../assets/icons/boostrap.jpeg";
+import Springboot from "../../assets/icons/boot.png";
+import Csharp from "../../assets/icons/csharp.png";
+import Cplus from "../../assets/icons/cplus.png";
+import Css from "../../assets/icons/css.png";
+import Dart from "../../assets/icons/dart.png";
+import Expo from "../../assets/icons/expo.png";
+import Firebase from "../../assets/icons/firebace.png";
+import Flutter from "../../assets/icons/flutter.jpg";
+import HTML from "../../assets/icons/html.png";
+import Java from "../../assets/icons/java.svg";
+import Javascript from "../../assets/icons/js.png";
+import  Linux from "../../assets/icons/linux.jpg";
+import Node from "../../assets/icons/nodejs.jpg";
+import Nosql from "../../assets/icons/nosql.svg";
+import Python from "../../assets/icons/python.png";
+import Reac from "../../assets/icons/react.webp";
+import SQL from "../../assets/icons/sql.png";
+import Typescript from "../../assets/icons/ts.webp";
+import Tailwind from "../../assets/icons/tailwind.png";
+import Workbench from "../../assets/icons/mysql_workbench.png";
+import Git from "../../assets/icons/git.png";
+import Github from "../../assets/icons/github.png";
+
+
+ 
 
 function About() {
   const [selectedStat, setSelectedStat] = useState("S");
@@ -94,6 +125,44 @@ function About() {
       </div>
     ));
   }
+
+
+  const techDominadas = [
+ 
+  SignalIcon ,
+  Character,
+  Angular,
+  Bootstrap,
+  Springboot,
+  Css,
+  Expo,
+  Firebase,
+  HTML,
+  Java,
+  Javascript,
+   Linux,
+  Node,
+  Nosql,
+  Python,
+  Reac,
+  SQL,
+  Typescript,
+  Tailwind,
+  Workbench,
+  Git,
+  Github,
+  
+
+];
+
+  const techLearning = [
+      Flutter,
+    Dart,
+  Csharp,
+  Cplus,
+  Selfie,
+  SignalIcon ,
+  ];
   return (
     <div className="about-container">
       <div className="about-frame">
@@ -186,8 +255,13 @@ function About() {
 
         {/* SECCIÓN 3: TECH */}
         <section className="about-tech">
-          <div className="tech-dominant"></div>
-          <div className="tech-learning"></div>
+          <TechCarousel title="DOMINATED TECH" techs={techDominadas} />
+
+          <TechCarousel
+            title="LEARNING TECH"
+            techs={techLearning}
+            reverse={true}
+          />
         </section>
       </div>
     </div>

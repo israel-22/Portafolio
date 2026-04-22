@@ -256,3 +256,9 @@
 .cert-list::-webkit-scrollbar-thumb:hover {
   background: #00ff99;
 }
+
+.filter-label {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 10px;
+}
