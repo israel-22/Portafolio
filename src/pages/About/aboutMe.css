@@ -150,6 +150,8 @@
   width: 100%;
   min-height: 100px; /* 🔥 más alto */
 }
+
+
 .special-image-card{
   border:1px solid rgba(0,255,100,.2);
   padding: 15px;
@@ -183,15 +185,6 @@
   cursor: pointer;
 }
 
-.special-display{
-  display:grid;
-  grid-template-columns:1fr 220px;
-  gap:20px;
-}
-.special-image-card{
-  border:1px solid rgba(0,255,100,.2);
-  padding:10px;
-}
 
 .special-image-card img{
   width:100%;

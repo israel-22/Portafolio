@@ -1,0 +1,26 @@
+[
+  {
+    "id": "VC-EC-001",
+    "name": "Juan Pérez",
+    "role": "Senior Developer",
+    "academic": "Software Engineer",
+    "institution": "TechCorp EC",
+    "relation": "Team Lead",
+    "email": "juan@email.com",
+    "whatsapp": "593999999999",
+    "testimony": "Santos demonstrates strong discipline and consistent delivery in complex projects.",
+    "image": "vaultboy"
+  },
+  {
+    "id": "VC-EC-002",
+    "name": "María López",
+    "role": "Project Manager",
+    "academic": "MBA",
+    "institution": "Digital Solutions",
+    "relation": "Supervisor",
+    "email": "maria@email.com",
+    "whatsapp": "593888888888",
+    "testimony": "Highly reliable, organized and capable of handling pressure environments.",
+    "image": "signal"
+  }
+]

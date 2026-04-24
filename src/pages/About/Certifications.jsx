@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./certifications.css";
 import certificatesData from "../../data/certificates.json";
-import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
-/*import signalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";*/
+
+
 function Certifications() {
   const data = certificatesData.datas;
   

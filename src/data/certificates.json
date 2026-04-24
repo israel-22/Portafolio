@@ -403,6 +403,21 @@
         "Data Interpretation"
       ],
       "image": "/certs/visualizadorBigData.jpg"
+    },
+    {
+      "id":28,
+      "title": "Visualizador de Datos",
+      "institution": "Fundacion Carlos Slim",
+      "year": 2026,
+      "category": "DATABASE",
+      "desc": "Proficiency in data visualization techniques and interpretation.",
+      "skills": [
+        "Data Visualization",
+        "Statistical Analysis",
+        "Data Cleaning",
+        "Data Interpretation"
+      ],
+      "image": "/certs/visualizadorDatos.jpg"
     }
   ]
 }

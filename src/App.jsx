@@ -4,7 +4,6 @@ console.log("APP MOUNTED");
 import BootScreen from "./components/BootScreen/BootScreen";
 import Layout from "./layout/Layout";
 import PDA from "./components/PDA/PDA";
-
 import Home from "./pages/Home/Home";
 import About from "./pages/About/AboutMe";
 import Projects from "./pages/Proyects/Proyects";
