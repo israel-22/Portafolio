@@ -4,7 +4,7 @@ import Typewriter from "../../components/typewriter/Typewriter.jsx";
 import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import contactsData from "../../data/contacts.json";
 
-/* ICONOS (puedes reemplazar luego) */
+
 import VaultBoy from "../../assets/icons/FO76_character.webp";
 import SignalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
 
@@ -62,65 +62,89 @@ function Contact() {
         </div>
 
         {/* DERECHA */}
-        <div className="contact-dossier">
+       <div className="contact-dossier">
 
-          {/* META */}
-          <div className="dossier-meta">
-            <span>&gt; FILE ID: {current.id}</span>
-            <span>&gt; STATUS: VERIFIED</span>
-            <span>&gt; LAST UPDATE: 2026.04</span>
-          </div>
+  {/* 📄 DOCUMENTO */}
+  <div className="dossier-paper">
 
-          {/* CONTENIDO */}
-          <div className="dossier-content">
+    {/* HEADER TIPO AGENCIA */}
+    <div className="paper-header">
+      <span>VAULT-TEC SYSTEM</span>
+      <span>DOSSIER FILE</span>
+      <span>{current.id}</span>
+    </div>
 
-            {/* TEXTO */}
-            <div className="dossier-text">
-              <h2>
-                &gt;{" "}
-                <Typewriter key={current.id} text={current.name} />
-                <span className="cursor">_</span>
-              </h2>
+    {/* BODY */}
+    <div className="paper-body">
 
-              <p>&gt; ROLE: {current.role}</p>
-              <p>&gt; ACADEMIC: {current.academic}</p>
-              <p>&gt; INSTITUTION: {current.institution}</p>
-              <p>&gt; RELATION: {current.relation}</p>
+      {/* SECCIÓN 1 */}
+      <div className="paper-section">
+        <p className="section-title">IDENTIFICATION</p>
+        <h2>
+          &gt; <Typewriter key={current.id} text={current.name} />
+          <span className="cursor">_</span>
+        </h2>
+      </div>
 
-              <div className="dossier-log">
-                <p>&gt; LOG ENTRY:</p>
-                <p className="log-text">
-                  <Typewriter
-                    key={current.id + "-log"}
-                    text={current.testimony}
-                    speed={20}
-                  />
-                </p>
-              </div>
+      {/* SECCIÓN 2 */}
+      <div className="paper-section">
+        <p className="section-title">PROFESSIONAL DATA</p>
+        <p>&gt; ROLE: {current.role}</p>
+        <p>&gt; ACADEMIC: {current.academic}</p>
+        <p>&gt; INSTITUTION: {current.institution}</p>
+        <p>&gt; RELATION: {current.relation}</p>
+      </div>
 
-              <div className="dossier-comm">
-                <p>&gt; COMM CHANNELS:</p>
-                <div className="comm-buttons">
-                  <a href={`mailto:${current.email}`}>EMAIL</a>
-                  <a
-                    href={`https://wa.me/${current.whatsapp}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    WHATSAPP
-                  </a>
-                </div>
-              </div>
-            </div>
+      {/* SECCIÓN 3 */}
+      <div className="paper-section">
+        <p className="section-title">LOG ENTRY</p>
+        <p className="log-text">
+          <Typewriter
+            key={current.id + "-log"}
+            text={current.testimony}
+            speed={20}
+          />
+        </p>
+      </div>
 
-            {/* IMAGEN (SOLO UNA, CORRECTA) */}
-            <div className="dossier-image">
-              <IconPipboy src={imageMap[current.image]} alt="contact" />
-              
-            </div>
-
-          </div>
+      {/* SECCIÓN 4 */}
+      <div className="paper-section">
+        <p className="section-title">COMMUNICATION</p>
+        <div className="comm-buttons">
+          <a href={`mailto:${current.email}`}>[F6] EMAIL</a>
+          <a
+            href={`https://wa.me/${current.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            [F7] WHATSAPP
+          </a>
         </div>
+      </div>
+
+    </div>
+
+    {/* IMAGEN LATERAL */}
+    <div className="paper-image">
+  <div className="photo-frame">
+    <span className={`stamp ${current.status}`}>
+  {current.status.toUpperCase()}
+</span>
+    <IconPipboy src={imageMap[current.image]} alt="contact" />
+  </div>
+
+  <span className="photo-label">{current.id}</span>
+</div>
+
+    {/* FOOTER */}
+    <div className="paper-footer">
+      <span>STATUS: VERIFIED</span>
+      <span>ACCESS: LEVEL 2</span>
+      <span>UPDATED: 2026.04</span>
+    </div>
+
+  </div>
+</div>
 
       </section>
     </div>

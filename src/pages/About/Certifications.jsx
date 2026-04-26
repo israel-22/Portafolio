@@ -84,7 +84,7 @@ function Certifications() {
 
       <div className="cert-actions">
         <button onClick={() => setShowModal(true)}>
-          VIEW CERTIFICATE
+         [F6] - VIEW CERTIFICATE
         </button>
 
        

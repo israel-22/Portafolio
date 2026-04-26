@@ -48,12 +48,23 @@
 
 /* foto */
 .about-header-photo img {
-  width: 120px;
-  height: 185px;
-  object-fit: contain;
-  opacity: 0.95;
-   border:1px solid rgba(0,255,100,.2);
-  padding:10px;
+   width: 140px;
+  height: 180px;
+
+  border: 1px solid rgba(0,255,100,0.3);
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 30, 0, 0.4);
+
+ 
+
+  position: relative; /* 🔥 CLAVE para el sello */
+  outline: 1px dashed rgba(0,255,100,0.2);
+  outline-offset: -6px;
 }
 
 /* icono */
@@ -158,6 +169,8 @@
   display:flex;
   justify-content:center;
   align-items:center;
+  outline: 1px dashed rgba(0,255,100,0.2);
+  outline-offset: -6px;
 }
 
 .special-image-card img{

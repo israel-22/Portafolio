@@ -1,6 +1,7 @@
 [
   {
     "id": "VC-EC-001",
+    "status": "verified",
     "name": "Juan Pérez",
     "role": "Senior Developer",
     "academic": "Software Engineer",
@@ -13,6 +14,7 @@
   },
   {
     "id": "VC-EC-002",
+    "status": "restricted ",
     "name": "María López",
     "role": "Project Manager",
     "academic": "MBA",
@@ -22,5 +24,18 @@
     "whatsapp": "593888888888",
     "testimony": "Highly reliable, organized and capable of handling pressure environments.",
     "image": "signal"
+  },
+  {
+    "id": "VC-EC-003",
+    "status": "archived",
+    "name": "Carlos Gómez",
+    "role": "UX Designer",
+    "academic": "Design Specialist",
+    "institution": "Creative Minds",
+    "relation": "Colleague",
+    "email": "  carlos@email.com",
+    "whatsapp": "593777777777",
+    "testimony": "Santos is a talented designer who consistently delivers visually stunning and user-friendly interfaces.",
+    "image": "vaultboy"
   }
 ]
