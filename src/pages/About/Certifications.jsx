@@ -27,7 +27,7 @@ function Certifications() {
 
       {/* FILTER */}
       <div className="cert-filter">
-        {["ALL", "WEB", "MOBILE", "DATABASE", "OTHER"].map((f) => (
+        {["ALL", "WEB", "MOBILE", "DATABASE", "NETWORKING","HARDWARE","OTHER"].map((f) => (
           <span
             key={f}
             className={filter === f ? "active" : ""}

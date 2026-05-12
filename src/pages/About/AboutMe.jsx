@@ -50,6 +50,7 @@ import Tailwind from "../../assets/icons/tailwind.png";
 import Workbench from "../../assets/icons/mysql_workbench.png";
 import Git from "../../assets/icons/git.png";
 import Github from "../../assets/icons/github.png";
+import Docker from "../../assets/icons/docker.png";
 
 
  
@@ -156,6 +157,7 @@ function About() {
 ];
 
   const techLearning = [
+    Docker,
       Flutter,
     Dart,
   Csharp,

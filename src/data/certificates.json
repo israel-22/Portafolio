@@ -170,7 +170,7 @@
       "title": "CCNA: Introduction to Networks",
       "institution": "Cisco Networking Academy",
       "year": 2023,
-      "category": "DATABASE",
+      "category": "NETWORKING",
       "desc": "Fundamentals of networking, including IP addressing, protocols, and network architecture.",
       "skills": [
         "Networking",
@@ -418,6 +418,23 @@
         "Data Interpretation"
       ],
       "image": "/certs/visualizadorDatos.jpg"
-    }
+    },
+    {
+  "id": "29",
+  "title": "Home Networking Installer",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "NETWORKING",
+  "desc": "Training to professionally install, configure, and maintain wired and wireless home networks, including proper network deployment according to technical requirements and basic home automation.",
+  "skills": [
+    "Wired Network Installation",
+    "Wi-Fi Network Configuration",
+    "Structured Cabling",
+    "Network Device Installation",
+    "Home Network Troubleshooting and Diagnostics",
+    "Basic Network Security"
+  ],
+  "image": "/certs/instaladorHomeNetworking.jpg"
+}
   ]
 }
