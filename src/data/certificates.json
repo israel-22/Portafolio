@@ -9,10 +9,10 @@
       "institution": "Instituto Tecnológico Quito Metropolitano",
       "year": 2025,
       "category": "WEB",
-      "desc": "Focused on web and software development fundamentals.",
+      "desc": "Comprehensive program focused on full-stack web and software development fundamentals.",
       "skills": [
-        "Backend",
-        "Frontend",
+        "Backend Development",
+        "Frontend Development",
         "Databases",
         "Mobile Development",
         "UI/UX Design"
@@ -25,11 +25,11 @@
       "institution": "BYU-Pathway Worldwide",
       "year": 2024,
       "category": "OTHER",
-      "desc": "pre-university and software development.",
+      "desc": "Pre-university program strengthening academic skills with focus on software development and English.",
       "skills": [
-        "Python",
-        "English",
-        "Math",
+        "Python Programming",
+        "English Proficiency",
+        "Mathematics",
         "Soft Skills"
       ],
       "image": "/certs/pathway.jpg"
@@ -40,11 +40,12 @@
       "institution": "Cisco Networking Academy",
       "year": 2023,
       "category": "WEB",
-      "desc": "Fundamentals of Python programming, problem solving and scripting.",
+      "desc": "Introduction to Python programming, problem-solving, scripting, and computational thinking.",
       "skills": [
         "Python",
         "Programming Logic",
-        "Data Structures Basics"
+        "Problem Solving",
+        "Basic Data Structures"
       ],
       "image": "/certs/python.jpg"
     },
@@ -54,7 +55,7 @@
       "institution": "Instituto Tecnológico Quito Metropolitano",
       "year": 2024,
       "category": "OTHER",
-      "desc": "treatment, behavior, and good practices in professional settings",
+      "desc": "Study of ethical principles, professional behavior, and best practices in the IT workplace.",
       "skills": [
         "Ethical Decision-Making",
         "Professional Conduct",
@@ -69,9 +70,9 @@
       "institution": "American Council on the Teaching of Foreign Languages",
       "year": 2019,
       "category": "OTHER",
-      "desc": "English language proficiency at the B2 level.",
+      "desc": "Certified English language proficiency at B2 level according to ACTFL standards.",
       "skills": [
-        "Reading",
+        "Reading Comprehension",
         "Writing",
         "Listening",
         "Speaking"
@@ -80,88 +81,96 @@
     },
     {
       "id": 6,
-      "title": "database administrator",
-      "institution": "Fundacion Carlos Slim",
+      "title": "Database Administrator",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in database management and administration.",
+      "desc": "Training to design, implement, manage, and maintain relational database systems.",
       "skills": [
         "Database Design",
         "SQL",
         "Data Modeling",
-        "Performance Tuning"
+        "Performance Tuning",
+        "Database Security"
       ],
       "image": "/certs/administradorDB.jpg"
     },
     {
       "id": 7,
       "title": "Data Analyst",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in data analysis and interpretation.",
+      "desc": "Professional training in data analysis, processing, visualization and interpretation for decision making.",
       "skills": [
         "Data Visualization",
         "Statistical Analysis",
         "Data Cleaning",
-        "Data Interpretation"
+        "Data Interpretation",
+        "Reporting"
       ],
       "image": "/certs/analistaDatos.jpg"
     },
     {
       "id": 8,
-      "title": "NoSQL database administrator",
-      "institution": "Fundacion Carlos Slim",
+      "title": "NoSQL Database Administrator",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in NoSQL database management and administration.",
+      "desc": "Specialized training in administration and management of non-relational databases.",
       "skills": [
         "MongoDB",
-        "CouchDB",
+        "Cassandra",
         "Redis",
-        "Cassandra"
+        "NoSQL Modeling",
+        "Scalability"
       ],
       "image": "/certs/administradorNoSQL.jpg"
     },
     {
       "id": 9,
-      "title": "cloud administrator",
-      "institution": "Fundacion Carlos Slim",
+      "title": "Cloud Administrator",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "DATABASE",
-      "desc": "Proficiency in cloud management and administration.",
+      "category": "NETWORKING",
+      "desc": "Training in cloud platforms management, deployment, and administration.",
       "skills": [
         "AWS",
         "Azure",
-        "Google Cloud"
+        "Google Cloud",
+        "Cloud Infrastructure",
+        "Cloud Security Basics"
       ],
       "image": "/certs/administradorNube.jpg"
     },
     {
       "id": 10,
-      "title": "Server administrator",
-      "institution": "Fundacion Carlos Slim",
+      "title": "Server Administrator",
+      "institution": "Fundación Carlos Slim",
       "year": 2025,
-      "category": "DATABASE",
-      "desc": "Proficiency in server management and administration.",
+      "category": "NETWORKING",
+      "desc": "Training in installation, configuration, and management of physical and virtual servers.",
       "skills": [
-        "Linux",
-        "Windows",
-        "Unix"
+        "Linux Server Administration",
+        "Windows Server",
+        "Server Security",
+        "Backup & Recovery"
       ],
       "image": "/certs/administradorServidores.jpg"
     },
     {
       "id": 11,
-      "title": "SQL database administrator",
-      "institution": "Fundacion Carlos Slim",
+      "title": "SQL Database Administrator",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in SQL database management and administration.",
+      "desc": "Advanced training in relational databases using SQL technologies.",
       "skills": [
         "MySQL",
         "PostgreSQL",
-        "Microsoft SQL Server"
+        "Microsoft SQL Server",
+        "Advanced SQL",
+        "Database Optimization"
       ],
       "image": "/certs/administradorSQL.jpg"
     },
@@ -171,270 +180,324 @@
       "institution": "Cisco Networking Academy",
       "year": 2023,
       "category": "NETWORKING",
-      "desc": "Fundamentals of networking, including IP addressing, protocols, and network architecture.",
+      "desc": "Fundamentals of networking, IP addressing, protocols, routing, switching, and network architecture.",
       "skills": [
-        "Networking",
+        "OSI Model",
+        "TCP/IP",
         "IPv4/IPv6",
-        "Routing",
-        "Switching",
-        "OSI Model"
+        "Routing & Switching",
+        "Network Fundamentals"
       ],
       "image": "/certs/CCNA.jpg"
     },
     {
       "id": 13,
       "title": "Business Analyst",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in business analysis and data interpretation.",
+      "desc": "Training to analyze business needs, processes, and data to support strategic decision-making.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Business Analysis",
+        "Requirements Gathering",
+        "Process Modeling",
+        "Stakeholder Management",
+        "Data-Driven Decision Making"
       ],
       "image": "/certs/businesAnalytics.jpg"
     },
     {
       "id": 14,
-      "title": "Data Converter",
-      "institution": "Fundacion Carlos Slim",
+      "title": "Data Curator",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in data conversion and interpretation.",
+      "desc": "Training focused on cleaning, organizing, optimizing, and managing databases to turn data into valuable assets.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
         "Data Cleaning",
-        "Data Interpretation"
+        "Database Management",
+        "Data Optimization",
+        "ETL Processes",
+        "Data Quality Assurance"
       ],
       "image": "/certs/curadorDatos.jpg"
     },
     {
       "id": 15,
       "title": "Fundamentals of Data Structures",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "DATABASE",
-      "desc": "Proficiency in data structures and interpretation.",
+      "category": "WEB",
+      "desc": "Introduction to data structures and their application in efficient programming.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Arrays",
+        "Lists",
+        "Stacks & Queues",
+        "Trees",
+        "Algorithms Basics"
       ],
       "image": "/certs/estructuraDatos.jpg"
     },
     {
       "id": 16,
       "title": "Process Evaluator",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "DATABASE",
-      "desc": "Proficiency in process evaluation and interpretation.",
+      "category": "OTHER",
+      "desc": "Training to evaluate, analyze, and improve organizational and business processes.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Process Analysis",
+        "Performance Evaluation",
+        "Continuous Improvement",
+        "Quality Control",
+        "Process Documentation"
       ],
       "image": "/certs/evaluadorProcesos.jpg"
     },
     {
       "id": 17,
       "title": "Data Analysis and Interpreter",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in data analysis and interpretation.",
+      "desc": "Training in data analysis techniques and interpretation for generating actionable insights.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Data Analysis",
+        "Data Interpretation",
+        "Statistical Methods",
+        "Visualization",
+        "Reporting"
       ],
       "image": "/certs/interpreteDatos.jpg"
     },
     {
       "id": 18,
       "title": "KPI Evaluator",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Evaluation of key performance indicators and business metrics.",
+      "desc": "Specialized training in defining, monitoring, and evaluating Key Performance Indicators (KPIs).",
       "skills": [
-        "KPIs",
-        "Data Analysis",
-        "Performance Metrics"
+        "KPI Definition",
+        "Performance Metrics",
+        "Dashboard Creation",
+        "Data Monitoring",
+        "Business Intelligence"
       ],
       "image": "/certs/KPI.jpg"
     },
     {
       "id": 19,
       "title": "BI Project Analyst",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in BI project analysis and interpretation.",
+      "desc": "Training in Business Intelligence project analysis and implementation.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Business Intelligence",
+        "BI Tools",
+        "Project Analysis",
+        "Data Warehousing",
+        "Reporting Systems"
       ],
       "image": "/certs/proyectosBI.jpg"
     },
     {
       "id": 20,
-      "title": "IT security technician (Servers)",
-      "institution": "Fundacion Carlos Slim",
+      "title": "IT Security Technician (Servers)",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "DATABASE",
-      "desc": "Proficiency in IT security and interpretation.",
+      "category": "NETWORKING",
+      "desc": "Training in server security, vulnerability management, and protection of IT infrastructure.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Server Security",
+        "Vulnerability Assessment",
+        "Access Control",
+        "Security Monitoring",
+        "Incident Response"
       ],
       "image": "/certs/seguridadInfoServidores.jpg"
     },
     {
       "id": 21,
       "title": "Cloud Security Technician",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "DATABASE",
-      "desc": "Proficiency in cloud security and interpretation.",
+      "category": "NETWORKING",
+      "desc": "Training in security best practices for cloud environments and services.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Cloud Security",
+        "Identity & Access Management",
+        "Data Protection",
+        "Security Compliance",
+        "Threat Detection"
       ],
       "image": "/certs/seguridadNube.jpg"
     },
     {
       "id": 22,
-      "title": "Cloud infrastructure services consultant",
-      "institution": "Fundacion Carlos Slim",
+      "title": "Cloud Infrastructure Services Consultant",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "DATABASE",
-      "desc": "Proficiency in cloud infrastructure services and interpretation.",
+      "category": "NETWORKING",
+      "desc": "Training to advise and implement cloud infrastructure services effectively.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Cloud Architecture",
+        "Infrastructure as a Service",
+        "Cloud Migration",
+        "Cost Optimization",
+        "Service Management"
       ],
       "image": "/certs/serviciosNube.jpg"
     },
     {
       "id": 23,
       "title": "BI Solutions Integrator",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in BI solutions integration and interpretation.",
+      "desc": "Training in integration and implementation of Business Intelligence solutions.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "BI Integration",
+        "ETL Development",
+        "Dashboard Development",
+        "Data Modeling",
+        "Reporting Tools"
       ],
       "image": "/certs/solucionesBI.jpg"
     },
     {
       "id": 24,
       "title": "Cell Phone and Tablet Repair Technician",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
-      "category": "MOBILE",
-      "desc": "Proficiency in cell phone and tablet repair and interpretation.",
+      "category": "HARDWARE",
+      "desc": "Training in diagnosis, maintenance, and repair of smartphones and tablets.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Mobile Hardware Repair",
+        "Screen Replacement",
+        "Software Flashing",
+        "Diagnosis & Troubleshooting",
+        "Component Replacement"
       ],
       "image": "/certs/telefoniaMovil.jpg"
     },
     {
       "id": 25,
       "title": "Risk Analyst",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in risk analysis, evaluation, and decision-making processes.",
+      "desc": "Training in identification, analysis, and management of business and operational risks.",
       "skills": [
         "Risk Assessment",
+        "Risk Mitigation",
         "Data Analysis",
-        "Decision Making"
+        "Decision Making",
+        "Compliance"
       ],
       "image": "/certs/analistaRiesgos.jpg"
     },
     {
-      "id":26,
+      "id": 26,
       "title": "Data Mining Technician",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in data mining techniques and interpretation.",
+      "desc": "Training in data mining techniques to discover patterns and useful knowledge from large datasets.",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Data Mining",
+        "Pattern Recognition",
+        "Predictive Modeling",
+        "Machine Learning Basics",
+        "Statistical Analysis"
       ],
       "image": "/certs/tecnicoMineríaDatos.jpg"
     },
     {
-      "id":27,
+      "id": 27,
       "title": "Big Data Visualizer",
-      "institution": "Fundacion Carlos Slim",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in big data visualization techniques and interpretation.",
+      "desc": "Training in visualization techniques for large volumes of data (Big Data).",
       "skills": [
-        "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Big Data Visualization",
+        "Dashboard Design",
+        "Data Storytelling",
+        "Tools like Power BI / Tableau",
+        "Advanced Charts"
       ],
       "image": "/certs/visualizadorBigData.jpg"
     },
     {
-      "id":28,
-      "title": "Visualizador de Datos",
-      "institution": "Fundacion Carlos Slim",
+      "id": 28,
+      "title": "Data Visualizer",
+      "institution": "Fundación Carlos Slim",
       "year": 2026,
       "category": "DATABASE",
-      "desc": "Proficiency in data visualization techniques and interpretation.",
+      "desc": "Training in effective data visualization and communication of insights.",
       "skills": [
         "Data Visualization",
-        "Statistical Analysis",
-        "Data Cleaning",
-        "Data Interpretation"
+        "Dashboard Creation",
+        "Infographics",
+        "Visual Storytelling",
+        "Chart Design"
       ],
       "image": "/certs/visualizadorDatos.jpg"
     },
     {
-  "id": "29",
-  "title": "Home Networking Installer",
+      "id": 29,
+      "title": "Home Networking Installer",
+      "institution": "Fundación Carlos Slim",
+      "year": 2026,
+      "category": "NETWORKING",
+      "desc": "Training to professionally install, configure, and maintain wired and wireless home networks.",
+      "skills": [
+        "Wired Network Installation",
+        "Wi-Fi Configuration",
+        "Structured Cabling",
+        "Network Troubleshooting",
+        "Basic Home Automation",
+        "Network Security Basics"
+      ],
+      "image": "/certs/instaladorHomeNetworking.jpg"
+    },
+    {
+      "id": 30,
+      "title": "Wireless Communications Technician",
+      "institution": "Fundación Carlos Slim",
+      "year": 2026,
+      "category": "NETWORKING",
+      "desc": "Training in wireless communication technologies for IoT and automation projects.",
+      "skills": [
+        "Wireless Technologies",
+        "Wi-Fi Standards (802.11)",
+        "Bluetooth & Zigbee",
+        "433 MHz Modules",
+        "IoT Development Boards",
+        "Wireless Sensor Integration"
+      ],
+      "image": "/certs/tecnicoComunicacionesInalambricas.jpg"
+    },
+    {
+  "id": 31,
+  "title": "Security Technician - Access Control",
   "institution": "Fundación Carlos Slim",
   "year": 2026,
   "category": "NETWORKING",
-  "desc": "Training to professionally install, configure, and maintain wired and wireless home networks, including proper network deployment according to technical requirements and basic home automation.",
+  "desc": "Training specialized in the design, implementation, and management of access control systems. Prepares students to develop security policies, manage physical and logical access, and apply preventive and corrective measures to protect organizational resources.",
   "skills": [
-    "Wired Network Installation",
-    "Wi-Fi Network Configuration",
-    "Structured Cabling",
-    "Network Device Installation",
-    "Home Network Troubleshooting and Diagnostics",
-    "Basic Network Security"
+    "Access Control Systems",
+    "Physical Security",
+    "Security Policies Development",
+    "Risk Prevention",
+    "Contingency Planning",
+    "Access Control Maintenance",
+    "Security Procedures",
+    "Incident Management"
   ],
-  "image": "/certs/instaladorHomeNetworking.jpg"
+  "image": "/certs/tecnicoSeguridadControlAccesos.jpg"
 }
   ]
 }
