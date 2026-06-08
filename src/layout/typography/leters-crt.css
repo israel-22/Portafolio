@@ -1,4 +1,5 @@
 /* ===============================
+LETERS-CRT.CSS
    TERMINAL TYPOGRAPHY SYSTEM
    Scope: .terminal-content
 ================================ */
@@ -41,4 +42,8 @@
 
 .terminal-mono {
   letter-spacing: 0.08em;
+}
+.terminal-content *,
+.crt-screen * {
+  color: inherit;
 }

@@ -1,3 +1,383 @@
-.proyects-page {
+/* ================================================= */
+/* PROJECT ARCHIVE */
+/* ================================================= */
+
+.projects-container {
+  width: min(90vw, 1650px);
   padding: 1rem;
+}
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+.projects-header {
+  margin-bottom: 2rem;
+
+  border-bottom: 1px solid rgba(0,255,100,0.25);
+
+  padding-bottom: 1rem;
+}
+
+.projects-header h1 {
+  margin-bottom: 10px;
+}
+
+.projects-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ================================================= */
+/* GRID */
+/* ================================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: 260px 1fr;
+
+  gap: 20px;
+}
+
+/* ================================================= */
+/* LISTA */
+/* ================================================= */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+   max-height: 600px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.projects-instruction {
+  opacity: 0.7;
+}
+
+.project-row {
+  display: flex;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.project-row:hover {
+  color: #00ff9f;
+
+  transform: translateX(4px);
+}
+
+.project-row.active {
+  color: #00ff9f;
+
+  border-left: 2px solid #00ff9f;
+
+  padding-left: 8px;
+
+  text-shadow: 0 0 6px #00ff9f;
+}
+.projects-sidebar{
+  display:flex;
+  flex-direction:column;
+}
+
+.projects-list{
+  max-height:600px;
+  overflow-y:auto;
+}
+/* ================================================= */
+/* DOSSIER */
+/* ================================================= */
+
+.project-dossier {
+  border: 1px solid rgba(0,255,100,0.2);
+
+  padding: 20px;
+
+  background: rgba(0,20,0,0.4);
+
+  box-shadow:
+    inset 0 0 10px rgba(0,255,100,0.08);
+}
+
+/* ================================================= */
+/* SECTIONS */
+/* ================================================= */
+
+.project-section {
+  border-bottom: 1px dashed rgba(0,255,100,0.2);
+
+  padding: 12px 0;
+}
+
+.project-section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 0.75rem;
+
+  opacity: 0.7;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+}
+
+/* ================================================= */
+/* DESCRIPTION */
+/* ================================================= */
+
+.project-description {
+  opacity: 0.9;
+
+  line-height: 1.6;
+}
+
+/* ================================================= */
+/* TECH STACK */
+/* ================================================= */
+
+.tech-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.tech-tag {
+  border: 1px solid rgba(0,255,100,0.3);
+
+  padding: 4px 8px;
+
+  background: rgba(0,255,100,0.05);
+
+  font-size: 0.8rem;
+
+  box-shadow:
+    inset 0 0 4px rgba(0,255,100,0.08);
+}
+
+/* ================================================= */
+/* LINKS */
+/* ================================================= */
+
+.project-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.project-links a {
+  text-decoration: none;
+
+  color: #00ff9f;
+
+  border: 1px solid rgba(0,255,100,0.3);
+
+  padding: 6px 10px;
+
+  transition: 0.2s;
+}
+
+.project-links a:hover {
+  background: rgba(0,255,100,0.08);
+
+  box-shadow:
+    0 0 8px rgba(0,255,100,0.3);
+}
+
+/* ================================================= */
+/* CURSOR */
+/* ================================================= */
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-dossier {
+    margin-top: 10px;
+  }
+
+}
+.projects-list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* ========================= */
+/* CRT SCROLLBAR */
+/* ========================= */
+
+.projects-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projects-list::-webkit-scrollbar-track {
+  background: rgba(0, 50, 0, 0.3);
+}
+
+.projects-list::-webkit-scrollbar-thumb {
+  background: #00ff66;
+  box-shadow: 0 0 6px #00ff66;
+}
+
+.projects-list::-webkit-scrollbar-thumb:hover {
+  background: #00ff99;
+}
+/* ========================================= */
+/* PROJECT PAPER */
+/* ========================================= */
+
+.project-paper {
+  display: grid;
+
+  grid-template-columns: 1fr 380px;
+
+  gap: 20px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-preview {
+  border-left: 1px solid rgba(0,255,100,0.2);
+
+  padding-left: 15px;
+}
+
+/* ========================================= */
+/* PREVIEW */
+/* ========================================= */
+
+.preview-frame {
+  margin-top: 10px;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: 1px solid rgba(0,255,100,0.3);
+
+  background: rgba(0,30,0,0.4);
+
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow:
+    inset 0 0 10px rgba(0,255,100,0.1),
+    0 0 8px rgba(0,255,100,0.15);
+}
+
+.preview-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0.9;
+
+  filter:
+    grayscale(100%)
+    brightness(0.9)
+    sepia(80%)
+    hue-rotate(80deg)
+    saturate(200%)
+    drop-shadow(0 0 8px #00ff66);
+
+  transition: 0.3s;
+}
+.preview-frame:hover img {
+  transform: scale(1.03);
+}
+.stamp {
+  position: absolute;
+
+  top: 12px;
+  left: 8px;
+
+  z-index: 2;
+
+  padding: 4px 10px;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+
+  border: 1px solid #00ff66;
+
+  color: #00ff66;
+
+  transform: rotate(-15deg);
+
+  box-shadow: 0 0 6px rgba(0,255,100,0.6);
+}
+.stamp.complete {
+  color: #00ff66;
+  border-color: #00ff66;
+}
+.preview-logo {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 15px;
+
+  text-align: center;
+}
+.preview-logo img {
+  width: 80px;
+
+  opacity: 0.9;
+}
+.preview-logo span {
+  font-size: 0.7rem;
+
+  opacity: 0.7;
+
+  letter-spacing: 2px;
+}
+.preview-meta {
+  margin-top: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  font-size: 0.75rem;
+
+  opacity: 0.8;
 }

@@ -73,6 +73,7 @@ return (
           {">"} INITIALIZING DISK DRIVE ... <br />
           {">"} LOADING OPERATING SYSTEM ... <br />
           {">"} WELCOME TO VINTAGE OS 1.0 <br />
+          {">"} PIP-OS v1.0 <br />
           {">"} {messages[messageIndex].substring(0, charIndex)}
           <span className="cursor"></span>
         </div>

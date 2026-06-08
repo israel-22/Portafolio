@@ -498,6 +498,25 @@
     "Incident Management"
   ],
   "image": "/certs/tecnicoSeguridadControlAccesos.jpg"
+},
+{
+  "id": 32,
+  "title": "Physical and Environmental Security Technician",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "NETWORKING",
+  "desc": "Training specialized in physical security and environmental protection. Prepares students to design, implement and manage security measures to protect facilities, equipment, and personnel against physical threats and environmental risks.",
+  "skills": [
+    "Physical Security Systems",
+    "Environmental Risk Assessment",
+    "Access Control Implementation",
+    "Surveillance Systems",
+    "Security Policies & Procedures",
+    "Facility Protection",
+    "Emergency Response Planning",
+    "Risk Mitigation"
+  ],
+  "image": "/certs/tecnicoSeguridadFisicaEntorno.jpg"
 }
   ]
 }

@@ -39,13 +39,7 @@ a:hover {
   color: #888;
 }
 
-/* Tema claro opcional */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
-  }
-}
+
 
 :crt {
   --crt-font: "VT323", monospace;
@@ -53,4 +47,9 @@ a:hover {
 
 body {
   font-family: var(--crt-font);
+}
+body {
+  font-family: var(--crt-font);
+  background: #000;
+  color: #00ff88;
 }
