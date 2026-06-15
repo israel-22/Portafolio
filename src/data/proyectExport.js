@@ -1,6 +1,36 @@
 const projects = [
   {
-    id: "PRJ-001",
+  id: "PRJ-001",
+
+  name: "Pip-Boy Portfolio",
+
+  status: "ACTIVE",
+
+  year: "2026",
+
+  category: "React Portfolio",
+
+  description:
+    "Retro-futuristic portfolio inspired by Fallout Pip-Boy terminals. Built with React, Vite, React Router and reusable components.",
+
+  technologies: [
+    "React",
+    "Vite",
+    "CSS",
+    "JavaScript",
+    "Tailwind CSS",
+    "Flowbite"
+  ],
+
+  image: "portfolio",
+
+  links: {
+    
+    github: "https://github.com/israel-22/Portafolio"
+  }
+},
+  {
+    id: "PRJ-002",
 
     name: "Cosmos Explorer",
 
@@ -28,7 +58,7 @@ const projects = [
   },
 
   {
-    id: "PRJ-002",
+    id: "PRJ-003",
 
     name: "Ecuatorian Cuisine",
 

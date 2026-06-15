@@ -9,7 +9,8 @@ import Typewriter from "../../components/typewriter/Typewriter";
 import Wdd131 from "../../assets/projects/wdd131.webp";
 import Wdd231 from "../../assets/projects/wdd231.webp";
 import VaultTecLogo from "../../assets/icons/FO4_Vault-Tec_logo.webp";
-import Pipboy from "../../components/iconPipBoy/IconPipboy";
+import Portfolio from "../../assets/projects/portfolio.webp";
+import ACPImage from "../../assets/icons/FO76_Quest_ACP.webp";
 
 
 export default function Projects() {
@@ -19,6 +20,8 @@ export default function Projects() {
   const imageMap = {
   wdd131: Wdd131,
   wdd231: Wdd231,
+  portfolio: Portfolio,
+
 };
 
   return (
@@ -37,7 +40,15 @@ export default function Projects() {
       {/* GRID PRINCIPAL */}
       <section className="projects-grid">
         {/* LISTA IZQUIERDA */}
-        <div className="projects-list">
+        <div className="projects-sidebar">
+          <div className="archive-mascot">
+
+  <IconPipboy
+    src={ACPImage}
+    alt="Vault Archive"
+  />
+
+</div>
           <p className="projects-instruction">&gt; SELECT PROJECT</p>
 
            <div className="projects-list">
@@ -67,11 +78,8 @@ export default function Projects() {
 
       {/* IDENTIFICATION */}
       <div className="project-section">
-        <IconPipboy
-      src={VaultTecLogo}
-      alt="Vault Tec"
-    />
-    <span className="vault-tec-tag">VAULT-TEC ARCHIVE_ nesesitamos colocar bien la imagen de referencia de VaultTec u otra imagen divertida, comprovar que la pagina no nesesite mas </span>
+     
+    <span className="vault-tec-tag">VAULT-TEC ARCHIVE</span>
 
         <p className="section-title">
           PROJECT IDENTIFICATION
@@ -168,7 +176,10 @@ export default function Projects() {
       </p>
       <div className="preview-logo">
 
-    
+       <IconPipboy
+      src={VaultTecLogo}
+      alt="Vault Tec"
+    />
     
 
   </div>

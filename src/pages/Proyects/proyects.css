@@ -381,3 +381,15 @@
 
   opacity: 0.8;
 }
+.archive-mascot{
+  display:flex;
+  justify-content:center;
+
+  margin-bottom:15px;
+}
+
+.archive-mascot img{
+  width:120px;
+
+  opacity:.85;
+}

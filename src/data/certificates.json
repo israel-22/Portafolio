@@ -517,6 +517,44 @@
     "Risk Mitigation"
   ],
   "image": "/certs/tecnicoSeguridadFisicaEntorno.jpg"
+},
+{
+  "id": 33,
+  "title": "Host Security Technician (Desktop)",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "NETWORKING",
+  "desc": "Training specialized in endpoint and desktop security. Prepares students to protect individual devices (workstations, laptops, and servers) against threats, malware, and unauthorized access.",
+  "skills": [
+    "Endpoint Security",
+    "Desktop Hardening",
+    "Malware Protection",
+    "Host Firewall Configuration",
+    "Patch Management",
+    "Antivirus and EDR Tools",
+    "User Access Control",
+    "Incident Response on Hosts"
+  ],
+  "image": "/certs/tecnicoSeguridadHost.jpg"
+},
+{
+  "id": 34,
+  "title": "Perimeter Security Technician",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "NETWORKING",
+  "desc": "Training focused on perimeter network security. Prepares students to design, implement and manage security barriers to protect organizational networks from external threats.",
+  "skills": [
+    "Perimeter Security",
+    "Firewall Management",
+    "IDS/IPS Systems",
+    "VPN Configuration",
+    "Network Segmentation",
+    "Threat Detection",
+    "Border Router Security",
+    "Security Monitoring"
+  ],
+  "image": "/certs/tecnicoSeguridadPerimetral.jpg"
 }
   ]
 }
