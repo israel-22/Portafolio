@@ -7,6 +7,10 @@ import contactsData from "../../data/contacts.json";
 
 import VaultBoy from "../../assets/icons/FO76_character.webp";
 import SignalIcon from "../../assets/icons/FO4_Vault-Tec_logo.webp";
+import Wester from "../../assets/icons/Icon_Minutemen_quest.webp";
+import Fallout from "../../assets/icons/Fallout3e_transparent.webp";
+import Mbox from "../../assets/icons/Mbox_default.webp";
+import Lucy from "../../assets/icons/FO76_Quest_MoM.webp";
 
 
 function Contact() {
@@ -14,7 +18,11 @@ function Contact() {
 
   const imageMap = {
   vaultboy: VaultBoy,
-  signal: SignalIcon
+  signal: SignalIcon,
+  wester: Wester,
+  fallout: Fallout,
+  mbox: Mbox,
+  lucy: Lucy
 };
   
 
