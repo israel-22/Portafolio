@@ -555,6 +555,42 @@
     "Security Monitoring"
   ],
   "image": "/certs/tecnicoSeguridadPerimetral.jpg"
+},
+{
+  "id": 35,
+  "title": "Web Assistant",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "WEB",
+  "desc": "Training focused on supporting web development projects, content management, and basic website maintenance.",
+  "skills": [
+    "Web Content Management",
+    "HTML & CSS Basics",
+    "Website Maintenance",
+    "CMS Administration",
+    "Digital Content Upload",
+    "Basic Web Analytics",
+    "User Support"
+  ],
+  "image": "/certs/asistenteWeb.jpg"
+},
+{
+  "id": 36,
+  "title": "Digital Content Developer",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "WEB",
+  "desc": "Training in the creation, optimization and management of digital content for web platforms, social media and multimedia channels.",
+  "skills": [
+    "Digital Content Creation",
+    "Content Strategy",
+    "SEO Basics",
+    "Multimedia Editing",
+    "Social Media Content",
+    "Copywriting for Web",
+    "Content Management Systems"
+  ],
+  "image": "/certs/desarrolladorContenidoDigital.jpg"
 }
   ]
 }

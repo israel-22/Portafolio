@@ -22,9 +22,9 @@ export default function Navbar() {
           <NavLink className="nav-item" to="/contact">[F4] CONTACT</NavLink>
         </li>
 
-        <li>
+        {/*<li>
           <NavLink className="nav-item" to="/skins">[F5] SKINS</NavLink>
-        </li>
+        </li>*/}
 
       </ul>
     </nav>
