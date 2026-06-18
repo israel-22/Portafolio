@@ -19,20 +19,26 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Layout onOpenPDA={() => setOpen(true)}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skins" element={<Skins />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Layout>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
+    {!bootDone ? (
+      <BootScreen onFinish={() => setBootDone(true)} />
+    ) : (
+      <>
+        <Layout onOpenPDA={() => setOpen(true)}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/skins" element={<Skins />} />
+          </Routes>
+        </Layout>
 
-      {open && <PDA isOpen={open} onClose={() => setOpen(false)} />}
-    </BrowserRouter>
-  );
+        {open && <PDA isOpen={open} onClose={() => setOpen(false)} />}
+      </>
+    )}
+  </BrowserRouter>
+);
 }
 
 export default App;

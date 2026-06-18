@@ -132,3 +132,14 @@
   }
 }
 
+.boot-crt {
+  transition: opacity 1s ease;
+}
+.boot-crt {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.boot-crt.fade-out {
+  opacity: 0;
+}

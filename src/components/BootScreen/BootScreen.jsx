@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import "./bootScreen.css";
 
-
-
 export default function BootScreen({ onFinish }) {
   const messages = [
     "WELCOME TO THE VINTAGE CRT TERMINAL",
@@ -12,13 +10,12 @@ export default function BootScreen({ onFinish }) {
     "ENJOY THE RETRO EXPERIENCE!"
   ];
 
-
   const [messageIndex, setMessageIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [opacity, setOpacity] = useState(1);
+  const [fadeOut, setFadeOut] = useState(false);
 
-  // --- TYPING EFFECT ---
+  // Efecto de escritura
   useEffect(() => {
     const currentMessage = messages[messageIndex];
 
@@ -31,56 +28,53 @@ export default function BootScreen({ onFinish }) {
           return prev + 1;
         }
 
-        if (prev - 1 === 0) {
+        if (prev - 1 <= 0) {
           setIsDeleting(false);
-          setMessageIndex((mi) => (mi + 1) % messages.length);
+          setMessageIndex(mi => (mi + 1) % messages.length);
+          return 0;
         }
 
         return prev - 1;
       });
     }, isDeleting ? 50 : 100);
-    
 
     return () => clearTimeout(timeout);
-  }, [isDeleting, messageIndex, charIndex]);  // ← FIX: incluye charIndex
+  }, [isDeleting, messageIndex, charIndex]);
 
-  // --- AUTO HIDE / FADE OUT (simple y limpio) ---
+  // Fade y cierre
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const fade = setInterval(() => {
-        setOpacity(prev => {
-          if (prev <= 0) {
-            clearInterval(fade);
-            onFinish();  // ← SE LLAMA SIEMPRE
-          }
-          return prev - 0.05;
-        });
-      }, 50);
+    const fadeTimer = setTimeout(() => {
+      setFadeOut(true);
     }, 7000);
 
-    return () => clearTimeout(timer);
-  }, [onFinish]);
-  
-return (
-  <div className="boot-layout">
-    <div className="boot-crt" style={{ opacity }}>
-      <canvas id="static-canvas"></canvas>
+    const finishTimer = setTimeout(() => {
+      onFinish();
+    }, 8000);
 
-      <div className="terminal-window">
-        <div className="boot terminal-text">
-          {">"} SYSTEM BOOTING... <br />
-          {">"} MEMORY CHECK OK ... <br />
-          {">"} INITIALIZING DISK DRIVE ... <br />
-          {">"} LOADING OPERATING SYSTEM ... <br />
-          {">"} WELCOME TO VINTAGE OS 1.0 <br />
-          {">"} PIP-OS v1.0 <br />
-          {">"} {messages[messageIndex].substring(0, charIndex)}
-          <span className="cursor"></span>
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(finishTimer);
+    };
+  }, [onFinish]);
+
+  return (
+    <div className="boot-layout">
+      <div className={`boot-crt ${fadeOut ? "fade-out" : ""}`}>
+        <canvas id="static-canvas"></canvas>
+
+        <div className="terminal-window">
+          <div className="boot terminal-text">
+            {">"} SYSTEM BOOTING... <br />
+            {">"} MEMORY CHECK OK ... <br />
+            {">"} INITIALIZING DISK DRIVE ... <br />
+            {">"} LOADING OPERATING SYSTEM ... <br />
+            {">"} WELCOME TO VINTAGE OS 1.0 <br />
+            {">"} PIP-OS v1.0 <br />
+            {">"} {messages[messageIndex].substring(0, charIndex)}
+            <span className="cursor"></span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
-
-
+  );
 }
