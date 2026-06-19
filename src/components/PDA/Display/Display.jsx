@@ -35,15 +35,15 @@ export default function Display({ onClose }) {
 
     //  Archivos reales
     const fileMap = {
-      pdf: {
-        es: "/src/assets/cv/cv_desarrollador_es.pdf",
-        en: "/src/assets/cv/cv_desarrollador_en.pdf",
-      },
-      word: {
-        es: "/src/assets/cv/cv_desarrollador_es.docx",
-        en: "/src/assets/cv/cv_desarrollador_en.docx",
-      },
-    };
+  pdf: {
+    es: `${import.meta.env.BASE_URL}cv/cv_desarrollador_es.pdf`,
+    en: `${import.meta.env.BASE_URL}cv/cv_desarrollador_en.pdf`,
+  },
+  word: {
+    es: `${import.meta.env.BASE_URL}cv/cv_desarrollador_es.docx`,
+    en: `${import.meta.env.BASE_URL}cv/cv_desarrollador_en.docx`,
+  },
+};
 
     const filePath = fileMap[format][language];
 
