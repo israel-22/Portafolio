@@ -120,7 +120,10 @@ function Certifications() {
         ✖
       </button>
 
-      <img src={selectedCert.image} alt={selectedCert.title} />
+      <img
+  src={`${import.meta.env.BASE_URL}${selectedCert.image}`}
+  alt={selectedCert.title}
+/>
 
     </div>
   </div>
