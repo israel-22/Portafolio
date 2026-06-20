@@ -143,3 +143,64 @@
 .boot-crt.fade-out {
   opacity: 0;
 }
+/* ================= LOGOS ================= */
+.boot-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.boot-logos img {
+   width: 150px;   
+  height: auto;
+  filter: grayscale(100%) brightness(1.2) sepia(1) hue-rotate(80deg);
+  opacity: 0.8;
+}
+
+.boot-logos img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* ================= LOADING BAR ================= */
+.boot-loading {
+  position: absolute;
+  bottom: 150px;
+  width: 100%;
+  text-align: center;
+}
+
+.boot-bar {
+  width: 70%;
+  height: 12px;
+  margin: 0 auto;
+  border: 1px solid #00ff66;
+  box-shadow: 0 0 8px #00ff66 inset;
+  overflow: hidden;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.boot-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #00ff66,
+    #00ffcc
+  );
+  box-shadow: 0 0 12px #00ff66;
+  transition: width 0.1s linear;
+}
+
+
+/* ================= FOOTER LEGAL ================= */
+.boot-footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  line-height: 1.2;
+}

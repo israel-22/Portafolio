@@ -30,8 +30,13 @@ export default function Display({ onClose }) {
     setIsDownloading(true);
 
     // Sonido de descarga
-    const beep = new Audio("/src/assets/sounds/beep.mp3");
-    beep.play();
+   const beep = new Audio(
+  `${import.meta.env.BASE_URL}sounds/beep.mp3`
+);
+
+beep.play().catch(err => {
+  console.warn("Audio bloqueado:", err);
+});
 
     //  Archivos reales
     const fileMap = {
