@@ -3,7 +3,7 @@ import React from "react";
   import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import "./skins.css";
 
-
+import House from "./components/MrHouseTerminal/MrHouse.jsx";
 
 import ibmLogo from "../../assets/icons/ibm.png";
 import atomCurrency from "../../assets/icons/FO76_Atom_Currency_2.webp";
@@ -36,8 +36,9 @@ function Skins() {
          repudiandae esse autem ratione accusamus vero tempora! Neque, 
          ipsum. Quidem soluta illo totam doloremque quae perferendis id est reprehenderit voluptates!
       </p>
-      
+      <House />
     </div>
+    
   
   );
 }
