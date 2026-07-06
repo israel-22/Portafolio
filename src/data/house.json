@@ -1,0 +1,34 @@
+{
+  "dialogOptions": [
+    {
+      "id": "who",
+      "audio": {
+        "es": "papu-es",
+        "en": "papu-en"
+      },
+      "text": {
+        "es": "[INTELIGENCIA] ¿Quién eres?",
+        "en": "[INTELLIGENCE] Who are you?"
+      },
+      "answer": {
+        "es": "Soy Mr. House. He vigilado New Vegas durante décadas.",
+        "en": "I am Mr. House. I have watched over New Vegas for decades."
+      }
+    },
+    {
+      "id": "objective",
+      "audio": {
+        "es": "objetivo-es",
+        "en": "objetivo-en"
+      },
+      "text": {
+        "es": "[CARISMA] ¿Cuál es tu objetivo?",
+        "en": "[CHARISMA] What is your objective?"
+      },
+      "answer": {
+        "es": "Preservar la ciudad y asegurar su futuro bajo mi control.",
+        "en": "Preserve the city and secure its future under my control."
+      }
+    }
+  ]
+}
