@@ -1,17 +1,17 @@
 .house-container {
-  width: 85%;
-  height: 700px;
-  position: relative;
 
-  background-size: cover;
-  background-position: center;
+  width: 900px;
+  max-width: 100%;
+  aspect-ratio: 16 / 11;
+  max-height: 700px;
+
+  position: relative;
 
   border: 2px solid #00ff66;
   box-shadow: 0 0 25px #00ff66;
 
   overflow: hidden;
 
-  /* CRT base feel */
   filter: contrast(1.1) brightness(0.9);
 }
 .house-container::before {
@@ -49,95 +49,111 @@
   position: absolute;
   inset: 0;
 
-  display: flex;
   flex-direction: column;
 
   padding: 35px;
 
   color: #00ff66;
-  background: rgba(0, 0, 0, 0.55);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
 
   z-index: 3;
-}
+  position: absolute;
 
-.house-title {
-  text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 0 0 8px #00ff66;
-}
+  inset: 0;
 
-/* LISTA tipo Fallout */
-.dialog-list{
+  padding: 20px;
+
+  color: #00ff66;
+
+  background: rgba(0, 0, 0, 0.45);
+}
+.house-image{
 
     position:absolute;
 
+    top:0;
+
     left:50%;
 
-    transform:translateX(-50%);
+    transform:translateX(-53%);
 
-    bottom:120px;
+    height:100%;
 
-    width:75%;
-
-    height:180px;
+    width:auto;
+    
 }
 
-.dialog-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.house-title {
+  position: absolute;
 
-    padding:8px 15px;
+  top: 18px;
 
-    cursor:pointer;
+  left: 25px;
 
-    transition:.2s;
+  margin: 0;
 
-    border-left:3px solid transparent;
-
-    min-height:48px;
+  font-size: 24px;
+  text-shadow: 0 0 8px #00ff66;
 }
 
-.dialog-item:hover{
+.dialog-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-    background:rgba(0,255,100,.08);
+  padding: 8px 15px;
 
-    border-left:3px solid #00ff66;
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  border-left: 3px solid transparent;
+
+  min-height: 48px;
 }
 
-.dialog-item.active{
+.dialog-item:hover {
+  background: rgba(0, 255, 100, 0.08);
 
-    background:rgba(0,255,100,.15);
+  border-left: 3px solid #00ff66;
+}
 
-    border-left:3px solid #00ff66;
+.dialog-item.active {
+  background: rgba(0, 255, 100, 0.15);
 
-    text-shadow:0 0 6px #00ff66;
+  border-left: 3px solid #00ff66;
+
+  text-shadow: 0 0 6px #00ff66;
 }
 
 .cursor-symbol {
-  width: 15px;
+  width: 18px;
+
+  color: #00ff66;
+
+  flex-shrink: 0;
 }
 .dialog-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  border: 1px solid rgba(0, 255, 100, 0.2);
-  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+
   width: 75%;
+
+  height: 170px;
+
   margin: auto;
-  flex-direction: column;
 
-  justify-content: center;
+  border: 1px solid rgba(0, 255, 100, 0.25);
 
-  gap: 10px;
+  background: rgba(0, 0, 0, 0.35);
 
-  height: 300px;
-
-  overflow-y: auto;
-
-  text-align: left;
+  overflow: hidden;
 }
+
 .dialog-response {
   margin-top: auto;
   padding-top: 10px;
@@ -145,27 +161,26 @@
   border-top: 1px solid rgba(0, 255, 100, 0.4);
 
   background: rgba(0, 0, 0, 0.35);
-  display:flex;
+  display: flex;
 
-    flex-direction:column;
+  flex-direction: column;
 
-    justify-content:center;
+  justify-content: center;
 
-    align-items:center;
+  align-items: center;
 
-    height:100%;
+  height: 100%;
 
-    text-align:center;
+  text-align: center;
 }
-.dialog-text{
+.dialog-text {
+  width: 70%;
 
-    width:70%;
+  margin-top: 25px;
 
-    margin-top:25px;
+  line-height: 1.8;
 
-    line-height:1.8;
-
-    text-shadow:0 0 10px #00ff66;
+  text-shadow: 0 0 10px #00ff66;
 }
 .house-back-btn {
   margin-top: 20px;
@@ -187,34 +202,49 @@
 
   box-shadow: 0 0 10px #00ff66;
 }
-.lang-switch{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin-bottom:25px;
+.lang-switch {
+  display: flex;
+
+  gap: 12px;
+  margin-bottom: 25px;
+
+  position: absolute;
+
+  top: 18px;
+
+  right: 25px;
+
+  display: flex;
+
+  gap: 10px;
+
+  margin: 0;
 }
 
-.lang-switch a{
+.lang-switch a {
+  display: inline-flex;
 
-    display:inline-flex;
+  align-items: center;
 
-    align-items:center;
+  justify-content: center;
 
-    justify-content:center;
+  width: auto;
 
-    width:auto;
+  flex: none;
 
-    flex:none;
+  padding: 5px 12px;
 
-    padding:5px 12px;
+  cursor: pointer;
 
-    cursor:pointer;
+  border: 1px solid rgba(0, 255, 100, 0.25);
 
-    border:1px solid rgba(0,255,100,.25);
+  text-decoration: none;
 
-    text-decoration:none;
+  color: #00ff66;
 
-    color:#00ff66;
+  transition: 0.25s;
+
+  user-select: none;
 }
 
 .lang-switch a:hover {
@@ -224,133 +254,91 @@
   letter-spacing: 1px;
   color: #00ff66;
 }
-.lang-switch a {
-  cursor: pointer;
 
-  padding: 4px 12px;
-
-  border: 1px solid rgba(0, 255, 100, 0.25);
-
-  transition: 0.25s;
-
-  user-select: none;
-}
 .lang-switch a:hover {
   background: rgba(0, 255, 100, 0.08);
 
   box-shadow: 0 0 8px rgba(0, 255, 100, 0.4);
 }
-.cursor-symbol{
 
-    width:18px;
+.dialog-scroll {
+  position: absolute;
 
-    color:#00ff66;
+  left: 50%;
 
-    flex-shrink:0;
+  transform: translateX(-50%);
+
+  bottom: 35px;
+
+  width: 75%;
+
+  max-width: 760px;
+
+  height: 170px;
 }
 
-.dialog-scroll{
-
-    position:absolute;
-
-    bottom:70px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-     bottom:1px; 
-
-    width:50%;
-align-items:stretch;
-    display:flex;
-      height:180px;
-     
+.dialog-list::-webkit-scrollbar {
+  display: none;
 }
-.scroll-arrows{
+.scroll-arrow {
+  font-size: 12px;
 
-    width:25px;
+  color: #00ff66;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    color:#00ff66;
-
-    padding-right:8px;
+  text-shadow: 0 0 8px #00ff66;
 }
-.dialog-list{
 
-    position:absolute;
+.scroll-bar {
+  position: absolute;
 
-    bottom:70px;
+  top: 0;
 
-    left:50%;
+  left: 0;
 
-    transform:translateX(-50%);
+  bottom: 0;
 
-    width:75%;
+  width: 24px;
 
-    height:155px;
+  display: flex;
 
-    overflow-y:auto;
+  flex-direction: column;
 
-    display:flex;
+  align-items: center;
 
-    flex-direction:column;
+  justify-content: space-between;
 
-    gap:4px;
-
-    padding-left:18px;
-
-    scrollbar-width:none;
-     flex:1;
+  padding: 8px 0;
 }
-.dialog-list::-webkit-scrollbar{
-    display:none;
+
+.scroll-line {
+  flex: 1;
+
+  width: 2px;
+
+  background: #00ff6667;
+
+  box-shadow: 0 0 6px #00ff66;
+
+  margin: 6px 0;
 }
-.scroll-arrows{
 
-    display:flex;
+.scroll-diamond {
+  font-size: 12px;
 
-    flex-direction:column;
+  color: #00ff66;
 
-    justify-content:space-between;
-
-    height:160px;
-
-    color:#00ff66;
+  text-shadow: 0 0 8px #00ff66;
 }
-.scroll-bar{
+.dialog-content {
+  height: 100%;
 
-    width:30px;
+  overflow-y: auto;
 
-    display:flex;
+  padding-left: 30px;
 
-    flex-direction:column;
-
-    align-items:center;
-
-    margin-right:12px;
+  scrollbar-width: none;
 }
-.scroll-line{
 
-    flex:1;
-
-    width:2px;
-
-    background:#00ff66;
-
-    box-shadow:0 0 6px #00ff66;
-}
-.scroll-diamond{
-
-    font-size:12px;
-
-    color:#00ff66;
-
-    text-shadow:0 0 8px #00ff66;
+.dialog-content::-webkit-scrollbar {
+  display: none;
 }

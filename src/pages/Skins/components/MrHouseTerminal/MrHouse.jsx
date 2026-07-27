@@ -54,8 +54,13 @@ export default function MrHouse() {
   return (
     <div
       className="house-container"
-      style={{ backgroundImage: `url(${bgHouse})` }}
+      
     >
+      <img
+        src={bgHouse}
+        className="house-image"
+        alt="Mr. House"
+    />
       <div className="house-overlay">
         {" "}
         <div className="lang-switch">
@@ -67,33 +72,43 @@ export default function MrHouse() {
             <span>&gt; [F7] ESPAÑOL {lang === "es" ? "✔" : ""}</span>
           </a>
         </div>
-        <h2 className="house-title">MR. HOUSE TERMINAL</h2>
+        <h2 className="house-title">MR. HOUSE</h2>
         {/* MENÚ */}
-        {showQuestions && (
-          <div className="dialog-scroll">
-            <div className="scroll-arrows">
-              <span>▲</span>
+       {/* MENÚ */}
+{showQuestions && (
+  <div className="dialog-scroll">
+    <div className="dialog-list">
 
-              <span>▼</span>
-            </div>
+      {/* Scroll integrado */}
+      <div className="scroll-bar">
+        <span className="scroll-arrow">▲</span>
 
-            <div className="dialog-list">
-              {dialogOptions.map((opt, index) => (
-                <div
-                  key={opt.id}
-                  className={`dialog-item ${selected === index ? "active" : ""}`}
-                  onMouseEnter={() => setSelected(index)}
-                  onClick={() => handleSelect(index)}
-                >
-                  <span className="cursor-symbol">
-                    {selected === index ? "▶" : ""}
-                  </span>
-                  <span>{opt.text[lang]}</span>
-                </div>
-              ))}
-            </div>
+        <div className="scroll-line"></div>
+
+        <span className="scroll-arrow">▼</span>
+      </div>
+
+      {/* Preguntas */}
+      <div className="dialog-content">
+        {dialogOptions.map((opt, index) => (
+          <div
+            key={opt.id}
+            className={`dialog-item ${selected === index ? "active" : ""}`}
+            onMouseEnter={() => setSelected(index)}
+            onClick={() => handleSelect(index)}
+          >
+            <span className="cursor-symbol">
+              {selected === index ? "▶" : ""}
+            </span>
+
+            <span>{opt.text[lang]}</span>
           </div>
-        )}
+        ))}
+      </div>
+
+    </div>
+  </div>
+)}
         {/* RESPUESTA */}
         {!showQuestions && (
           <div className="dialog-response">

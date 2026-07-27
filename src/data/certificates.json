@@ -591,6 +591,42 @@
     "Content Management Systems"
   ],
   "image": "certs/desarrolladorContenidoDigital.jpg"
+},
+{
+  "id": 37,
+  "title": "Graphics, Animations and Illustrations for Visual Environments",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "WEB",
+  "desc": "Training in the creation of digital graphics, animations and illustrations for visual environments, web interfaces and multimedia projects.",
+  "skills": [
+    "Digital Illustration",
+    "2D Animation",
+    "Graphic Design",
+    "Visual Composition",
+    "Image Editing",
+    "Motion Graphics Basics",
+    "Visual Storytelling"
+  ],
+  "image": "/certs/graficosAnimacionesIlustraciones.jpg"
+},
+{
+  "id": 38,
+  "title": "IT Technician (Office Automation)",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "OTHER",
+  "desc": "Training focused on office productivity tools and computer skills for administrative and professional environments.",
+  "skills": [
+    "Microsoft Office Suite",
+    "Word Processing",
+    "Spreadsheets",
+    "Presentations",
+    "File Management",
+    "Email & Communication Tools",
+    "Basic Computer Maintenance"
+  ],
+  "image": "/certs/tecnicoInformaticaOfimatica.jpg"
 }
   ]
 }
