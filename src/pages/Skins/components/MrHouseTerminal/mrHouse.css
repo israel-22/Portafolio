@@ -1,6 +1,6 @@
 .house-container {
 
-  width: 900px;
+  width: 980px;
   max-width: 100%;
   aspect-ratio: 16 / 11;
   max-height: 700px;
@@ -13,36 +13,51 @@
   overflow: hidden;
 
   filter: contrast(1.1) brightness(0.9);
+   animation:crtFlicker .12s infinite alternate;
 }
-.house-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.house-container::before{
 
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 255, 100, 0.06),
-    rgba(0, 255, 100, 0.06) 1px,
-    transparent 2px,
-    transparent 3px
-  );
+    content:"";
 
-  pointer-events: none;
-  z-index: 2;
+    position:absolute;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(0,255,120,.08) 0px,
+        rgba(0,255,120,.08) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    mix-blend-mode:screen;
+
+    pointer-events:none;
+
+    z-index:4;
 }
-.house-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+.house-container::after{
 
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 255, 100, 0.15),
-    transparent 70%
-  );
+    content:"";
 
-  pointer-events: none;
-  z-index: 1;
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        rgba(0,255,120,.08),
+        transparent 70%
+    );
+
+    mix-blend-mode:screen;
+
+    animation:tubeGlow 4s ease-in-out infinite;
+
+    pointer-events:none;
 }
 
 .house-overlay {
@@ -85,6 +100,10 @@
     height:100%;
 
     width:auto;
+    
+
+    animation:screenShift 6s infinite;
+
     
 }
 
@@ -155,32 +174,35 @@
 }
 
 .dialog-response {
-  margin-top: auto;
-  padding-top: 10px;
+  position: absolute;
 
-  border-top: 1px solid rgba(0, 255, 100, 0.4);
+  left: 50%;
+  bottom: 35px;
 
-  background: rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%);
+
+  width: 75%;
+  height: 170px;
+
+  padding: 18px 25px;
+
+  
+
+
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
-  align-items: center;
-
-  height: 100%;
-
-  text-align: center;
+  text-align: left;
 }
 .dialog-text {
-  width: 70%;
+  width: 100%;
 
-  margin-top: 25px;
+  margin-top: 10px;
 
-  line-height: 1.8;
+  line-height: 1.6;
 
-  text-shadow: 0 0 10px #00ff66;
+  text-shadow: 0 0 8px #00ff66;
 }
 .house-back-btn {
   margin-top: 20px;
@@ -221,30 +243,13 @@
   margin: 0;
 }
 
-.lang-switch a {
-  display: inline-flex;
+.lang-switch a{
 
-  align-items: center;
+    padding:3px 8px;
 
-  justify-content: center;
+    font-size:.80rem;
 
-  width: auto;
-
-  flex: none;
-
-  padding: 5px 12px;
-
-  cursor: pointer;
-
-  border: 1px solid rgba(0, 255, 100, 0.25);
-
-  text-decoration: none;
-
-  color: #00ff66;
-
-  transition: 0.25s;
-
-  user-select: none;
+    border:1px solid rgba(0,255,100,.20);
 }
 
 .lang-switch a:hover {
@@ -255,10 +260,11 @@
   color: #00ff66;
 }
 
-.lang-switch a:hover {
-  background: rgba(0, 255, 100, 0.08);
+.lang-switch a:hover{
 
-  box-shadow: 0 0 8px rgba(0, 255, 100, 0.4);
+    padding:3px 8px;
+
+    letter-spacing:.5px;
 }
 
 .dialog-scroll {
@@ -280,14 +286,38 @@
 .dialog-list::-webkit-scrollbar {
   display: none;
 }
-.scroll-arrow {
-  font-size: 12px;
+.scroll-arrow{
 
-  color: #00ff66;
+    background:none;
 
-  text-shadow: 0 0 8px #00ff66;
+    border:none;
+
+    color:#00ff66;
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    text-shadow:0 0 8px #00ff66;
+
+    transition:.2s;
 }
+.scroll-arrow:hover{
 
+    transform:scale(1.25);
+
+    color:#8dffb5;
+}
+.scroll-arrow.disabled{
+
+    opacity:.25;
+
+    text-shadow:none;
+}
+.scroll-arrow.disabled:hover{
+
+    transform:none;
+}
 .scroll-bar {
   position: absolute;
 
@@ -341,4 +371,133 @@
 
 .dialog-content::-webkit-scrollbar {
   display: none;
+}
+.boot-screen-house{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+}
+.boot-content{
+
+    width:80%;
+
+    font-size:20px;
+
+    color:#00ff66;
+
+    text-shadow:0 0 10px #00ff66;
+
+    font-family:monospace;
+}
+
+.boot-line{
+
+    opacity:0;
+
+    animation:bootAppear .1s forwards;
+}
+.crt-house-text{
+    text-shadow:
+        0 0 3px #00ff66,
+        0 0 8px #00ff66,
+        0 0 14px rgba(0,255,100,.45);
+}
+
+.flicker{
+    animation:crt-flicker 0.18s infinite alternate;
+}
+
+@keyframes crt-flicker{
+
+    0%{
+        opacity:.95;
+        filter:brightness(.95);
+    }
+
+    35%{
+        opacity:1;
+        filter:brightness(1.05);
+    }
+
+    70%{
+        opacity:.92;
+        filter:brightness(.90);
+    }
+
+    100%{
+        opacity:1;
+        filter:brightness(1.02);
+    }
+}
+
+@keyframes bootAppear{
+
+    to{
+
+        opacity:1;
+    }
+}
+
+@keyframes crtFlicker{
+
+    0%{
+
+        filter:
+        brightness(.98)
+        contrast(1.08);
+    }
+
+    100%{
+
+        filter:
+        brightness(1.03)
+        contrast(1.12);
+    }
+
+}
+@keyframes tubeGlow{
+
+    0%{
+
+        opacity:.45;
+    }
+
+    50%{
+
+        opacity:.65;
+    }
+
+    100%{
+
+        opacity:.45;
+    }
+
+}
+@keyframes screenShift{
+
+    0%{
+
+        transform:translateX(-53%);
+    }
+
+    49%{
+
+        transform:translateX(-53%);
+    }
+
+    50%{
+
+        transform:translateX(calc(-53% + .8px));
+    }
+
+    51%{
+
+        transform:translateX(-53%);
+    }
+
 }

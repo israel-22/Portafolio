@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import data from "../../../../data/house.json";
 import bgHouse from "../../../../assets/house/house-background.webp";
 import Typewriter from "../../../../components/typewriter/Typewriter";
@@ -12,8 +12,41 @@ export default function MrHouse() {
   const [lang, setLang] = useState("en");
 
   const currentAudio = useRef(null);
+  const dialogRef = useRef(null);
+  const [canScrollUp, setCanScrollUp] = useState(false);
+  const [canScrollDown, setCanScrollDown] = useState(true);
+  const [booting, setBooting] = useState(true);
 
   const dialogOptions = data.dialogOptions;
+  const [visibleLines, setVisibleLines] = useState(1);
+
+  const scrollUp = () => {
+    dialogRef.current?.scrollBy({
+      top: -70,
+      behavior: "smooth",
+    });
+
+    setTimeout(updateScrollButtons, 250);
+  };
+
+  const scrollDown = () => {
+    dialogRef.current?.scrollBy({
+      top: 70,
+      behavior: "smooth",
+    });
+
+    setTimeout(updateScrollButtons, 250);
+  };
+
+  const updateScrollButtons = () => {
+    if (!dialogRef.current) return;
+
+    const el = dialogRef.current;
+
+    setCanScrollUp(el.scrollTop > 0);
+
+    setCanScrollDown(el.scrollTop + el.clientHeight < el.scrollHeight - 2);
+  };
 
   const playAudio = (file) => {
     if (!file) {
@@ -51,16 +84,68 @@ export default function MrHouse() {
 
     playAudio(audioMap[option.audio[lang]]);
   };
+  const bootText = [
+    "> ROBCO INDUSTRIES (TM) TERMLINK",
+    "> PIP-OS v1.0 ",
+    "> Initializing Personality Matrix...",
+    "\\ Connecting to Lucky 38...",
+    "MR. HOUSE ONLINE",
+  ];
+  
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setBooting(false);
+    }, 2800);
+
+    return () => clearTimeout(timer);
+  }, []);
+useEffect(() => {
+
+  if (!booting) return;
+
+  let line = 1;
+
+  const interval = setInterval(() => {
+
+    line++;
+
+    setVisibleLines(line);
+
+    if (line >= bootText.length) {
+
+      clearInterval(interval);
+
+    }
+
+  }, 450);
+
+  return () => clearInterval(interval);
+  
+
+}, [booting, bootText.length]);
+
+if (booting) {
+    return (
+      <div className="house-container boot-screen-house">
+       <div className="boot-content">
+  {bootText.slice(0, visibleLines).map((line, i) => (
+    <p key={i} className="boot-line">
+      <Typewriter
+        text={line}
+        speed={85}
+        className="boot-typewriter"
+      />
+    </p>
+  ))}
+</div>
+      </div>
+    );
+  }
+  
   return (
-    <div
-      className="house-container"
-      
-    >
-      <img
-        src={bgHouse}
-        className="house-image"
-        alt="Mr. House"
-    />
+    <div className="house-container">
+      <img src={bgHouse} className="house-image" alt="Mr. House" />
       <div className="house-overlay">
         {" "}
         <div className="lang-switch">
@@ -72,49 +157,62 @@ export default function MrHouse() {
             <span>&gt; [F7] ESPAÑOL {lang === "es" ? "✔" : ""}</span>
           </a>
         </div>
-        <h2 className="house-title">MR. HOUSE</h2>
+        <h3 className="house-title">D:\\ MR. HOUSE TERMINAL</h3>
         {/* MENÚ */}
-       {/* MENÚ */}
-{showQuestions && (
-  <div className="dialog-scroll">
-    <div className="dialog-list">
+        {showQuestions && (
+          <div className="dialog-scroll">
+            <div className="dialog-list">
+              {/* Barra lateral */}
+              <div className="scroll-bar">
+                <button
+                  className={`scroll-arrow ${!canScrollUp ? "disabled" : ""}`}
+                  onClick={scrollUp}
+                >
+                  ▲
+                </button>
 
-      {/* Scroll integrado */}
-      <div className="scroll-bar">
-        <span className="scroll-arrow">▲</span>
+                <div className="scroll-line"></div>
 
-        <div className="scroll-line"></div>
+                <button
+                  className={`scroll-arrow ${!canScrollDown ? "disabled" : ""}`}
+                  onClick={scrollDown}
+                >
+                  ▼
+                </button>
+              </div>
 
-        <span className="scroll-arrow">▼</span>
-      </div>
+              {/* Preguntas */}
+              <div
+                className="dialog-content"
+                ref={dialogRef}
+                onScroll={updateScrollButtons}
+              >
+                {dialogOptions.map((opt, index) => (
+                  <div
+                    key={opt.id}
+                    className={`dialog-item ${selected === index ? "active" : ""}`}
+                    onMouseEnter={() => setSelected(index)}
+                    onClick={() => handleSelect(index)}
+                  >
+                    <span className="cursor-symbol">
+                      {selected === index ? "▶" : ""}
+                    </span>
 
-      {/* Preguntas */}
-      <div className="dialog-content">
-        {dialogOptions.map((opt, index) => (
-          <div
-            key={opt.id}
-            className={`dialog-item ${selected === index ? "active" : ""}`}
-            onMouseEnter={() => setSelected(index)}
-            onClick={() => handleSelect(index)}
-          >
-            <span className="cursor-symbol">
-              {selected === index ? "▶" : ""}
-            </span>
-
-            <span>{opt.text[lang]}</span>
+                    <span>{opt.text[lang]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-
-    </div>
-  </div>
-)}
+        )}
         {/* RESPUESTA */}
         {!showQuestions && (
           <div className="dialog-response">
             <p>&gt; MR. HOUSE:</p>
-            <p className="dialog-text">
-              <Typewriter text={response} />
+            <p className="dialog-text crt-house-text">
+              <span className="flicker">
+                <Typewriter text={response} />
+              </span>
             </p>
           </div>
         )}

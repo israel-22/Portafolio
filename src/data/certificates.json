@@ -608,7 +608,7 @@
     "Motion Graphics Basics",
     "Visual Storytelling"
   ],
-  "image": "/certs/graficosAnimacionesIlustraciones.jpg"
+  "image": "certs/graficosAnimacionesIlustraciones.jpg"
 },
 {
   "id": 38,
@@ -626,7 +626,25 @@
     "Email & Communication Tools",
     "Basic Computer Maintenance"
   ],
-  "image": "/certs/tecnicoInformaticaOfimatica.jpg"
+  "image": "certs/tecnicoInformaticaOfimatica.jpg"
+},
+{
+  "id": 39,
+  "title": "Graphical Interface Developer",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "WEB",
+  "desc": "Training focused on the design and development of graphical user interfaces (GUI) for applications and digital systems, emphasizing usability and visual experience.",
+  "skills": [
+    "UI Design",
+    "Graphical Interface Development",
+    "User Experience (UX) Basics",
+    "Visual Design Principles",
+    "Prototyping",
+    "Interface Usability",
+    "Front-end Visual Implementation"
+  ],
+  "image": "certs/desarrolladorInterfacesGraficas.jpg"
 }
   ]
 }
