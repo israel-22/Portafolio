@@ -144,17 +144,7 @@
   }
 }
 
-@keyframes flicker {
-  0%,
-  100% {
-    opacity: 0.15;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
-
-@keyframes flicker {
+@keyframes home-flicker {
   0% {
     opacity: 0.1;
   }

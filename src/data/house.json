@@ -3,31 +3,181 @@
     {
       "id": "who",
       "audio": {
-        "es": "papu-es",
-        "en": "papu-en"
+        "es": "who-es",
+        "en": "who-en"
       },
       "text": {
         "es": "[INTELIGENCIA] ¿Quién eres?",
         "en": "[INTELLIGENCE] Who are you?"
       },
       "answer": {
-        "es": "Soy Mr. House. He vigilado New Vegas durante décadas.",
-        "en": "I am Mr. House. I have watched over New Vegas for decades."
+        "es": "Soy Robert Edwin House, presidente de ROBCO Industries. Si estás escuchando esta grabación, significa que has solicitado acceso al expediente profesional del candidato Israel Santos. Mi tarea es sencilla: responder tus preguntas y ayudarte a determinar si merece formar parte de tu equipo... aunque, naturalmente, la decisión final sigue siendo tuya.",
+        "en": "I am Robert Edwin House, President of ROBCO Industries. If you are hearing this recording, it means you have requested access to candidate Israel Santos' professional dossier. My task is simple: answer your questions and help you decide whether he deserves a place on your team... although, naturally, the final decision is yours."
+      }
+    },
+    {
+      "id": "portfolio",
+      "audio": {
+        "es": "portfolio-es",
+        "en": "portfolio-en"
+      },
+      "text": {
+        "es": "[PERCEPCIÓN] ¿Qué contiene este portafolio?",
+        "en": "[PERCEPTION] What does this portfolio contain?"
+      },
+      "answer": {
+        "es": "Este terminal reúne proyectos personales, aplicaciones web, experimentos con React, componentes reutilizables y diversos ejercicios de desarrollo de software. Todo lo que ves aquí fue construido para demostrar habilidades reales, no simples promesas escritas en un currículum.",
+        "en": "This terminal contains personal projects, web applications, React experiments, reusable components, and software development exercises. Everything you see here was built to demonstrate real skills, not promises written on a resume."
+      }
+    },
+    {
+      "id": "candidate",
+      "audio": {
+        "es": "candidate-es",
+        "en": "candidate-en"
+      },
+      "text": {
+        "es": "[CARISMA] Háblame del candidato.",
+        "en": "[CHARISMA] Tell me about the candidate."
+      },
+      "answer": {
+        "es": "Israel Santos es un desarrollador de software en formación con especial interés en React, JavaScript y desarrollo Front-End. También disfruta explorar nuevas tecnologías, resolver problemas y convertir ideas complejas en interfaces funcionales.",
+        "en": "Israel Santos is a software developer in training with a strong interest in React, JavaScript, and Front-End development. He also enjoys exploring new technologies, solving problems, and turning complex ideas into functional interfaces."
+      }
+    },
+    {
+      "id": "technology",
+      "audio": {
+        "es": "technology-es",
+        "en": "technology-en"
+      },
+      "text": {
+        "es": "[CIENCIA] ¿Qué tecnologías domina?",
+        "en": "[SCIENCE] What technologies does he master?"
+      },
+      "answer": {
+        "es": "Encontrarás experiencia con HTML, CSS, JavaScript, React, Vite, Git y GitHub, además de conocimientos en bases de datos, Linux y desarrollo de aplicaciones web. Aún sigue aprendiendo... una cualidad que considero mucho más útil que creer que ya lo sabe todo.",
+        "en": "You'll find experience with HTML, CSS, JavaScript, React, Vite, Git, and GitHub, along with knowledge of databases, Linux, and web application development. He is still learning... a trait I find far more valuable than believing one already knows everything."
+      }
+    },
+    {
+      "id": "fallout",
+      "audio": {
+        "es": "fallout-es",
+        "en": "fallout-en"
+      },
+      "text": {
+        "es": "[SUERTE] ¿Por qué Fallout?",
+        "en": "[LUCK] Why Fallout?"
+      },
+      "answer": {
+        "es": "Una pregunta razonable. Fallout representa tecnología retrofuturista, terminales, ingeniería y creatividad. Este diseño transforma un portafolio convencional en una experiencia interactiva. Después de todo, cualquiera puede hacer una página web... pocas personas construyen una terminal de ROBCO.",
+        "en": "A reasonable question. Fallout represents retrofuturistic technology, terminals, engineering, and creativity. This design transforms a conventional portfolio into an interactive experience. After all, anyone can build a website... very few build a ROBCO terminal."
+      }
+    },
+    {
+      "id": "work",
+      "audio": {
+        "es": "work-es",
+        "en": "work-en"
+      },
+      "text": {
+        "es": "[AGILIDAD] ¿Qué tipo de trabajo busca?",
+        "en": "[AGILITY] What type of work are you looking for?"
+      },
+      "answer": {
+        "es": "El candidato busca oportunidades como desarrollador Front-End o Full Stack Junior, donde pueda aportar valor, aprender rápidamente y seguir creciendo profesionalmente. La ambición controlada siempre produce mejores resultados que la arrogancia.",
+        "en": "The candidate is seeking opportunities as a Junior Front-End or Full Stack Developer, where he can contribute, learn quickly, and continue growing professionally. Controlled ambition consistently outperforms arrogance."
+      }
+    },
+    {
+      "id": "problems",
+      "audio": {
+        "es": "problems-es",
+        "en": "problems-en"
+      },
+      "text": {
+        "es": "[INTELIGENCIA] ¿Cómo resuelve problemas?",
+        "en": "[INTELLIGENCE] How does he solve problems?"
+      },
+      "answer": {
+        "es": "Analiza el problema, investiga alternativas, construye prototipos, prueba soluciones y mejora continuamente el resultado. No es el método más rápido... pero suele ser el que evita repetir el mismo error dos veces.",
+        "en": "He analyzes the problem, researches alternatives, builds prototypes, tests solutions, and continuously improves the result. It may not be the fastest approach... but it usually prevents repeating the same mistake twice."
+      }
+    },
+    {
+      "id": "skills",
+      "audio": {
+        "es": "skills-es",
+        "en": "skills-en"
+      },
+      "text": {
+        "es": "[PERCEPCIÓN] ¿Qué encontrarás aquí?",
+        "en": "[PERCEPTION] What will you find here?"
+      },
+      "answer": {
+        "es": "Encontrarás código fuente, proyectos completos, certificaciones, información académica y diferentes formas de contacto. En otras palabras, suficiente evidencia para evaluar al candidato por sus resultados y no únicamente por sus palabras.",
+        "en": "You'll find source code, complete projects, certifications, academic information, and multiple ways to get in touch. In other words, enough evidence to evaluate the candidate by his work rather than his words."
+      }
+    },
+    {
+      "id": "hire",
+      "audio": {
+        "es": "hire-es",
+        "en": "hire-en"
+      },
+      "text": {
+        "es": "[CARISMA] ¿Por qué debería contratarlo?",
+        "en": "[CHARISMA] Why should I hire him?"
+      },
+      "answer": {
+        "es": "Porque las empresas no progresan únicamente gracias a las personas más brillantes. También necesitan personas confiables, disciplinadas y capaces de aprender. Los resultados suelen ser más rentables que el ego.",
+        "en": "Because companies do not succeed solely because of their brightest employees. They also need reliable, disciplined people who are willing to learn. Results are usually more profitable than ego."
+      }
+    },
+    {
+      "id": "contact",
+      "audio": {
+        "es": "contact-es",
+        "en": "contact-en"
+      },
+      "text": {
+        "es": "[PERCEPCIÓN] ¿Cómo puedo contactarlo?",
+        "en": "[PERCEPTION] How can I contact him?"
+      },
+      "answer": {
+        "es": "Utiliza el módulo implementado en el footer de este terminal. Encontrarás correo electrónico, WhatsApp y otros medios de comunicación. La tecnología existe para ahorrar tiempo. Conviene utilizarla.",
+        "en": "Access the contact module implemented in the footer of this terminal. You'll find email, WhatsApp, and other contact methods. Technology exists to save time. One should make good use of it."
       }
     },
     {
       "id": "objective",
       "audio": {
-        "es": "objetivo-es",
-        "en": "objetivo-en"
+        "es": "objective-es",
+        "en": "objective-en"
       },
       "text": {
-        "es": "[CARISMA] ¿Cuál es tu objetivo?",
-        "en": "[CHARISMA] What is your objective?"
+        "es": "[VOLUNTAD] ¿Cuál es su objetivo?",
+        "en": "[ENDURANCE] What is your goal?"
       },
       "answer": {
-        "es": "Preservar la ciudad y asegurar su futuro bajo mi control.",
-        "en": "Preserve the city and secure its future under my control."
+        "es": "Construir software útil, adquirir experiencia profesional y continuar desarrollándose como ingeniero de software. Un objetivo menos espectacular que conquistar el Mojave... pero considerablemente más práctico.",
+        "en": "To build useful software, gain professional experience, and continue growing as a software engineer. Less dramatic than conquering the Mojave... but considerably more practical."
+      }
+    },
+    {
+      "id": "final",
+      "audio": {
+        "es": "final-es",
+        "en": "final-en"
+      },
+      "text": {
+        "es": "[SALIR] Mensaje final",
+        "en": "[EXIT] Final message"
+      },
+      "answer": {
+        "es": "El expediente ha concluido. Ahora conoces las habilidades, proyectos y objetivos del candidato. Si consideras que puede aportar valor a tu organización, te recomiendo iniciar contacto. Las buenas oportunidades rara vez esperan demasiado.",
+        "en": "The dossier is now complete. You have reviewed the candidate's skills, projects, and goals. If you believe he can contribute to your organization, I recommend contacting him. Valuable opportunities rarely wait for long."
       }
     }
   ]

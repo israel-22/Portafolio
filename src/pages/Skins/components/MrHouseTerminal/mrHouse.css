@@ -13,7 +13,7 @@
   overflow: hidden;
 
   filter: contrast(1.1) brightness(0.9);
-   animation:crtFlicker .12s infinite alternate;
+   animation:house-crt-flicker .12s infinite alternate;
 }
 .house-container::before{
 
@@ -55,7 +55,7 @@
 
     mix-blend-mode:screen;
 
-    animation:tubeGlow 4s ease-in-out infinite;
+    animation:house-tubeGlow 4s ease-in-out infinite;
 
     pointer-events:none;
 }
@@ -69,12 +69,13 @@
   padding: 35px;
 
   color: #00ff66;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.2) 45%,
-    rgba(0, 0, 0, 0.65) 100%
-  );
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,40,20,.08),
+            rgba(0,0,0,.18) 45%,
+            rgba(0,0,0,.65) 100%
+        );
 
   z-index: 3;
   position: absolute;
@@ -85,7 +86,7 @@
 
   color: #00ff66;
 
-  background: rgba(0, 0, 0, 0.45);
+
 }
 .house-image{
 
@@ -102,7 +103,13 @@
     width:auto;
     
 
-    animation:screenShift 6s infinite;
+    animation:house-screenShift 6s infinite;
+     filter:
+        brightness(.90)
+        contrast(1.08)
+        sepia(.18)
+        hue-rotate(50deg)
+        saturate(.9);
 
     
 }
@@ -399,7 +406,7 @@
 
     opacity:0;
 
-    animation:bootAppear .1s forwards;
+    animation:house-bootAppear .1s forwards;
 }
 .crt-house-text{
     text-shadow:
@@ -409,10 +416,10 @@
 }
 
 .flicker{
-    animation:crt-flicker 0.18s infinite alternate;
+    animation:house-crt-flicker 0.18s infinite alternate;
 }
 
-@keyframes crt-flicker{
+@keyframes house-crt-flicker{
 
     0%{
         opacity:.95;
@@ -435,32 +442,14 @@
     }
 }
 
-@keyframes bootAppear{
+@keyframes house-bootAppear{
 
     to{
 
         opacity:1;
     }
 }
-
-@keyframes crtFlicker{
-
-    0%{
-
-        filter:
-        brightness(.98)
-        contrast(1.08);
-    }
-
-    100%{
-
-        filter:
-        brightness(1.03)
-        contrast(1.12);
-    }
-
-}
-@keyframes tubeGlow{
+@keyframes house-tubeGlow{
 
     0%{
 
@@ -478,7 +467,7 @@
     }
 
 }
-@keyframes screenShift{
+@keyframes house-screenShift{
 
     0%{
 

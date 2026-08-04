@@ -26,10 +26,29 @@ function Skins() {
       </div>
 
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique,
-        obcaecati repudiandae esse autem ratione accusamus vero tempora! Neque,
-        ipsum. Quidem soluta illo totam doloremque quae perferendis id est
-        reprehenderit voluptates!
+       ⚠ NOTA IMPORTANTE - CSS GLOBAL EN REACT
+
+Los archivos CSS importados en React NO están aislados. Todo el CSS se carga de forma global en el navegador.
+
+Los @keyframes, :root, body, html y demás reglas globales COMPARTEN el mismo espacio de nombres entre todos los componentes.
+
+Si dos páginas utilizan el mismo nombre (por ejemplo: @keyframes crt-flicker), la última definición reemplazará a la anterior y puede romper efectos en otros componentes.
+
+✔ Convención del proyecto:
+- home-*
+- house-*
+- radio-*
+- tv-*
+- arcade-*
+- navbar-*
+- footer-*
+
+Ejemplo:
+@keyframes house-screenShift
+@keyframes home-crt-flicker
+@keyframes radio-static
+
+Siempre verificar nombres duplicados antes de modificar animaciones o agregar nuevos componentes.
       </p>
       <House />
     </div>
