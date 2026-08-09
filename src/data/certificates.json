@@ -645,6 +645,41 @@
     "Front-end Visual Implementation"
   ],
   "image": "certs/desarrolladorInterfacesGraficas.jpg"
+},
+{
+  "id": 40,
+  "title": "PCB Designer",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on the design, layout and manufacturing principles of printed circuit boards (PCB) for electronic projects.",
+  "skills": [
+    "PCB Design",
+    "Schematic Capture",
+    "PCB Layout",
+    "Component Placement",
+    "Routing Techniques",
+    "Design Rules Check (DRC)",
+    "Gerber Files Generation"
+  ],
+  "image": "certs/diseñadorPCB.jpg"
+},
+{
+  "id": 41,
+  "title": "Python Essentials 2",
+  "institution": "Cisco Networking Academy",
+  "year": 2026,
+  "category": "WEB",
+  "desc": "Intermediate Python programming course covering advanced concepts, data structures, object-oriented programming and modules.",
+  "skills": [
+    "Python Intermediate",
+    "Object-Oriented Programming",
+    "Modules and Packages",
+    "Exceptions Handling",
+    "File Processing",
+    "Advanced Data Structures"
+  ],
+  "image": "certs/pythonEssentials2.jpg"
 }
   ]
 }
