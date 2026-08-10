@@ -21,7 +21,10 @@ export default function Navbar() {
         <li>
           <NavLink className="nav-item" to="/contact">[F4] CONTACT</NavLink>
         </li>
-         
+
+         <li>
+          <NavLink className="nav-item" to="/skins">[F5] SKINS</NavLink>
+        </li>
  
         {/*<li>
           <NavLink className="nav-item" to="/skins">[F5] SKINS</NavLink>

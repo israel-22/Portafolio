@@ -4,6 +4,7 @@ import IconPipboy from "../../components/iconPipBoy/IconPipboy.jsx";
 import "./skins.css";
 
 import House from "./components/MrHouseTerminal/MrHouse.jsx";
+import RobcoRadio from "./components/RobcoRadio/RobcoRadio";
 
 import ibmLogo from "../../assets/icons/ibm.png";
 import atomCurrency from "../../assets/icons/FO76_Atom_Currency_2.webp";
@@ -51,6 +52,7 @@ Ejemplo:
 Siempre verificar nombres duplicados antes de modificar animaciones o agregar nuevos componentes.
       </p>
       <House />
+      <RobcoRadio />
     </div>
   );
 }

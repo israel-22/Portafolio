@@ -1,0 +1,1041 @@
+.robco-radio {
+  --radio-green: #8cff38;
+  --radio-green-dark: #315d1d;
+  --radio-bg: #071207;
+  --radio-metal: #292922;
+  --radio-metal-light: #44443a;
+
+  width: min(1100px, 94%);
+  margin: 30px auto;
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  color: var(--radio-green);
+  font-family: "Courier New", monospace;
+
+  background:
+    linear-gradient(
+      145deg,
+      #45453c 0%,
+      #292922 35%,
+      #1e1e1b 70%,
+      #3b3b32 100%
+    );
+
+  border: 3px solid #111;
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 0 3px #56564a,
+    0 18px 35px rgba(0, 0, 0, 0.65),
+    inset 0 0 30px rgba(0, 0, 0, 0.8);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.robco-radio .radio-header {
+  min-height: 70px;
+
+  display: grid;
+  grid-template-columns: 130px 1fr 130px;
+  align-items: center;
+  gap: 20px;
+
+  padding: 0 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #292922,
+      #1b1b18
+    );
+
+  border-bottom: 2px solid #111;
+
+  box-shadow:
+    inset 0 -1px 0 #5a5a4d;
+}
+
+
+.robco-radio .radio-header h2 {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: clamp(18px, 2vw, 30px);
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 5px var(--radio-green),
+    0 0 15px rgba(140, 255, 56, 0.4);
+}
+
+
+.robco-radio .radio-brand {
+  font-size: 18px;
+  font-weight: bold;
+
+  opacity: 0.8;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MAIN AREA
+========================================= */
+
+.robco-radio .radio-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 20px;
+
+  padding: 22px 0;
+}
+
+
+/* =========================================
+   CRT
+========================================= */
+
+.robco-radio .crt-frame {
+  position: relative;
+
+  min-height: 560px;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #10100d,
+      #303027,
+      #171713
+    );
+
+  border: 3px solid #111;
+  border-radius: 34px;
+
+  box-shadow:
+    inset 0 0 25px #000,
+    0 0 0 2px #555548;
+}
+
+
+.robco-radio .crt-screen {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 27%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #173917 0%,
+      #071807 58%,
+      #020702 100%
+    );
+
+  border: 5px solid #151512;
+
+  box-shadow:
+    inset 0 0 50px #000,
+    inset 0 0 100px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(140, 255, 56, 0.15);
+
+  isolation: isolate;
+}
+
+
+/* CRT CURVATURE */
+
+.robco-radio .crt-screen::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  box-shadow:
+    inset 20px 0 30px rgba(0, 0, 0, 0.4),
+    inset -20px 0 30px rgba(0, 0, 0, 0.4),
+    inset 0 25px 35px rgba(255, 255, 255, 0.03),
+    inset 0 -30px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* SCREEN GLOW */
+
+.robco-radio .crt-screen::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 11;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse,
+      transparent 45%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+
+  border-radius: inherit;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.robco-radio .crt-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.15;
+
+  background-image:
+    linear-gradient(
+      rgba(140, 255, 56, 0.25) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(140, 255, 56, 0.25) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    28px 28px;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   SIGNAL
+========================================= */
+
+.robco-radio .signal-display {
+  position: relative;
+
+  z-index: 4;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 50px;
+
+  box-sizing: border-box;
+
+  text-shadow:
+    0 0 5px var(--radio-green),
+    0 0 12px rgba(140, 255, 56, 0.5);
+}
+
+
+.robco-radio .signal-title {
+  text-align: center;
+
+  font-size: clamp(18px, 2vw, 28px);
+
+  letter-spacing: 4px;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================================
+   WAVEFORM
+========================================= */
+
+.robco-radio .waveform {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-bottom: 40px;
+}
+
+
+.robco-radio .waveform span {
+  display: block;
+
+  height: 2px;
+
+  background: var(--radio-green);
+
+  box-shadow:
+    0 0 6px var(--radio-green),
+    0 0 15px rgba(140, 255, 56, 0.6);
+
+  clip-path: polygon(
+    0 50%,
+    5% 45%,
+    8% 70%,
+    12% 25%,
+    16% 55%,
+    20% 15%,
+    24% 75%,
+    28% 40%,
+    33% 60%,
+    38% 20%,
+    42% 80%,
+    47% 30%,
+    52% 65%,
+    57% 10%,
+    62% 55%,
+    67% 35%,
+    72% 75%,
+    77% 20%,
+    82% 60%,
+    87% 35%,
+    92% 70%,
+    96% 40%,
+    100% 50%
+  );
+}
+
+
+/* =========================================
+   SIGNAL INFO
+========================================= */
+
+.robco-radio .signal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 0;
+
+  border-top: 1px solid var(--radio-green);
+  border-bottom: 1px solid var(--radio-green);
+
+  font-size: 18px;
+}
+
+
+.robco-radio .signal-info strong {
+  font-size: 32px;
+}
+
+
+.robco-radio .signal-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.robco-radio .meter {
+  display: flex;
+  gap: 4px;
+}
+
+
+.robco-radio .meter i {
+  display: block;
+
+  width: 14px;
+  height: 18px;
+
+  background: var(--radio-green);
+
+  box-shadow:
+    0 0 5px var(--radio-green);
+}
+
+
+.robco-radio .meter i.inactive {
+  background: transparent;
+
+  border: 1px solid var(--radio-green);
+
+  box-shadow: none;
+}
+
+
+.robco-radio .station-name {
+  margin-top: 22px;
+
+  font-size: clamp(18px, 2vw, 28px);
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   CRT EFFECTS
+========================================= */
+
+.robco-radio .crt-scanlines {
+  position: absolute;
+  inset: 0;
+
+  z-index: 12;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3px,
+      rgba(140, 255, 56, 0.06) 4px
+    );
+
+  mix-blend-mode: screen;
+}
+
+
+.robco-radio .crt-noise {
+  position: absolute;
+  inset: -50%;
+
+  z-index: 13;
+
+  pointer-events: none;
+
+  opacity: 0.04;
+
+  background-image:
+    repeating-radial-gradient(
+      circle at 0 0,
+      #fff 0,
+      #fff 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  background-size: 4px 4px;
+
+  animation: radioNoise 0.15s steps(2) infinite;
+}
+
+
+@keyframes radioNoise {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(2%, -1%);
+  }
+
+  50% {
+    transform: translate(-1%, 2%);
+  }
+
+  75% {
+    transform: translate(1%, 1%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+/* =========================================
+   SIDE PANEL
+========================================= */
+
+.robco-radio .radio-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.robco-radio .radio-control,
+.robco-radio .station-display,
+.robco-radio .frequency-display {
+  background:
+    linear-gradient(
+      145deg,
+      #35352d,
+      #1d1d19
+    );
+
+  border: 2px solid #111;
+
+  box-shadow:
+    inset 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================
+   TUNING
+========================================= */
+
+.robco-radio .radio-control {
+  position: relative;
+
+  padding: 20px;
+}
+
+
+.robco-radio .radio-control h3,
+.robco-radio .station-display h3 {
+  margin: 0 0 20px;
+
+  text-align: center;
+
+  letter-spacing: 3px;
+
+  font-size: 17px;
+}
+
+
+.robco-radio .tuning-dial {
+  position: relative;
+
+  width: 150px;
+  height: 150px;
+
+  margin: 20px auto;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #555548 0 20%,
+      #272720 21% 55%,
+      #151512 56% 100%
+    );
+
+  border: 4px solid #111;
+
+  box-shadow:
+    inset 0 0 12px #000,
+    0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.robco-radio .dial-marker {
+  position: absolute;
+
+  top: 12px;
+  left: 50%;
+
+  width: 4px;
+  height: 35px;
+
+  transform: translateX(-50%);
+
+  background: var(--radio-green);
+
+  box-shadow:
+    0 0 6px var(--radio-green);
+}
+
+
+.robco-radio .dial-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 45px;
+  height: 45px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #22221e;
+
+  border: 2px solid #555548;
+}
+
+
+.robco-radio .frequency-scale {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   FREQUENCY DISPLAY
+========================================= */
+
+.robco-radio .frequency-display {
+  padding: 15px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse,
+      #173917,
+      #071007
+    );
+
+  color: var(--radio-green);
+
+  text-shadow:
+    0 0 7px var(--radio-green);
+}
+
+
+.robco-radio .frequency-display strong {
+  font-size: 32px;
+}
+
+
+.robco-radio .frequency-display span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+
+/* =========================================
+   STATION
+========================================= */
+
+.robco-radio .station-display {
+  padding: 20px;
+}
+
+
+.robco-radio .station-screen {
+  padding: 20px 10px;
+
+  text-align: center;
+
+  background: #061006;
+
+  border: 2px solid #111;
+
+  box-shadow:
+    inset 0 0 15px #000;
+
+  font-size: 15px;
+
+  text-shadow:
+    0 0 7px var(--radio-green);
+}
+
+
+/* =========================================
+   LOWER CONTROLS
+========================================= */
+
+.robco-radio .radio-controls {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    1fr
+    180px
+    180px;
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+
+.robco-radio .knob-section {
+  text-align: center;
+}
+
+
+.robco-radio .knob-section h3 {
+  margin: 0 0 10px;
+
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+
+.robco-radio .knob {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #555548,
+      #22221e 65%,
+      #111
+    );
+
+  border: 3px solid #0b0b0a;
+
+  box-shadow:
+    0 5px 8px rgba(0, 0, 0, 0.6),
+    inset 0 0 10px #000;
+}
+
+
+.robco-radio .knob-marker {
+  position: absolute;
+
+  top: 8px;
+  left: 50%;
+
+  width: 4px;
+  height: 25px;
+
+  transform: translateX(-50%);
+
+  background: var(--radio-green);
+
+  box-shadow:
+    0 0 5px var(--radio-green);
+}
+
+
+.robco-radio .knob-labels {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 5px 25px 0;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   PLAYER BUTTONS
+========================================= */
+
+.robco-radio .player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.robco-radio .player-controls button {
+  min-width: 70px;
+  height: 65px;
+
+  border: 2px solid #111;
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #3b3b32,
+      #1d1d19
+    );
+
+  color: var(--radio-green);
+
+  font-family: inherit;
+  font-weight: bold;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #111,
+    inset 0 0 10px rgba(0, 0, 0, 0.7);
+
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
+}
+
+
+.robco-radio .player-controls button:hover {
+  color: #c0ff9b;
+
+  text-shadow:
+    0 0 8px var(--radio-green);
+}
+
+
+.robco-radio .player-controls button:active {
+  transform: translateY(4px);
+
+  box-shadow:
+    0 1px 0 #111,
+    inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+
+.robco-radio .player-controls .play-button {
+  min-width: 110px;
+
+  position: relative;
+}
+
+
+.robco-radio .status-light {
+  display: block;
+
+  width: 7px;
+  height: 7px;
+
+  margin: 0 auto 6px;
+
+  border-radius: 50%;
+
+  background: var(--radio-green);
+
+  box-shadow:
+    0 0 7px var(--radio-green);
+}
+
+
+/* =========================================
+   SPEAKER
+========================================= */
+
+.robco-radio .speaker {
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #111 0,
+      #111 8px,
+      #333329 9px,
+      #333329 11px
+    );
+
+  border: 2px solid #111;
+}
+
+
+.robco-radio .speaker-logo {
+  padding: 10px 20px;
+
+  background: #24241f;
+
+  border: 2px solid #555548;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  text-shadow:
+    0 0 5px var(--radio-green);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.robco-radio .radio-footer {
+  min-height: 55px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+
+  margin-top: 20px;
+
+  border-top: 2px solid #111;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+
+.robco-radio .radio-status {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.robco-radio .radio-status i {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--radio-green);
+
+  box-shadow:
+    0 0 8px var(--radio-green);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .robco-radio .radio-main {
+    grid-template-columns: 1fr;
+  }
+
+  .robco-radio .radio-side {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    align-items: stretch;
+  }
+
+  .robco-radio .radio-controls {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .robco-radio .speaker {
+    min-height: 100px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .robco-radio {
+    width: 96%;
+
+    padding: 12px;
+
+    margin: 15px auto;
+
+    border-radius: 12px;
+  }
+
+
+  .robco-radio .radio-header {
+    grid-template-columns: 1fr;
+
+    padding: 15px;
+
+    gap: 8px;
+  }
+
+
+  .robco-radio .radio-brand {
+    display: none;
+  }
+
+
+  .robco-radio .radio-header h2 {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .robco-radio .crt-frame {
+    min-height: 400px;
+
+    padding: 10px;
+
+    border-radius: 25px;
+  }
+
+
+  .robco-radio .crt-screen {
+    min-height: 380px;
+
+    border-radius: 24%;
+  }
+
+
+  .robco-radio .signal-display {
+    padding: 25px;
+  }
+
+
+  .robco-radio .signal-title {
+    margin-bottom: 25px;
+
+    font-size: 16px;
+  }
+
+
+  .robco-radio .signal-info {
+    flex-direction: column;
+
+    gap: 15px;
+
+    align-items: flex-start;
+  }
+
+
+  .robco-radio .signal-info strong {
+    font-size: 25px;
+  }
+
+
+  .robco-radio .station-name {
+    font-size: 16px;
+  }
+
+
+  .robco-radio .radio-side {
+    grid-template-columns: 1fr;
+  }
+
+
+  .robco-radio .radio-controls {
+    grid-template-columns: 1fr;
+  }
+
+
+  .robco-radio .radio-footer {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+  }
+}
