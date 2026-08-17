@@ -680,6 +680,24 @@
     "Advanced Data Structures"
   ],
   "image": "certs/pythonEssentials2.jpg"
+},
+{
+  "id": 42,
+  "title": "3D Object Designer for Printing",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on the design and modeling of objects specifically optimized for 3D printing, covering the complete workflow from concept to printable files.",
+  "skills": [
+    "3D Modeling",
+    "CAD Design",
+    "3D Printing Optimization",
+    "Slicing Preparation",
+    "STL File Generation",
+    "Design for Additive Manufacturing",
+    "Prototype Development"
+  ],
+  "image": "certs/disenadorObjetos3D.jpg"
 }
   ]
 }

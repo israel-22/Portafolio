@@ -22,6 +22,7 @@ export default function Navbar() {
           <NavLink className="nav-item" to="/contact">[F4] CONTACT</NavLink>
         </li>
 
+        
          
  
         {/*<li>

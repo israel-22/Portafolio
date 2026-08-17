@@ -4,6 +4,12 @@
   --radio-bg: #071207;
   --radio-metal: #292922;
   --radio-metal-light: #44443a;
+  --phosphor: #8cff38;
+  --phosphor-soft: rgba(140, 255, 56, 0.25);
+
+  --crt-core: #173917;
+  --crt-mid: #071807;
+  --crt-dark: #020702;
 
   width: min(1100px, 94%);
   margin: 30px auto;
@@ -11,7 +17,7 @@
 
   box-sizing: border-box;
 
-  color: var(--radio-green);
+  color: var(--phosphor);
   font-family: "Courier New", monospace;
 
   background:
@@ -36,6 +42,134 @@
   position: relative;
 }
 
+.robco-radio.phosphor-green {
+  --phosphor: #8cff38;
+  --phosphor-soft: rgba(140, 255, 56, 0.25);
+
+  --crt-core: #173917;
+  --crt-mid: #071807;
+  --crt-dark: #020702;
+}
+
+.robco-radio.phosphor-amber {
+  --phosphor: #ffb52e;
+  --phosphor-soft: rgba(255, 181, 46, 0.25);
+
+  --crt-core: #3b2a0b;
+  --crt-mid: #170f03;
+  --crt-dark: #070400;
+}
+
+
+.robco-radio.phosphor-blue {
+  --phosphor:  #3fa9ff;
+  --phosphor-soft: rgba(82, 183, 255, 0.25);
+
+  --crt-core: #12344a;
+  --crt-mid: #06151f;
+  --crt-dark: #020609;
+}
+
+.robco-radio.phosphor-red {
+  --phosphor: #ff4545;
+  --phosphor-soft: rgba(255, 69, 69, 0.25);
+
+  --crt-core: #481313;
+  --crt-mid: #1d0505;
+  --crt-dark: #070000;
+}
+
+.robco-radio.phosphor-purple {
+  --phosphor: #c77dff;
+  --phosphor-soft: rgba(199, 125, 255, 0.25);
+
+  --crt-core: #32164a;
+  --crt-mid: #12051c;
+  --crt-dark: #040007;
+}
+
+.robco-radio.phosphor-cyan {
+  --phosphor: #45fff3;
+  --phosphor-soft: rgba(69, 255, 243, 0.25);
+
+  --crt-core: #10403d;
+  --crt-mid: #041815;
+  --crt-dark: #010706;
+}
+.robco-radio .phosphor-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+.robco-radio .phosphor-buttons button {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: 2px solid #111;
+
+  background: #22221e;
+
+  color: var(--phosphor);
+
+  font-family: inherit;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.1s,
+    box-shadow 0.15s;
+}
+
+.robco-radio .phosphor-buttons button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 8px var(--phosphor);
+}
+.robco-radio .crt-screen {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      var(--crt-core) 0%,
+      var(--crt-mid) 48%,
+      var(--crt-dark) 100%
+    );
+
+  border: 6px solid #151512;
+
+  box-shadow:
+    inset 0 0 40px #000,
+    inset 0 0 90px rgba(0, 0, 0, 0.9),
+    0 0 18px var(--phosphor-soft);
+
+  isolation: isolate;
+}
+.robco-radio .radio-phosphor {
+  justify-self: start;
+
+  white-space: nowrap;
+
+  font-size: 0.8rem;
+
+  color: var(--phosphor);
+}
 
 /* =========================================
    HEADER
@@ -74,8 +208,10 @@
   letter-spacing: 3px;
 
   text-shadow:
-    0 0 5px var(--radio-green),
-    0 0 15px rgba(140, 255, 56, 0.4);
+    0 0 5px var(--phosphor),
+    var(--crt-core) 0%,
+      var(--crt-mid) 48%,
+      var(--crt-dark) 100%
 }
 
 
@@ -135,26 +271,19 @@
 
   width: 100%;
   height: 100%;
-  min-height: 520px;
 
   overflow: hidden;
 
-  border-radius: 27%;
+  border-radius: 50%;
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      #173917 0%,
-      #071807 58%,
-      #020702 100%
-    );
+ 
 
-  border: 5px solid #151512;
+  border: 6px solid #151512;
 
   box-shadow:
-    inset 0 0 50px #000,
-    inset 0 0 100px rgba(0, 0, 0, 0.8),
-    0 0 15px rgba(140, 255, 56, 0.15);
+    inset 0 0 40px #000,
+    inset 0 0 90px rgba(0, 0, 0, 0.9),
+    0 0 18px rgba(140, 255, 56, 0.18);
 
   isolation: isolate;
 }
@@ -211,23 +340,31 @@
 
 .robco-radio .crt-grid {
   position: absolute;
+
   inset: 0;
 
   opacity: 0.15;
 
   background-image:
     linear-gradient(
-      rgba(140, 255, 56, 0.25) 1px,
+      color-mix(
+        in srgb,
+        var(--phosphor) 25%,
+        transparent
+      ) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(140, 255, 56, 0.25) 1px,
+      color-mix(
+        in srgb,
+        var(--phosphor) 25%,
+        transparent
+      ) 1px,
       transparent 1px
     );
 
-  background-size:
-    28px 28px;
+  background-size: 28px 28px;
 
   z-index: 1;
 }
@@ -254,8 +391,10 @@
   box-sizing: border-box;
 
   text-shadow:
-    0 0 5px var(--radio-green),
-    0 0 12px rgba(140, 255, 56, 0.5);
+    0 0 5px var(--phosphor),
+    0 0 12px var(--crt-core) 0%,
+      var(--crt-mid) 48%,
+      var(--crt-dark) 100%
 }
 
 
@@ -288,11 +427,13 @@
 
   height: 2px;
 
-  background: var(--radio-green);
+  background: var(--phosphor);
 
   box-shadow:
-    0 0 6px var(--radio-green),
-    0 0 15px rgba(140, 255, 56, 0.6);
+    0 0 6px var(--phosphor),
+    var(--crt-core) 0%,
+      var(--crt-mid) 48%,
+      var(--crt-dark) 100%;
 
   clip-path: polygon(
     0 50%,
@@ -333,8 +474,8 @@
 
   padding: 15px 0;
 
-  border-top: 1px solid var(--radio-green);
-  border-bottom: 1px solid var(--radio-green);
+  border-top: 1px solid var(--phosphor);
+  border-bottom: 1px solid var(--phosphor);
 
   font-size: 18px;
 }
@@ -364,17 +505,17 @@
   width: 14px;
   height: 18px;
 
-  background: var(--radio-green);
+  background: var(--phosphor);
 
   box-shadow:
-    0 0 5px var(--radio-green);
+    0 0 5px var(--phosphor);
 }
 
 
 .robco-radio .meter i.inactive {
   background: transparent;
 
-  border: 1px solid var(--radio-green);
+  border: 1px solid var(--phosphor);
 
   box-shadow: none;
 }
@@ -394,22 +535,17 @@
 ========================================= */
 
 .robco-radio .crt-scanlines {
-  position: absolute;
-  inset: 0;
-
-  z-index: 12;
-
-  pointer-events: none;
-
   background:
     repeating-linear-gradient(
       to bottom,
       transparent 0,
       transparent 3px,
-      rgba(140, 255, 56, 0.06) 4px
+      color-mix(
+        in srgb,
+        var(--phosphor) 7%,
+        transparent
+      ) 4px
     );
-
-  mix-blend-mode: screen;
 }
 
 
@@ -549,10 +685,10 @@
 
   transform: translateX(-50%);
 
-  background: var(--radio-green);
+  background: var(--phosphor);
 
   box-shadow:
-    0 0 6px var(--radio-green);
+    0 0 6px var(--phosphor);
 }
 
 
@@ -600,14 +736,15 @@
   background:
     radial-gradient(
       ellipse,
-      #173917,
-      #071007
+      var(--crt-core) 0%,
+      var(--crt-mid) 48%,
+      var(--crt-dark) 100%
     );
 
-  color: var(--radio-green);
+  color: var(--phosphor);
 
   text-shadow:
-    0 0 7px var(--radio-green);
+    0 0 7px var(--phosphor);
 }
 
 
@@ -621,6 +758,42 @@
   font-size: 18px;
 }
 
+.robco-radio .audio-visualizer {
+  width: 85%;
+  height: 180px;
+
+  margin: 10px auto 35px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+
+  padding: 15px 20px;
+
+  box-sizing: border-box;
+}
+
+
+.robco-radio .signal-bar {
+  width: 7%;
+
+  min-height: 4px;
+
+   background: var(--phosphor);
+
+  box-shadow:
+    0 0 6px var(--phosphor),
+    0 0 14px var(--phosphor);
+
+  transition:
+    height 80ms linear;
+}
 
 /* =========================================
    STATION
@@ -646,7 +819,7 @@
   font-size: 15px;
 
   text-shadow:
-    0 0 7px var(--radio-green);
+    0 0 7px var(--phosphor);
 }
 
 
@@ -719,10 +892,10 @@
 
   transform: translateX(-50%);
 
-  background: var(--radio-green);
+  background: var(--phosphor);
 
   box-shadow:
-    0 0 5px var(--radio-green);
+    0 0 5px var(--phosphor);
 }
 
 
@@ -733,6 +906,24 @@
   margin: 5px 25px 0;
 
   font-size: 12px;
+}
+.robco-radio .robco-radio-logo {
+  display: block;
+
+  width: 200px;
+  height: auto;
+
+  object-fit: contain;
+
+  justify-self: center;
+
+  filter:
+    drop-shadow(
+      0 0 5px var(--phosphor)
+    );
+
+  transition:
+    filter 0.25s ease;
 }
 
 
@@ -761,7 +952,7 @@
       #1d1d19
     );
 
-  color: var(--radio-green);
+  color: var(--phosphor);
 
   font-family: inherit;
   font-weight: bold;
@@ -781,10 +972,12 @@
 
 
 .robco-radio .player-controls button:hover {
-  color: #c0ff9b;
+  color:var(--crt-core) 0%,
+      var(--crt-mid) 48%,
+      var(--crt-dark) 100%;
 
   text-shadow:
-    0 0 8px var(--radio-green);
+    0 0 8px var(--phosphor);
 }
 
 
@@ -814,10 +1007,10 @@
 
   border-radius: 50%;
 
-  background: var(--radio-green);
+  background: var(--phosphor);
 
   box-shadow:
-    0 0 7px var(--radio-green);
+    0 0 7px var(--phosphor);
 }
 
 
@@ -858,7 +1051,7 @@
   font-weight: bold;
 
   text-shadow:
-    0 0 5px var(--radio-green);
+    0 0 5px var(--phosphor);
 }
 
 
@@ -869,12 +1062,14 @@
 .robco-radio .radio-footer {
   min-height: 55px;
 
-  display: flex;
+   display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
 
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 20px;
+ padding: 8px 14px;
 
   margin-top: 20px;
 
@@ -885,13 +1080,26 @@
 }
 
 
+
 .robco-radio .radio-status {
   display: flex;
+
   align-items: center;
+  justify-content: flex-end;
 
   gap: 10px;
-}
 
+  white-space: nowrap;
+
+  font-size: 0.8rem;
+
+  color: var(--phosphor);
+}
+.robco-radio .radio-status-value {
+  min-width: 58px;
+
+  text-align: left;
+}
 
 .robco-radio .radio-status i {
   width: 10px;
@@ -899,13 +1107,69 @@
 
   border-radius: 50%;
 
-  background: var(--radio-green);
+  background: var(--phosphor);
 
   box-shadow:
-    0 0 8px var(--radio-green);
+    0 0 8px var(--phosphor);
+}
+
+.robco-radio .status-led {
+  display: inline-block;
+
+  width: 12px;
+  height: 12px;
+
+  flex: 0 0 12px;
+
+  border-radius: 50%;
+
+  background: #444;
+
+  border: 1px solid #111;
+
+  box-shadow:
+    inset 0 0 3px #000;
+
+  opacity: 1;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 
+.robco-radio .status-led.active {
+  background: var(--phosphor);
+
+  box-shadow:
+    0 0 4px var(--phosphor),
+    0 0 9px var(--phosphor),
+    0 0 16px var(--phosphor);
+
+  animation: radio-status-pulse 1.2s infinite;
+}
+
+
+@keyframes radio-status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    box-shadow:
+      0 0 4px var(--phosphor),
+      0 0 9px var(--phosphor),
+      0 0 15px var(--phosphor);
+  }
+
+  50% {
+    opacity: 0.55;
+
+    box-shadow:
+      0 0 2px var(--phosphor),
+      0 0 5px var(--phosphor);
+  }
+  
+}
 /* =========================================
    RESPONSIVE
 ========================================= */
