@@ -1,73 +1,83 @@
+
 import { useEffect, useRef, useState } from "react";
 import "./robcoRadio.css";
-import "./radio.effect";
 import RobCoLogo from "../../../../assets/icons/RobCo_MDBP.webp";
+import radioStations from "../../../../data/radio.json";
 
-const audioFiles = import.meta.glob("../../../assets/radio/*/*.{mp3,ogg,wav}", {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
+const audioFiles = import.meta.glob(
+  "../../../assets/radio/*/*.{mp3,ogg,wav}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
 
-function getStations() {
-  const stations = {};
+const audioFilesByPath = Object.fromEntries(
+  Object.entries(audioFiles).map(([path, url]) => [
+    path.split("/radio/").pop(),
+    url,
+  ])
+);
 
-  Object.entries(audioFiles).forEach(([path, url]) => {
-    const parts = path.split("/");
+const stations = radioStations.slice(0, 5).map((station) => ({
+  ...station,
+  tracks: station.tracks
+    .map((path) => audioFilesByPath[path])
+    .filter(Boolean),
+}));
 
-    const stationName = parts[parts.length - 2];
-
-    if (!stations[stationName]) {
-      stations[stationName] = [];
-    }
-
-    stations[stationName].push(url);
-  });
-
-  return stations;
-}
 
 function RobcoRadio() {
-  const stations = getStations();
-
-  const stationNames = Object.keys(stations);
-
   const audioRef = useRef(null);
   const analyserRef = useRef(null);
   const animationRef = useRef(null);
 
   const [stationIndex, setStationIndex] = useState(0);
   const [trackIndex, setTrackIndex] = useState(0);
-
   const [isPlaying, setIsPlaying] = useState(false);
-
   const [phosphor, setPhosphor] = useState("green");
-
   const [signal, setSignal] = useState(new Array(10).fill(0));
 
-  const currentStation = stationNames[stationIndex] || "station01";
-
-  const currentTracks = stations[currentStation] || [];
-
+  const currentStation = stations[stationIndex];
+  const currentTracks = currentStation?.tracks ?? [];
   const currentTrack = currentTracks[trackIndex];
 
+ 
   /*
    * AUDIO
    */
 
-  useEffect(() => {
-    if (!audioRef.current || !currentTrack) return;
+  // Carga la canción cuando cambia la pista.
+useEffect(() => {
+  const audio = audioRef.current;
+  if (!audio) return;
 
-    audioRef.current.src = currentTrack;
-    audioRef.current.load();
+  if (!currentTrack) {
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    return;
+  }
 
-    if (isPlaying) {
-      audioRef.current.play().catch(() => {
-        setIsPlaying(false);
-      });
-    }
-  }, [currentTrack]);
+  audio.src = currentTrack;
+  audio.load();
+}, [currentTrack]);
 
+// Reproduce o pausa según el estado de la radio.
+useEffect(() => {
+  const audio = audioRef.current;
+  if (!audio || !currentTrack) return;
+
+  if (isPlaying) {
+    audio.play().catch((error) => {
+      console.error("No se pudo reproducir la canción:", error);
+      setIsPlaying(false);
+    });
+  } else {
+    audio.pause();
+  }
+}, [isPlaying, currentTrack]);
   /*
    * WEB AUDIO API
    */
@@ -181,16 +191,15 @@ function RobcoRadio() {
    * CHANGE STATION
    */
 
-  const changeStation = (direction) => {
-    if (!stationNames.length) return;
+ const changeStation = (direction) => {
+  if (!stations.length) return;
 
-    setStationIndex(
-      (previous) =>
-        (previous + direction + stationNames.length) % stationNames.length,
-    );
+  setStationIndex((previous) =>
+    (previous + direction + stations.length) % stations.length
+  );
 
-    setTrackIndex(0);
-  };
+  setTrackIndex(0);
+};
 
   /*
    * CLEANUP
@@ -245,9 +254,8 @@ function RobcoRadio() {
 
               <div className="signal-info">
                 <div>
-                  <strong>98.7</strong> MHz
-                </div>
-
+  <strong>{currentStation?.frequency ?? "--.-"}</strong> MHz
+</div>
                 <div className="signal-meter">
                   SIGNAL
                   <div className="meter">
@@ -258,7 +266,9 @@ function RobcoRadio() {
                 </div>
               </div>
 
-              <div className="station-name">ROBCO CLASSICS</div>
+              <div className="station-name">
+  {currentStation?.name ?? "SIN SEÑAL"}
+</div>
 
               <div className="radio-status-text">
                 {isPlaying ? "TRANSMITTING" : "STANDBY"}
@@ -282,6 +292,23 @@ function RobcoRadio() {
 
               <div className="dial-center" />
             </div>
+            <div className="station-tuning-controls">
+  <button
+    type="button"
+    onClick={() => changeStation(-1)}
+    aria-label="Emisora anterior"
+  >
+    ◀
+  </button>
+
+  <button
+    type="button"
+    onClick={() => changeStation(1)}
+    aria-label="Emisora siguiente"
+  >
+    ▶
+  </button>
+</div>
 
             <div className="frequency-scale">
               <span>88</span>
@@ -294,15 +321,14 @@ function RobcoRadio() {
           </section>
 
           <div className="frequency-display">
-            <strong>98.7</strong>
-
-            <span>MHz</span>
-          </div>
+  <strong>{currentStation?.frequency ?? "--.-"}</strong>
+  <span>MHz</span>
+</div>
 
           <section className="station-display">
             <h3>STATION</h3>
 
-            <div className="station-screen">{currentStation.toUpperCase()}</div>
+            <div className="station-screen">{currentStation?.name ?? "SIN SEÑAL"}</div>
           </section>
 
           {/* PHOSPHOR */}
@@ -403,27 +429,35 @@ function RobcoRadio() {
         </section>
       </div>
 
-      {/* FOOTER */}
+    
 
-      <footer className="radio-footer">
-        <span className="radio-phosphor">
-          PHOSPHOR: {phosphor.toUpperCase()}
-        </span>
+   
 
-        <img
-          src={RobCoLogo}
-          alt="RobCo Industries"
-          className="robco-radio-logo"
-        />
+{/* FOOTER */}
 
-        <span className="radio-status">
-          STATUS:
-          <span className="radio-status-value">
-            {isPlaying ? "ONLINE" : "STANDBY"}
-          </span>
-          <span className={`status-led ${isPlaying ? "active" : ""}`} />
-        </span>
-      </footer>
+<footer className="radio-footer">
+  <span className="radio-phosphor">
+    PHOSPHOR: {phosphor.toUpperCase()}
+  </span>
+
+  <img
+    src={RobCoLogo}
+    alt="RobCo Industries"
+    className="robco-radio-logo"
+  />
+
+  <span className="radio-status">
+    STATUS:
+    <span className="radio-status-value">
+      {isPlaying ? "ONLINE" : "STANDBY"}
+    </span>
+
+    <span
+      className={`status-led ${isPlaying ? "active" : ""}`}
+    />
+  </span>
+</footer>
+
     </section>
   );
 }

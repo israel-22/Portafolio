@@ -1,11 +1,19 @@
+
 [
   {
-    "id": "robco",
+    "id": "robco-classics",
     "frequency": "98.7",
     "name": "ROBCO CLASSICS",
     "tracks": [
-      "/assets/radio/station01/Marty Robbins - Big Iron.mp3",
-      "/assets/radio/station02/Reminiscencias_Julio Jaramillo.mp3"
+      "station01/Marty Robbins - Big Iron.mp3"
+    ]
+  },
+  {
+    "id": "remminiscencias",
+    "frequency": "101.3",
+    "name": "ECUADOR RETRO",
+    "tracks": [
+      "station02/Reminiscencias_Julio Jaramillo.mp3"
     ]
   }
 ]

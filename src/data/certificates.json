@@ -698,6 +698,96 @@
     "Prototype Development"
   ],
   "image": "certs/disenadorObjetos3D.jpg"
+},
+{
+  "id": 43,
+  "title": "Fundamentals of Analog Electronics",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on the basic principles of analog electronics, including circuits, components and signal analysis.",
+  "skills": [
+    "Analog Circuits",
+    "Resistors, Capacitors and Inductors",
+    "Operational Amplifiers",
+    "Signal Amplification",
+    "Filters",
+    "Power Supplies",
+    "Circuit Analysis"
+  ],
+  "image": "certs/fundamentosElectronicaAnalogica.jpg"
+},
+{
+  "id": 44,
+  "title": "Fundamentals of Digital Electronics",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on the principles of digital electronics, logic gates, binary systems and digital circuit design.",
+  "skills": [
+    "Digital Logic",
+    "Logic Gates",
+    "Boolean Algebra",
+    "Binary Number Systems",
+    "Combinational Circuits",
+    "Sequential Circuits",
+    "Flip-Flops and Counters"
+  ],
+  "image": "certs/fundamentosElectronicaDigital.jpg"
+},
+{
+  "id": 45,
+  "title": "3D Printer Operator",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on the operation, setup, maintenance and troubleshooting of 3D printers for manufacturing physical objects.",
+  "skills": [
+    "3D Printer Operation",
+    "Slicer Software",
+    "Print Parameter Configuration",
+    "Material Handling",
+    "Printer Calibration",
+    "Troubleshooting Print Failures",
+    "Post-Processing Techniques"
+  ],
+  "image": "certs/operadorImpresoras3D.jpg"
+},
+{
+  "id": 46,
+  "title": "Microcontroller Programmer",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training in programming and interfacing microcontrollers for embedded systems and electronic projects.",
+  "skills": [
+    "Microcontroller Programming",
+    "Embedded C / Arduino",
+    "GPIO Control",
+    "Sensors and Actuators",
+    "Timers and Interrupts",
+    "Serial Communication",
+    "Embedded Systems Basics"
+  ],
+  "image": "certs/programadorMicrocontroladores.jpg"
+},
+{
+  "id": 47,
+  "title": "Microcomputer Programmer",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on programming and developing applications for microcomputers and single-board computers.",
+  "skills": [
+    "Microcomputer Programming",
+    "Single-Board Computers",
+    "Embedded Linux Basics",
+    "Hardware Interfacing",
+    "Python / C for Embedded",
+    "Peripheral Control",
+    "IoT Prototyping"
+  ],
+  "image": "certs/programadorMicroordenadores.jpg"
 }
   ]
 }
