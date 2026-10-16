@@ -283,7 +283,7 @@
   box-shadow:
     inset 0 0 40px #000,
     inset 0 0 90px rgba(0, 0, 0, 0.9),
-    0 0 18px rgba(140, 255, 56, 0.18);
+    0 0 18px var(--phosphor-soft);
 
   isolation: isolate;
 }
@@ -374,28 +374,27 @@
    SIGNAL
 ========================================= */
 
+
 .robco-radio .signal-display {
   position: relative;
-
   z-index: 4;
 
-  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-
   justify-content: center;
 
-  padding: 50px;
-
-  box-sizing: border-box;
+  padding: clamp(16px, 3vw, 50px);
 
   text-shadow:
     0 0 5px var(--phosphor),
-    0 0 12px var(--crt-core) 0%,
-      var(--crt-mid) 48%,
-      var(--crt-dark) 100%
+    0 0 12px var(--phosphor-soft);
 }
+
 
 
 .robco-radio .signal-title {
@@ -407,6 +406,25 @@
 
   margin-bottom: 40px;
 }
+
+
+
+
+/*Añade estas reglas debajo de tu bloque actual .audio-visualizer: si esta mal ubicado luego me dices donde*/
+
+.robco-radio .audio-visualizer {
+  position: relative;
+  overflow: hidden;
+}
+
+.robco-radio .audio-waveform {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--phosphor);
+  background: transparent;
+}
+
 
 
 /* =========================================
@@ -521,13 +539,32 @@
 }
 
 
+
 .robco-radio .station-name {
   margin-top: 22px;
+  max-width: 100%;
+  min-width: 0;
 
-  font-size: clamp(18px, 2vw, 28px);
-
+  font-size: clamp(14px, 1.6vw, 28px);
   letter-spacing: 2px;
+  line-height: 1.25;
+
+  overflow-wrap: anywhere;
+  text-align: center;
 }
+
+.robco-radio .radio-status-text {
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 10px;
+
+  font-size: clamp(12px, 1.2vw, 18px);
+  line-height: 1.3;
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
 
 
 /* =========================================

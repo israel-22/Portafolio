@@ -4,8 +4,9 @@ import "./robcoRadio.css";
 import RobCoLogo from "../../../../assets/icons/RobCo_MDBP.webp";
 import radioStations from "../../../../data/radio.json";
 
+
 const audioFiles = import.meta.glob(
-  "../../../assets/radio/*/*.{mp3,ogg,wav}",
+  "../../../../assets/radio/*/*.{mp3,ogg,wav}",
   {
     eager: true,
     query: "?url",
@@ -20,10 +21,20 @@ const audioFilesByPath = Object.fromEntries(
   ])
 );
 
-const stations = radioStations.slice(0, 5).map((station) => ({
+
+
+const stations = radioStations.map((station) => ({
   ...station,
   tracks: station.tracks
-    .map((path) => audioFilesByPath[path])
+    .map((path) => {
+      const audioUrl = audioFilesByPath[path];
+
+      if (!audioUrl) {
+        console.warn(`No se encontró la canción: ${path}`);
+      }
+
+      return audioUrl;
+    })
     .filter(Boolean),
 }));
 
@@ -32,6 +43,7 @@ function RobcoRadio() {
   const audioRef = useRef(null);
   const analyserRef = useRef(null);
   const animationRef = useRef(null);
+  const canvasRef = useRef(null);
 
   const [stationIndex, setStationIndex] = useState(0);
   const [trackIndex, setTrackIndex] = useState(0);
@@ -43,7 +55,10 @@ function RobcoRadio() {
   const currentTracks = currentStation?.tracks ?? [];
   const currentTrack = currentTracks[trackIndex];
 
- 
+
+
+
+
   /*
    * AUDIO
    */
@@ -94,7 +109,7 @@ useEffect(() => {
 
       const analyser = audioContext.createAnalyser();
 
-      analyser.fftSize = 128;
+      analyser.fftSize = 2048;
 
       source.connect(analyser);
 
@@ -114,31 +129,96 @@ useEffect(() => {
    * VISUALIZER
    */
 
-  const updateVisualizer = () => {
-    if (!analyserRef.current) return;
+const updateVisualizer = () => {
+  if (!analyserRef.current || !canvasRef.current) return;
 
-    const analyser = analyserRef.current;
+  const analyser = analyserRef.current;
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
 
-    const dataArray = new Uint8Array(analyser.frequencyBinCount);
+  const timeData = new Uint8Array(analyser.fftSize);
+  const frequencyData = new Uint8Array(analyser.frequencyBinCount);
 
-    const draw = () => {
-      analyser.getByteFrequencyData(dataArray);
+  const draw = () => {
+    if (!canvasRef.current || !analyserRef.current) return;
 
-      const bars = [];
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    const dpr = window.devicePixelRatio || 1;
 
-      for (let i = 0; i < 10; i++) {
-        const index = Math.floor(i * (dataArray.length / 10));
+    // Ajustar la resolución del canvas sin deformar la onda.
+    const pixelWidth = Math.round(width * dpr);
+    const pixelHeight = Math.round(height * dpr);
 
-        bars.push(dataArray[index] || 0);
+    if (
+      canvas.width !== pixelWidth ||
+      canvas.height !== pixelHeight
+    ) {
+      canvas.width = pixelWidth;
+      canvas.height = pixelHeight;
+    }
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ 
+// Limpiar el canvas sin pintar ningún fondo.
+
+ ctx.clearRect(0, 0, width, height);
+
+
+    // Obtener la forma de onda real del audio.
+    analyser.getByteTimeDomainData(timeData);
+
+    // Dibujar la línea del osciloscopio.
+    const style = getComputedStyle(canvas);
+    const phosphor = style.color || "#8cff38";
+
+    ctx.beginPath();
+    ctx.strokeStyle = phosphor;
+    ctx.lineWidth = 1.8;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.shadowColor = phosphor;
+    ctx.shadowBlur = 12;
+
+    const centerY = height / 2;
+    const amplitude = height * 0.42;
+    const stepX = width / (timeData.length - 1);
+
+    for (let i = 0; i < timeData.length; i++) {
+      const normalized = (timeData[i] - 128) / 128;
+      const x = i * stepX;
+      const y = centerY + normalized * amplitude;
+
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
       }
+    }
 
-      setSignal(bars);
+    ctx.stroke();
 
-      animationRef.current = requestAnimationFrame(draw);
-    };
+    // Mantener el medidor de señal que ya existe.
+    analyser.getByteFrequencyData(frequencyData);
 
-    draw();
+    const bars = [];
+
+    for (let i = 0; i < 10; i++) {
+      const index = Math.floor(
+        i * (frequencyData.length / 10)
+      );
+
+      bars.push(frequencyData[index] || 0);
+    }
+
+    setSignal(bars);
+
+    animationRef.current = requestAnimationFrame(draw);
   };
+
+  draw();
+};
+
 
   /*
    * PLAY / PAUSE
@@ -215,7 +295,19 @@ useEffect(() => {
 
   return (
     <section className={`robco-radio phosphor-${phosphor}`}>
-      <audio ref={audioRef} onEnded={nextTrack} />
+      
+<audio
+  ref={audioRef}
+  onEnded={() => {
+    if (currentTracks.length > 1) {
+      nextTrack();
+    } else {
+      setIsPlaying(false);
+      setSignal(new Array(10).fill(0));
+    }
+  }}
+/>
+
 
       {/* HEADER */}
 
@@ -240,17 +332,15 @@ useEffect(() => {
 
               {/* REAL AUDIO VISUALIZER */}
 
-              <div className="audio-visualizer">
-                {signal.map((value, index) => (
-                  <div
-                    key={index}
-                    className="signal-bar"
-                    style={{
-                      height: `${Math.max(4, value * 0.8)}%`,
-                    }}
-                  />
-                ))}
-              </div>
+              
+<div className="audio-visualizer">
+  <canvas
+    ref={canvasRef}
+    className="audio-waveform"
+    aria-label="Osciloscopio de audio"
+  />
+</div>
+
 
               <div className="signal-info">
                 <div>

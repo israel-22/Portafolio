@@ -3,17 +3,32 @@
   {
     "id": "robco-classics",
     "frequency": "98.7",
-    "name": "ROBCO CLASSICS",
+    "name": "MOJAVE RADIO MUSIC",
     "tracks": [
-      "station01/Marty Robbins - Big Iron.mp3"
+      "station02/I_Don_t_Want_To_Set_The_World_On_Fire.mp3",
+      "station02/Marty Robbins - Big Iron.mp3"
     ]
+    
+
   },
   {
     "id": "remminiscencias",
     "frequency": "101.3",
-    "name": "ECUADOR RETRO",
+    "name": "RADIO NEW VEGAS",
     "tracks": [
-      "station02/Reminiscencias_Julio Jaramillo.mp3"
+      "station01/Reminiscencias_Julio Jaramillo.mp3",
+      "station01/Balada de la trompeta_Raphael.mp3"
+    ]
+  },
+  {
+    "id": "history",
+    "frequency": "108.4",
+    "name": "RNC RADIO HISTORIE",
+    "tracks": [
+      "station03/Primer Real Madrid -FC-Barcelona televisado.mp3",
+      "station03/Caída del Muro de Berlín (nota de prensa Canal 13, 1989).mp3",
+      "station03/John F Kennedy, viaje a la Luna.mp3"
+      
     ]
   }
 ]

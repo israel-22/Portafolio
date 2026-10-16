@@ -151,7 +151,7 @@ export default function Projects() {
             target="_blank"
             rel="noreferrer"
           >
-            [F1] EXECUTE PROJECT
+            [F6] EXECUTE PROJECT
           </a>
 
           <a
@@ -159,7 +159,7 @@ export default function Projects() {
             target="_blank"
             rel="noreferrer"
           >
-            [F2] SOURCE CODE
+            [F7] SOURCE CODE
           </a>
 
         </div>
