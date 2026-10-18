@@ -11,6 +11,7 @@ import atomCurrency from "../../assets/icons/FO76_Atom_Currency_2.webp";
 import pistolIcon from "../../assets/icons/FO76_iconwheel_pistol.webp";
 import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
 import specialIcon from "../../assets/icons/FO76_vaultboy_endurance.webp";
+import CRTTelevision from "./components/CRTTelevision/CRTTelevision.jsx";
 
 function Skins() {
   return (
@@ -51,8 +52,12 @@ Ejemplo:
 
 Siempre verificar nombres duplicados antes de modificar animaciones o agregar nuevos componentes.
       </p>*/}
+      
       <House />
       <RobcoRadio />
+       {/*<CRTTelevision />*/}
+      
+      
     </div>
   );
 }
