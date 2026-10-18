@@ -1,4 +1,16 @@
-[
+[ {
+    "id": "mojave-music",
+    "frequency": "95.1",
+    "name": "MOJAVE RADIO MUSIC",
+    "tracks": [
+      "station02/Marty Robbins - Big Iron.mp3",
+      "station02/Sleepwalk (La Bamba soundtrack) - Santo & Johnny.mp3",
+      "station02/Johnny Guitar_Peggy Lee.mp3",
+      "station02/House Of the Rising Sun - Animals.mp3",
+      "station02/Lonesome town (Pulp fiction soundtrack) - Ricky Nelson.mp3",
+      "station02/Jingle, Jangle, Jingle (I Got Spurs)_Kay Kyser.mp3"
+    ]
+  },
   
   {
     "id": "radio-new-vegas",
@@ -6,23 +18,25 @@
     "name": "RADIO NEW VEGAS",
     "tracks": [
       "station01/Reminiscencias_Julio Jaramillo.mp3",
-      "station01/Balada de la trompeta_Raphael.mp3"
+      "station01/Balada de la trompeta_Raphael.mp3",
+      "station01/Tú Significas Todo para Mí.mp3",
+      "station01/Dulzura Mía_Jinsop.mp3",
+      "station01/Abrázame Muy Fuerte [Fbi481QFo4Y].mp3",
+      "station01/Ven, aquí siempre estaré_Karina.mp3"
     ]
   },
-  {
-    "id": "mojave-music",
-    "frequency": "95.1",
-    "name": "MOJAVE RADIO MUSIC",
-    "tracks": [
-      "station02/Marty Robbins - Big Iron.mp3"
-    ]
-  },
+ 
   {
     "id": "galaxy-news",
     "frequency": "103.8",
     "name": "GALAXY NEWS RADIO",
     "tracks": [
-      "station02/I_Don_t_Want_To_Set_The_World_On_Fire.mp3" , "?? reasignar esta cancion a otra emisora, no es de la galaxia" 
+      "station04/I_Don_t_Want_To_Set_The_World_On_Fire.mp3",
+      "station04/So Doggone Lonesome - Remastered 2022_Johnny Cash.mp3",
+      "station04/Maybe_The Ink Spots.mp3",
+      "station04/The End of the World_Skeeter Davis.mp3",
+      "station04/The Wanderer_Dion.mp3",
+      "station04/Johnny Remember Me_John Leyton.mp3"
     ]
   },
   {
@@ -32,20 +46,38 @@
     "tracks": [
       "station03/Primer Real Madrid -FC-Barcelona televisado.mp3",
       "station03/Caída del Muro de Berlín (nota de prensa Canal 13, 1989).mp3",
-      "station03/John F Kennedy, viaje a la Luna.mp3"
+      "station03/John F Kennedy, viaje a la Luna.mp3",
+      "station03/La Guerra de los Mundos Quito, 1949.mp3",
+      "station03/Marvin Hagler vs Tommy Hearns Round 1 GREATEST ROUND OF BOXING ON THIS DAY.mp3",
+      "station03/MI ECUADOR AMAZÓNICO DESDE SIEMPRE, PARA SIEMPRE.mp3"
     ]
   },
   {
     "id": "black-mountain",
     "frequency": "2.22",
     "name": "BLACK MOUNTAIN RADIO",
-    "tracks": []
+    "tracks": [
+      "station05/Parov Stelar - Booty Swing (Official Audio)(MP3_160K).mp3",
+      "station05/Ring my bell - Anita Ward.mp3",
+      "station05/Caravan Palace - Lone Digger.mp3",
+      "station05/Daft Punk - Lose Yourself to Dance (Official Versi - 128K MP3.mp3",
+      "station05/Good Mouse - From the MOUSE P.I. FOR HIRE Soundtrack_Caravan Palace.mp3",
+      "station05/Parov Stelar - Libella Swing (Official Audio)(MP3_160K).mp3"
+
+    ]
   },
   
   {
     "id": "diamond-city",
     "frequency": "98.0",
     "name": "DIAMOND CITY RADIO",
-    "tracks": []
+    "tracks": [
+      "station06/Radio.mp3",
+      "station06/Heroin.mp3",
+      "station06/Let_The_Bodies.mp3",
+      "station06/Feuer.mp3",
+      "station06/System Of A Down -Lonely Day.mp3",
+      "station06/03 Du Hast.mp3"
+    ]
   }
 ]

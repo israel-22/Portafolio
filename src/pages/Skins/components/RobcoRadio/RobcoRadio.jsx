@@ -45,6 +45,8 @@ function RobcoRadio() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [phosphor, setPhosphor] = useState("green");
   const [signal, setSignal] = useState(new Array(10).fill(0));
+  const [volume, setVolume] = useState(70);
+  const [brightness, setBrightness] = useState(100);
 
   const currentStation = stations[stationIndex];
   const currentTracks = currentStation?.tracks ?? [];
@@ -84,6 +86,14 @@ function RobcoRadio() {
       audio.pause();
     }
   }, [isPlaying, currentTrack]);
+
+  // Sincroniza la perilla con el volumen real del reproductor.
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    audioRef.current.volume = volume / 100;
+  }, [volume]);
+
   /*
    * WEB AUDIO API
    */
@@ -205,6 +215,51 @@ function RobcoRadio() {
   };
 
   /*
+ * PHYSICAL KNOBS
+ */
+
+// Convierte la posición horizontal en un valor de 0 a 100.
+const updateKnob = (event, setter) => {
+  const rect = event.currentTarget.getBoundingClientRect();
+
+  const position = (event.clientX - rect.left) / rect.width;
+  const value = Math.round(position * 100);
+
+  setter(Math.max(0, Math.min(100, value)));
+};
+
+// Permite controlar las perillas con el teclado.
+const handleKnobKeyDown = (event, value, setter) => {
+  let nextValue = value;
+
+  switch (event.key) {
+    case "ArrowRight":
+    case "ArrowUp":
+      nextValue = Math.min(100, value + 2);
+      break;
+
+    case "ArrowLeft":
+    case "ArrowDown":
+      nextValue = Math.max(0, value - 2);
+      break;
+
+    case "Home":
+      nextValue = 0;
+      break;
+
+    case "End":
+      nextValue = 100;
+      break;
+
+    default:
+      return;
+  }
+
+  event.preventDefault();
+  setter(nextValue);
+};
+
+  /*
    * PLAY / PAUSE
    */
 
@@ -278,7 +333,9 @@ function RobcoRadio() {
   }, []);
 
   return (
-    <section className={`robco-radio phosphor-${phosphor}`}>
+    <section className={`robco-radio phosphor-${phosphor}`} style={{
+    "--radio-brightness": brightness / 100,
+  }}>
       <audio
         ref={audioRef}
         onEnded={() => {
@@ -495,12 +552,38 @@ function RobcoRadio() {
 
       <div className="radio-controls">
         <section className="knob-section">
-          <h3>VOLUME</h3>
+  <h3>VOLUME</h3>
 
-          <div className="knob">
-            <div className="knob-marker" />
-          </div>
-        </section>
+  <div
+    className="knob"
+    role="slider"
+    tabIndex={0}
+    aria-label="Volumen de audio"
+    aria-valuemin={0}
+    aria-valuemax={100}
+    aria-valuenow={volume}
+    aria-valuetext={`${volume}%`}
+    style={{
+      "--knob-angle": `${-135 + volume * 2.7}deg`,
+    }}
+    onPointerDown={(event) => {
+      event.currentTarget.setPointerCapture(event.pointerId);
+      updateKnob(event, setVolume);
+    }}
+    onPointerMove={(event) => {
+      if (event.buttons === 1) {
+        updateKnob(event, setVolume);
+      }
+    }}
+    onKeyDown={(event) =>
+      handleKnobKeyDown(event, volume, setVolume)
+    }
+  >
+    <div className="knob-marker" />
+  </div>
+
+  <output className="knob-value">{volume}%</output>
+</section>
 
         <section className="player-controls">
           <button type="button" onClick={previousTrack}>
@@ -519,12 +602,38 @@ function RobcoRadio() {
         </section>
 
         <section className="knob-section">
-          <h3>TUNING</h3>
+  <h3>BRIGHTNESS</h3>
 
-          <div className="knob">
-            <div className="knob-marker" />
-          </div>
-        </section>
+  <div
+    className="knob"
+    role="slider"
+    tabIndex={0}
+    aria-label="Brillo de la pantalla"
+    aria-valuemin={0}
+    aria-valuemax={100}
+    aria-valuenow={brightness}
+    aria-valuetext={`${brightness}%`}
+    style={{
+      "--knob-angle": `${-135 + brightness * 2.7}deg`,
+    }}
+    onPointerDown={(event) => {
+      event.currentTarget.setPointerCapture(event.pointerId);
+      updateKnob(event, setBrightness);
+    }}
+    onPointerMove={(event) => {
+      if (event.buttons === 1) {
+        updateKnob(event, setBrightness);
+      }
+    }}
+    onKeyDown={(event) =>
+      handleKnobKeyDown(event, brightness, setBrightness)
+    }
+  >
+    <div className="knob-marker" />
+  </div>
+
+  <output className="knob-value">{brightness}%</output>
+</section>
 
         <section className="speaker">
           <div className="speaker-logo">&reg; RobCo</div>

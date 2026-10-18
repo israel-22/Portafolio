@@ -1317,6 +1317,51 @@ box-shadow:
     inset 0 0 5px var(--phosphor-soft);
 }
 
+/* =========================================
+   VOLUME / BRIGHTNESS KNOBS
+========================================= */
+
+.robco-radio .knob {
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+.robco-radio .knob:focus-visible {
+  outline: 2px solid var(--phosphor);
+  outline-offset: 5px;
+}
+
+.robco-radio .knob-marker {
+  transform: translateX(-50%)
+    rotate(var(--knob-angle, 0deg));
+
+  transform-origin: 50% 45px;
+
+  transition: transform 0.08s linear;
+}
+
+.robco-radio .knob-value {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--phosphor);
+  font-size: 13px;
+  font-weight: bold;
+
+  text-shadow: 0 0 5px var(--phosphor);
+}
+
+/* BRIGHTNESS: afecta las pantallas, no el chasis. */
+
+.robco-radio .crt-screen,
+.robco-radio .frequency-display,
+.robco-radio .station-screen {
+  filter: brightness(var(--radio-brightness, 1));
+}
+
+
 
 /* =========================================
    RESPONSIVE 
