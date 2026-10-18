@@ -6,7 +6,7 @@ import "./skins.css";
 import House from "./components/MrHouseTerminal/MrHouse.jsx";
 import RobcoRadio from "./components/RobcoRadio/RobcoRadio";
 
-import ibmLogo from "../../assets/icons/ibm.png";
+import IBM from "../../assets/boot/ibm.png";
 import atomCurrency from "../../assets/icons/FO76_Atom_Currency_2.webp";
 import pistolIcon from "../../assets/icons/FO76_iconwheel_pistol.webp";
 import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
@@ -18,10 +18,10 @@ function Skins() {
       <div className="glow"></div>
       <h1>C:\\ Mi Portafolio Retro</h1>
 
-      <div className="icon-grid">
+    <div className="icon-grid">
         <IconPipboy src={atomCurrency} alt="Atom Currency" />
         <IconPipboy src={pistolIcon} alt="Pistol Icon" />
-        <IconPipboy src={ibmLogo} alt="IBM Logo" />
+        <IconPipboy src={IBM} alt="IBM Logo" />
         <IconPipboy src={briefcaseIcon} alt="Briefcase Icon" />
         <IconPipboy src={specialIcon} alt="Special Icon" />
       </div>

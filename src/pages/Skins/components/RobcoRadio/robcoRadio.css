@@ -1496,3 +1496,208 @@ box-shadow:
     text-align: center;
   }
 }
+
+/* =========================================
+   ROBCO RADIO — RESPONSIVE REFINADO
+   Sobrescribe los breakpoints anteriores
+========================================= */
+
+/* Ajustes generales: reducir espacios innecesarios */
+.robco-radio {
+  width: min(1100px, 96%);
+  padding: clamp(10px, 1.6vw, 18px);
+  margin: clamp(10px, 2vh, 20px) auto;
+}
+
+.robco-radio .radio-main {
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+  gap: clamp(10px, 1.5vw, 18px);
+  padding: clamp(12px, 1.8vw, 20px) 0;
+}
+
+.robco-radio .crt-frame {
+  min-width: 0;
+  min-height: clamp(360px, 45vw, 520px);
+  padding: clamp(10px, 1.5vw, 18px);
+}
+
+.robco-radio .signal-display {
+  padding: clamp(12px, 2vw, 30px);
+}
+
+.robco-radio .signal-title {
+  margin-bottom: clamp(16px, 3vh, 32px);
+}
+
+.robco-radio .audio-visualizer {
+  height: clamp(100px, 15vw, 165px);
+  margin: 10px auto 22px;
+  padding: 10px;
+}
+
+.robco-radio .waveform {
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+/* Paneles laterales más compactos */
+.robco-radio .radio-side {
+  min-width: 0;
+  gap: 12px;
+}
+
+.robco-radio .radio-control,
+.robco-radio .station-display {
+  padding: clamp(10px, 1.4vw, 18px);
+}
+
+.robco-radio .tuning-dial {
+  width: clamp(105px, 12vw, 140px);
+  height: clamp(105px, 12vw, 140px);
+  margin: 14px auto;
+}
+
+/* Controles inferiores */
+.robco-radio .radio-controls {
+  grid-template-columns:
+    minmax(120px, 180px)
+    minmax(0, 1fr)
+    minmax(120px, 180px)
+    minmax(120px, 180px);
+
+  gap: clamp(8px, 1.5vw, 16px);
+}
+
+/* =========================================
+   TABLETS Y VENTANAS MEDIANAS
+========================================= */
+
+@media (max-width: 900px) {
+  .robco-radio .radio-main {
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 240px);
+  }
+
+  .robco-radio .radio-side {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .robco-radio .radio-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .robco-radio .player-controls {
+    flex-wrap: wrap;
+  }
+
+  .robco-radio .player-controls button {
+    min-width: 55px;
+  }
+
+  .robco-radio .player-controls .play-button {
+    min-width: 85px;
+  }
+}
+
+/* =========================================
+   TABLETS VERTICALES Y MÓVILES
+========================================= */
+
+@media (max-width: 700px) {
+  .robco-radio .radio-main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .robco-radio .crt-frame {
+    min-height: clamp(320px, 75vw, 420px);
+  }
+
+  .robco-radio .crt-screen {
+    min-height: 0;
+  }
+
+  .robco-radio .radio-side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .robco-radio .radio-control,
+  .robco-radio .station-display,
+  .robco-radio .frequency-display {
+    min-width: 0;
+  }
+
+  .robco-radio .radio-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .robco-radio .radio-brand {
+    display: none;
+  }
+
+  .robco-radio .radio-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MÓVILES ESTRECHOS
+========================================= */
+
+@media (max-width: 480px) {
+  .robco-radio {
+    width: 98%;
+    padding: 8px;
+    margin: 8px auto;
+    border-radius: 10px;
+  }
+
+  .robco-radio .radio-side {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .robco-radio .crt-frame {
+    min-height: 300px;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .robco-radio .signal-display {
+    padding: 12px;
+  }
+
+  .robco-radio .signal-title {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+
+  .robco-radio .signal-info {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .robco-radio .signal-info strong {
+    font-size: 24px;
+  }
+
+  .robco-radio .audio-visualizer {
+    width: 95%;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+
+  .robco-radio .radio-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .robco-radio .radio-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

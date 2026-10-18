@@ -39,6 +39,7 @@ function RobcoRadio() {
   const analyserRef = useRef(null);
   const animationRef = useRef(null);
   const canvasRef = useRef(null);
+  const waveformHistoryRef = useRef([]);
 
   const [stationIndex, setStationIndex] = useState(0);
   const [trackIndex, setTrackIndex] = useState(0);
@@ -130,6 +131,7 @@ function RobcoRadio() {
    * VISUALIZER
    */
 
+  // Actualiza el visualizador de audio.
   const updateVisualizer = () => {
     if (!analyserRef.current || !canvasRef.current) return;
 
@@ -147,7 +149,11 @@ function RobcoRadio() {
       const height = canvas.clientHeight;
       const dpr = window.devicePixelRatio || 1;
 
-      // Ajustar la resolución del canvas sin deformar la onda.
+      if (!width || !height) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       const pixelWidth = Math.round(width * dpr);
       const pixelHeight = Math.round(height * dpr);
 
@@ -157,62 +163,85 @@ function RobcoRadio() {
       }
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      // Limpiar el canvas sin pintar ningún fondo.
-
       ctx.clearRect(0, 0, width, height);
 
-      // Obtener la forma de onda real del audio.
+      // Leer la señal actual del audio.
       analyser.getByteTimeDomainData(timeData);
 
-      // Dibujar la línea del osciloscopio.
-      const style = getComputedStyle(canvas);
-      const phosphor = style.color || "#8cff38";
+      const phosphorColor = getComputedStyle(canvas).color || "#8cff38";
+      const history = waveformHistoryRef.current;
 
-      ctx.beginPath();
-      ctx.strokeStyle = phosphor;
-      ctx.lineWidth = 1.8;
-      ctx.lineJoin = "round";
-      ctx.lineCap = "round";
-      ctx.shadowColor = phosphor;
-      ctx.shadowBlur = 12;
+      // Guardar una copia independiente de cada fotograma.
+      history.unshift(timeData.slice());
+
+      if (history.length > 13) {
+        history.length = 13;
+      }
 
       const centerY = height / 2;
       const amplitude = height * 0.42;
-      const stepX = width / (timeData.length - 1);
 
-      for (let i = 0; i < timeData.length; i++) {
-        const normalized = (timeData[i] - 128) / 128;
-        const x = i * stepX;
-        const y = centerY + normalized * amplitude;
+      const drawWave = (data, opacity, lineWidth, glow) => {
+        if (!data) return;
 
-        if (i === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
+        ctx.beginPath();
+        ctx.globalAlpha = opacity;
+        ctx.lineWidth = lineWidth;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+        ctx.strokeStyle = phosphorColor;
+        ctx.shadowColor = phosphorColor;
+        
+        ctx.shadowBlur = glow;
+
+        for (let i = 0; i < data.length; i++) {
+          const normalized = (data[i] - 128) / 128;
+          const x = (i / (data.length - 1)) * width;
+          const y = centerY + normalized * amplitude;
+
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
         }
-      }
 
-      ctx.stroke();
+        ctx.stroke();
+      };
 
-      // Mantener el medidor de señal que ya existe.
+      // Persistencia del fósforo: rastros anteriores.
+      drawWave(history[12], 0.10, 1, 3);
+      drawWave(history[8], 0.16, 1.2, 4);
+      drawWave(history[4], 0.25, 1.4, 6);
+
+      // Señal actual, más brillante.
+      drawWave(timeData, 1, 1.8, 12);
+
+      // Restablecer los efectos gráficos.
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+
+      // Actualizar el medidor de señal existente.
       analyser.getByteFrequencyData(frequencyData);
 
       const bars = [];
 
       for (let i = 0; i < 10; i++) {
         const index = Math.floor(i * (frequencyData.length / 10));
-
         bars.push(frequencyData[index] || 0);
       }
 
       setSignal(bars);
 
+      // Continuar la animación.
       animationRef.current = requestAnimationFrame(draw);
     };
 
     draw();
   };
+
+
+   
 
   /*
  * PHYSICAL KNOBS
@@ -634,33 +663,38 @@ const handleKnobKeyDown = (event, value, setter) => {
 
   <output className="knob-value">{brightness}%</output>
 </section>
-
-        <section className="speaker">
-          <div className="speaker-logo">&reg; RobCo</div>
-        </section>
+<section className="speaker">
+    <div className="speaker-logo">&reg; RobCo</div>
+  </section>
+       
       </div>
 
       {/* FOOTER */}
 
-      <footer className="radio-footer">
-        <span className="radio-phosphor">
-          PHOSPHOR: {phosphor.toUpperCase()}
-        </span>
+      
+<footer className="radio-footer">
+  
 
-        <img
-          src={RobCoLogo}
-          alt="RobCo Industries"
-          className="robco-radio-logo"
-        />
+  <span className="radio-phosphor">
+    PHOSPHOR: {phosphor.toUpperCase()}
+  </span>
 
-        <span className="radio-status">
-          STATUS:
-          <span className="radio-status-value">
-            {isPlaying ? "ONLINE" : "STANDBY"}
-          </span>
-          <span className={`status-led ${isPlaying ? "active" : ""}`} />
-        </span>
-      </footer>
+  <img
+    src={RobCoLogo}
+    alt="RobCo Industries"
+    className="robco-radio-logo"
+  />
+
+  <span className="radio-status">
+    STATUS:
+    <span className="radio-status-value">
+      {isPlaying ? "ONLINE" : "STANDBY"}
+    </span>
+    <span className={`status-led ${isPlaying ? "active" : ""}`} />
+  </span>
+ 
+</footer>
+
     </section>
   );
 }
