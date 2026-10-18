@@ -1155,8 +1155,171 @@ box-shadow:
 }
 }
 
+/* PERILLA DE SINTONIZACIÓN */
+
+.robco-radio .tuning-dial {
+  cursor: pointer;
+  touch-action: manipulation;
+
+  transform: rotate(var(--dial-angle, 0deg));
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.25s ease;
+
+  box-shadow:
+    inset 0 0 12px #000,
+    0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.robco-radio .tuning-dial:hover {
+  box-shadow:
+    inset 0 0 12px #000,
+    0 5px 10px rgba(0, 0, 0, 0.5),
+    0 0 14px var(--phosphor-soft);
+}
+
+.robco-radio .tuning-dial:active {
+  box-shadow:
+    inset 0 0 15px #000,
+    0 3px 6px rgba(0, 0, 0, 0.5),
+    0 0 18px var(--phosphor);
+}
+
+.robco-radio .tuning-dial:focus-visible {
+  outline: 2px solid var(--phosphor);
+  outline-offset: 5px;
+}
+
+
+/* BOTONES DE CAMBIO DE EMISORA */
+
+.robco-radio .station-tuning-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.robco-radio .station-tuning-controls button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #45453b;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 35% 30%,
+    #414138 0%,
+    #24241f 55%,
+    #11110e 100%
+  );
+
+  color: var(--phosphor);
+  font-size: 11px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.08),
+    0 3px 4px rgba(0, 0, 0, 0.6);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+/* Iluminación al pasar el cursor */
+.robco-radio .station-tuning-controls button:hover {
+  border-color: var(--phosphor);
+
+  box-shadow:
+    0 0 7px var(--phosphor-soft),
+    inset 0 0 5px var(--phosphor-soft);
+
+  transform: scale(1.08);
+}
+
+/* Sensación de botón físico */
+.robco-radio .station-tuning-controls button:active {
+  transform: scale(0.92);
+
+  background: #11110e;
+
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.8),
+    0 0 4px var(--phosphor-soft);
+}
+
+/* Accesibilidad con teclado */
+.robco-radio .station-tuning-controls button:focus-visible {
+  outline: 2px solid var(--phosphor);
+  outline-offset: 3px;
+}
+
+
+/* ESCALA DE FRECUENCIAS */
+
+.robco-radio .frequency-scale {
+  display:flexbox;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.robco-radio .frequency-mark {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 1px;
+
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+
+  color: var(--phosphor-soft);
+  font-family: inherit;
+  font-size: 10px;
+  text-align: center;
+
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    text-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.robco-radio .frequency-mark:hover {
+  color: var(--phosphor);
+  border-color: var(--phosphor-soft);
+}
+
+.robco-radio .frequency-mark.active {
+  color: var(--phosphor);
+  background: var(--phosphor-soft);
+  
+
+  text-shadow: 0 0 6px var(--phosphor);
+
+  box-shadow:
+    0 0 7px var(--phosphor-soft),
+    inset 0 0 5px var(--phosphor-soft);
+}
+
+
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE 
 ========================================= */
 
 @media (max-width: 900px) {

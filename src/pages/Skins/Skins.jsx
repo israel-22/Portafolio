@@ -26,7 +26,7 @@ function Skins() {
         <IconPipboy src={specialIcon} alt="Special Icon" />
       </div>
 
-      <p>
+   { /*  <p>
        ⚠ NOTA IMPORTANTE - CSS GLOBAL EN REACT
 
 Los archivos CSS importados en React NO están aislados. Todo el CSS se carga de forma global en el navegador.
@@ -50,7 +50,7 @@ Ejemplo:
 @keyframes radio-static
 
 Siempre verificar nombres duplicados antes de modificar animaciones o agregar nuevos componentes.
-      </p>
+      </p>*/}
       <House />
       <RobcoRadio />
     </div>

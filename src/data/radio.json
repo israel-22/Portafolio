@@ -1,19 +1,8 @@
-
 [
+  
   {
-    "id": "robco-classics",
-    "frequency": "98.7",
-    "name": "MOJAVE RADIO MUSIC",
-    "tracks": [
-      "station02/I_Don_t_Want_To_Set_The_World_On_Fire.mp3",
-      "station02/Marty Robbins - Big Iron.mp3"
-    ]
-    
-
-  },
-  {
-    "id": "remminiscencias",
-    "frequency": "101.3",
+    "id": "radio-new-vegas",
+    "frequency": "38.0",
     "name": "RADIO NEW VEGAS",
     "tracks": [
       "station01/Reminiscencias_Julio Jaramillo.mp3",
@@ -21,14 +10,42 @@
     ]
   },
   {
-    "id": "history",
-    "frequency": "108.4",
-    "name": "RNC RADIO HISTORIE",
+    "id": "mojave-music",
+    "frequency": "95.1",
+    "name": "MOJAVE RADIO MUSIC",
+    "tracks": [
+      "station02/Marty Robbins - Big Iron.mp3"
+    ]
+  },
+  {
+    "id": "galaxy-news",
+    "frequency": "103.8",
+    "name": "GALAXY NEWS RADIO",
+    "tracks": [
+      "station02/I_Don_t_Want_To_Set_The_World_On_Fire.mp3" , "?? reasignar esta cancion a otra emisora, no es de la galaxia" 
+    ]
+  },
+  {
+    "id": "radio-freedom",
+    "frequency": "17.75",
+    "name": "RADIO FREEDOM",
     "tracks": [
       "station03/Primer Real Madrid -FC-Barcelona televisado.mp3",
       "station03/Caída del Muro de Berlín (nota de prensa Canal 13, 1989).mp3",
       "station03/John F Kennedy, viaje a la Luna.mp3"
-      
     ]
+  },
+  {
+    "id": "black-mountain",
+    "frequency": "2.22",
+    "name": "BLACK MOUNTAIN RADIO",
+    "tracks": []
+  },
+  
+  {
+    "id": "diamond-city",
+    "frequency": "98.0",
+    "name": "DIAMOND CITY RADIO",
+    "tracks": []
   }
 ]
