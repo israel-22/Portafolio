@@ -607,11 +607,11 @@
 
   background-size: 4px 4px;
 
-  animation: radioNoise 0.15s steps(2) infinite;
+  animation: robcoRadioNoise 0.15s steps(2) infinite;
 }
 
 
-@keyframes radioNoise {
+@keyframes robcoRadioNoise {
   0% {
     transform: translate(0, 0);
   }
@@ -1135,10 +1135,10 @@ background: var(--phosphor);
 
 border-color: var(--phosphor);
 
-animation: radio-status-pulse 1.2s ease-in-out infinite;
+animation: robcoRadioStatusPulse 1.2s ease-in-out infinite;
 }
 
-@keyframes radio-status-pulse {
+@keyframes robcoRadioStatusPulse {
 0%, 100% {
 opacity: 1;
 box-shadow:

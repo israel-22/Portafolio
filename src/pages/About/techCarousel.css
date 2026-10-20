@@ -100,3 +100,59 @@
     transform: translateX(-50%);
   }
 }
+
+
+/* ========================================
+   RESPONSIVE — TECH CAROUSEL
+======================================== */
+
+.tech-section {
+  width: 100%;
+  min-width: 0;
+}
+
+.tech-carousel {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.tech-track {
+  width: max-content;
+  align-items: center;
+}
+
+.tech-track img {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 600px) {
+  .tech-section {
+    margin-top: 1.25rem;
+  }
+
+  .tech-carousel {
+    padding: 8px 0;
+  }
+
+  .tech-track img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .tech-track img {
+    width: 34px;
+    height: 34px;
+    margin: 0 8px;
+  }
+}
+
+/* Accesibilidad: respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .tech-track {
+    animation: none;
+  }
+}

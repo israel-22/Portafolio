@@ -180,10 +180,10 @@
   color: #00ff9f;
   font-family: monospace;
   opacity: 0.8;
-  animation: blink 1s infinite;
+  animation: certLoadingBlink 1s infinite;
 }
 
-@keyframes blink {
+@keyframes certLoadingBlink {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
 }
@@ -261,4 +261,111 @@
   font-size: 12px;
   opacity: 0.6;
   margin-top: 10px;
+}
+
+/* ========================================
+   RESPONSIVE — CERTIFICATIONS
+======================================== */
+
+.cert-container,
+.cert-detail,
+.cert-content,
+.cert-text {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.cert-row {
+  overflow-wrap: anywhere;
+}
+
+.cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cert-actions button,
+.cert-actions a {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  margin-right: 0;
+}
+
+.cert-modal {
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.cert-modal-content {
+  box-sizing: border-box;
+  width: min(100%, 700px);
+  max-height: 90dvh;
+  overflow: auto;
+}
+
+.cert-modal img {
+  display: block;
+  max-height: 78dvh;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  .cert-container {
+    padding: 0.75rem;
+  }
+
+  .cert-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .special-image-certification {
+    width: min(100%, 260px);
+    justify-self: center;
+    box-sizing: border-box;
+  }
+
+  .special-image-certification img {
+    max-height: 240px;
+  }
+
+  .cert-filter {
+    gap: 6px;
+  }
+
+  .cert-filter span {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .cert-list {
+    max-height: 220px;
+  }
+
+  .cert-close-btn {
+    top: 4px;
+    right: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+  .cert-container {
+    padding: 0.5rem;
+  }
+
+  .cert-actions button,
+  .cert-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cert-modal {
+    padding: 8px;
+  }
+
+  .cert-modal-content {
+    padding: 40px 8px 8px;
+  }
 }

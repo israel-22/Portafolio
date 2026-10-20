@@ -51,21 +51,40 @@
   z-index: 2;
 }
 
+
+/* Parpadeo sutil de la pantalla LCD */
 .display-screen::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.04);
-  animation: flicker 0.15s infinite;
+  background: rgba(0, 0, 0, 0.12);
+  animation: pdaDisplayFlicker 3.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 3;
 }
 
-@keyframes flicker {
-  0% { opacity: 0.95; }
-  50% { opacity: 0.88; }
-  100% { opacity: 1; }
+@keyframes pdaDisplayFlicker {
+  0%, 100% {
+    opacity: 0.15;
+  }
+
+  45% {
+    opacity: 0.3;
+  }
+
+  48% {
+    opacity: 0.5;
+  }
+
+  52% {
+    opacity: 0.25;
+  }
+
+  75% {
+    opacity: 0.2;
+  }
 }
+
 
 .terminal-menu {
   margin-top: 10px;
@@ -157,9 +176,9 @@
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  transform: translateX(50px);
+  width: 100%;
+  box-sizing: border-box;
 }
-
 
 @keyframes bootIn {
   from {
@@ -243,4 +262,130 @@
   0%   { opacity: 1; }
   50%  { opacity: 0; }
   100% { opacity: 1; }
+}
+
+/* =========================================
+   DISPLAY CRT — RESPONSIVE
+========================================= */
+
+.display-screen {
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.terminal-layout {
+  min-width: 0;
+  min-height: 0;
+  gap: 8px;
+}
+
+.terminal-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.terminal-content p {
+  overflow-wrap: anywhere;
+}
+
+.terminal-side {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.terminal-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.display-actions {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.display-btn {
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.download-center {
+  transform: none;
+  margin-top: 20px;
+}
+
+/* Tabletas */
+@media (max-width: 600px) {
+  .display-screen {
+    padding: 10px;
+  }
+
+  .terminal-layout {
+    gap: 6px;
+  }
+
+  .terminal-side {
+    width: 76px;
+    padding-top: 6px;
+  }
+
+  .terminal-image {
+    width: 65px;
+  }
+
+  .display-actions {
+    margin-top: 10px;
+  }
+
+  .display-btn {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .download-center {
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+}
+
+/* Móviles estrechos */
+@media (max-width: 380px) {
+  .display-screen {
+    padding: 8px;
+  }
+
+  .terminal-layout {
+    gap: 4px;
+  }
+
+  .terminal-side {
+    width: 48px;
+  }
+
+  .terminal-image {
+    width: 44px;
+  }
+
+  .display-actions {
+    gap: 6px;
+  }
+
+  .display-btn {
+    padding: 6px;
+    font-size: 0.78rem;
+  }
+
+  .download-center {
+    margin-top: 12px;
+  }
+}
+
+/* En móviles muy bajos, permitir desplazamiento vertical */
+@media (max-height: 500px) {
+  .display-screen {
+    overflow-y: auto;
+  }
 }

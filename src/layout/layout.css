@@ -71,10 +71,10 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 255, 0, 0.02);
-  animation: flicker 0.15s infinite;
+  animation: layoutFlicker 0.15s infinite;
   pointer-events: none;
 }
-@keyframes flicker {
+@keyframes layoutFlicker {
   0% {
     opacity: 0.95;
   }

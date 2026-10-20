@@ -1,70 +1,123 @@
 
+/* =========================================
+   SKINS — ESTRUCTURA PRINCIPAL
+   Seguir el estilo de Contact y Projects
+========================================= */
 
-CSS 
-
-/*HOME.CSS*/
-/* iconPipboy.css ya lo tienes, solo agregamos container grid */
-
-.home {
-  padding: 1rem;
-  color: #00ff66;
-}
-
-.home-container {
-  position:relative;
- padding: 20px;
- min-height: calc(100vh - 120px); /* ajusta según navbar+footer */
- display: flex;
- flex-direction: column;
- align-items: center;
- gap: 20px;
- overflow-y: auto;
-}
-
-/* Grid de iconos */
-.icon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+.skins-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 120px);
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+/* HEADER — TERMINAL */
+.skins-header {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid rgba(0, 255, 100, 0.25);
+  text-align: left;
+}
+.skins-container > h1 {
+  align-self: flex-start;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.skins-header h1 {
+  margin: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+/* Iconos */
+.skins-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+
   width: 100%;
   max-width: 800px;
+  min-width: 0;
 }
 
-/* Scroll CRT */
-.home-container::-webkit-scrollbar {
-  width: 8px;
-}
-.home-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 255, 0, 0.4);
+.skins-icon-grid > * {
+  min-width: 0;
 }
 
+/* Módulos */
+.skins-modules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 
-/* Responsivo */
+  width: 100%;
+  min-width: 0;
+}
+
+.skins-module {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .skins-container {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .skins-icon-grid {
+    gap: 12px;
+  }
+
+  .skins-modules {
+    gap: 20px;
+  }
+}
+
+/* Móvil */
 @media (max-width: 600px) {
-    .icon-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 12px;
-    }
+  .skins-container {
+    padding: 12px;
+  }
 
-    .home-container h1 {
-        font-size: 1.5rem;
-    }
+  .skins-container > h1 {
+    font-size: 1.5rem;
+  }
 
-    .home-container p {
-        font-size: 0.9rem;
-    }
+  .skins-icon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
 }
 
-@keyframes flicker {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.3; }
-}
+/* Móvil pequeño */
+@media (max-width: 360px) {
+  .skins-container {
+    padding: 8px;
+  }
 
+  .skins-container > h1 {
+    font-size: 1.3rem;
+  }
 
-
-
-@keyframes flicker {
-    0% { opacity: 0.1; }
-    50% { opacity: 0.2; }
-    100% { opacity: 0.1; }
+  .skins-icon-grid {
+    gap: 8px;
+  }
 }

@@ -51,11 +51,16 @@ useEffect(() => {
 
       {/* Panel central — botones */}
       <div className="footer-buttons">
-        <a href="https://github.com/israel-22" target="_blank" >
-        <button className="retro-btn">
-          <img src={githubIcon} alt="GitHub" className="sticker-icon" />
-        </button>
-        </a>
+        <a
+  href="https://github.com/israel-22"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="GitHub"
+>
+  <button className="retro-btn">
+    <img src={githubIcon} alt="GitHub" className="sticker-icon" />
+  </button>
+</a>
 
 
          <a href="https://www.linkedin.com/in/israel-766580314/" target="_blank" >

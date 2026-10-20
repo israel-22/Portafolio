@@ -105,7 +105,7 @@
 }
 
 .tv-screen-active {
-  animation: tv-crt-warmup 0.65s ease-out;
+  animation: tvConsoleCrtWarmup 0.65s ease-out;
 }
 
 .tv-youtube-player {
@@ -184,7 +184,7 @@
     transparent 3px
   );
   background-size: 4px 4px;
-  animation: tv-grain-shift 0.18s steps(2) infinite;
+  animation: tvConsoleGrainShift 0.18s steps(2) infinite;
 }
 .general-atomic-logo {
   width: 150%;
@@ -251,7 +251,7 @@
   );
 
   background-size: 7px 7px;
-  animation: tv-static-shift 0.12s steps(3) infinite;
+  animation: tvConsoleStaticShift 0.12s steps(3) infinite;
 }
 
 .tv-static-noise {
@@ -464,7 +464,7 @@
   letter-spacing: 1px;
 }
 
-@keyframes tv-crt-warmup {
+@keyframes tvConsoleCrtWarmup {
   0% {
     transform: scaleY(0.01);
     opacity: 0.2;
@@ -487,7 +487,7 @@
   }
 }
 
-@keyframes tv-static-shift {
+@keyframes tvConsoleStaticShift {
   0% {
     transform: translate(0, 0);
   }
@@ -505,7 +505,7 @@
   }
 }
 
-@keyframes tv-grain-shift {
+@keyframes tvConsoleGrainShift {
   0% {
     transform: translate(0, 0);
   }

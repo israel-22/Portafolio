@@ -123,7 +123,7 @@
     background: orange;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 150, 0, 1);
-    animation: blinkLed 1s infinite;
+    animation: footerBlinkLed 1s infinite;
 }
 
 .status-text {
@@ -131,7 +131,7 @@
     color: #3a3020;
 }
 
-@keyframes blinkLed {
+@keyframes footerBlinkLed {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
 }
@@ -198,20 +198,7 @@ flex-shrink: 1;
   opacity: 1;
 }
 
-@media (max-width: 950px) {
-  .nav-list {
-    flex-wrap: wrap;
-    row-gap: 8px;
-    justify-content: center;
-  }
-}
 
-@media (max-width: 900px) {
-  .digital-clock {
-    width: auto;
-    min-width: 60px;
-  }
-}
 
 
 @media (max-width: 700px) {
@@ -287,5 +274,192 @@ flex-shrink: 1;
     width: 100%;
     justify-content: center;
     margin-top: 6px;
+  }
+}
+
+/* =========================================
+   FOOTER — RESPONSIVE
+   Conserva el diseño retro original
+========================================= */
+
+.retro-footer {
+  gap: 20px;
+}
+
+.footer-block,
+.footer-title,
+.footer-buttons,
+.footer-status {
+  min-width: 0;
+}
+
+.footer-title {
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+}
+
+.footer-subtext {
+  overflow-wrap: anywhere;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.footer-buttons a {
+  display: inline-flex;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.retro-btn {
+  flex-shrink: 0;
+}
+
+.cv-btn {
+  min-height: 50px;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.digital-clock {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* Tablet y pantallas intermedias */
+@media (max-width: 900px) {
+  .retro-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px 18px;
+    text-align: center;
+  }
+
+  .footer-block {
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-title {
+    justify-content: center;
+  }
+
+  .footer-buttons {
+    order: 1;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-status {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+
+  .digital-clock {
+    margin-left: 4px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .retro-footer {
+    gap: 14px;
+    padding: 14px 12px 16px;
+  }
+
+  .footer-title {
+    gap: 8px;
+    font-size: 1.1rem;
+  }
+
+  .footer-logo {
+    width: 45px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-subtext {
+    font-size: 0.75rem;
+  }
+
+  .footer-buttons {
+    gap: 10px;
+  }
+
+  .retro-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cv-btn {
+    width: auto;
+    min-width: 130px;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 0.75rem;
+  }
+
+  .footer-status {
+    gap: 7px;
+    font-size: 0.85rem;
+  }
+
+  .led {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  .digital-clock {
+    min-width: 58px;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Móviles estrechos */
+@media (max-width: 360px) {
+  .retro-footer {
+    padding-inline: 8px;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  .footer-buttons {
+    gap: 8px;
+  }
+
+  .retro-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cv-btn {
+    min-width: 120px;
+    min-height: 40px;
+    font-size: 0.7rem;
+  }
+
+  .footer-status {
+    font-size: 0.78rem;
   }
 }

@@ -136,7 +136,7 @@
   background: orange;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255,150,0,1);
-  animation: blinkLed 1s infinite;
+  animation: pdaBlinkLed 1s infinite;
 }
 
 /* BOTON FISICO */
@@ -155,7 +155,7 @@
   box-shadow: none;
 }
 
-@keyframes blinkLed {
+@keyframes pdaBlinkLed {
   0%,100% { opacity: 0.3; }
   50% { opacity: 1; }
 }
@@ -170,4 +170,131 @@
   max-width: 180px;
   object-fit: contain;
   opacity: 0.85;
+}
+
+/* =========================================
+   PDA ROBCO — RESPONSIVE
+   Mantener carcasa y animaciones originales
+========================================= */
+
+.pda-overlay {
+  box-sizing: border-box;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.pda-container {
+  width: min(460px, 100%);
+  height: min(620px, calc(100vh - 24px));
+  max-height: calc(100dvh - 24px);
+  min-width: 0;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+.pda-header,
+.pda-body,
+.pda-footer {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.pda-body {
+  gap: 8px;
+}
+
+.pda-footer {
+  gap: 12px;
+}
+
+.robco-logo,
+.robco-slogan {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.pda-btn {
+  flex-shrink: 0;
+}
+
+/* Tabletas y móviles */
+@media (max-width: 600px) {
+  .pda-overlay {
+    padding: 12px;
+  }
+
+  .pda-container {
+    width: 100%;
+    height: min(620px, calc(100vh - 24px));
+    max-height: calc(100dvh - 24px);
+    border-width: 4px;
+    border-radius: 10px;
+  }
+
+  .pda-header {
+    padding: 10px 12px;
+  }
+
+  .pda-body {
+    padding: 12px;
+  }
+
+  .pda-footer {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .robco-slogan {
+    height: auto;
+    width: min(30%, 140px);
+  }
+
+  .pda-btn {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .vent {
+    width: 6px;
+    height: 100px;
+  }
+}
+
+/* Móviles estrechos */
+@media (max-width: 360px) {
+  .pda-overlay {
+    padding: 6px;
+  }
+
+  .pda-container {
+    height: min(620px, calc(100vh - 12px));
+    max-height: calc(100dvh - 12px);
+  }
+
+  .pda-header {
+    padding: 8px;
+  }
+
+  .pda-body {
+    padding: 8px;
+  }
+
+  .pda-footer {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .robco-logo {
+    height: 24px;
+    max-width: 100px;
+  }
+
+  .robco-slogan {
+    width: 25%;
+  }
+
+  .pda-btn {
+    padding: 7px 8px;
+    font-size: 0.72rem;
+  }
 }

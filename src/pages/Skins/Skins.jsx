@@ -15,51 +15,46 @@ import CRTTelevision from "./components/CRTTelevision/CRTTelevision.jsx";
 
 function Skins() {
   return (
-    <div className="home-container">
-      <div className="glow"></div>
-      <h1>C:\\ Mi Portafolio Retro</h1>
+  <div className="skins-container">
+    <div className="skins-glow" aria-hidden="true"></div>
 
-    <div className="icon-grid">
-        <IconPipboy src={atomCurrency} alt="Atom Currency" />
-        <IconPipboy src={pistolIcon} alt="Pistol Icon" />
-        <IconPipboy src={IBM} alt="IBM Logo" />
-        <IconPipboy src={briefcaseIcon} alt="Briefcase Icon" />
-        <IconPipboy src={specialIcon} alt="Special Icon" />
-      </div>
+    <header className="skins-header">
+      <p className="skins-overline"> <span>&gt; ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM</span></p>
+      <h1 className="skins-title">C:\\ ADDITIONAL_SKILLS</h1>
+      <p className="skins-subtitle">
+        
+        <span>&gt; PERSONAL INTERFACE SYSTEM // SELECT A MODULE</span>
+      </p>
+    </header>
 
-   { /*  <p>
-       ⚠ NOTA IMPORTANTE - CSS GLOBAL EN REACT
+    <nav className="skins-icon-grid" aria-label="Iconos del sistema">
+      <IconPipboy src={atomCurrency} alt="Atom Currency" />
+      <IconPipboy src={pistolIcon} alt="Pistol Icon" />
+      <IconPipboy src={IBM} alt="IBM Logo" />
+      <IconPipboy src={briefcaseIcon} alt="Briefcase Icon" />
+      <IconPipboy src={specialIcon} alt="Special Icon" />
+    </nav>
+      <main className="skins-modules">
+      <section className="skins-module skins-house">
+        <House />
+      </section>
 
-Los archivos CSS importados en React NO están aislados. Todo el CSS se carga de forma global en el navegador.
+      <section className="skins-module skins-radio">
+        <RobcoRadio />
+      </section>
 
-Los @keyframes, :root, body, html y demás reglas globales COMPARTEN el mismo espacio de nombres entre todos los componentes.
+     {/* <section className="skins-module skins-television">
+        <CRTTelevision />
+      </section>*/}
+    </main>
 
-Si dos páginas utilizan el mismo nombre (por ejemplo: @keyframes crt-flicker), la última definición reemplazará a la anterior y puede romper efectos en otros componentes.
-
-✔ Convención del proyecto:
-- home-*
-- house-*
-- radio-*
-- tv-*
-- arcade-*
-- navbar-*
-- footer-*
-
-Ejemplo:
-@keyframes house-screenShift
-@keyframes home-crt-flicker
-@keyframes radio-static
-
-Siempre verificar nombres duplicados antes de modificar animaciones o agregar nuevos componentes.
-      </p>*/}
-      
-      <House />
-      <RobcoRadio />
-       {/*<CRTTelevision />*/}
-      
-      
-    </div>
-  );
+    <footer className="skins-footer">
+      <span>ROBCO SYSTEMS</span>
+      <span>STATUS: OPERATIONAL</span>
+      <span>© RETRO PORTFOLIO</span>
+    </footer>
+  </div>
+);
 }
 
 export default Skins;

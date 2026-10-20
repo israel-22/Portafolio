@@ -52,39 +52,35 @@ export default function BootScreen({ onFinish }) {
   return () => clearTimeout(timeout);
 }, [isDeleting, messageIndex, charIndex]);
 
-useEffect(() => {
-  if (progress >= 100) return;
 
-  const interval = setInterval(() => {
-    setProgress(prev => {
-      if (prev >= 100) {
-        clearInterval(interval);
-        return 100;
-      }
-      return prev + 2;
-    });
-  }, 80);
+  // Progreso de carga: un solo temporizador
+  useEffect(() => {
+    if (progress >= 100) return;
 
-  return () => clearInterval(interval);
-}, [progress]);
+    const interval = setInterval(() => {
+      setProgress((prev) => Math.min(prev + 2, 100));
+    }, 80);
 
+    return () => clearInterval(interval);
+  }, [progress]);
 
-useEffect(() => {
-  if (progress < 100) return;
+  // Transición y salida cuando termina la carga
+  useEffect(() => {
+    if (progress < 100) return;
 
-  const holdTimer = setTimeout(() => {
-    setFadeOut(true);
-  }, 4000);
+    const holdTimer = setTimeout(() => {
+      setFadeOut(true);
+    }, 4000);
 
-  const finishTimer = setTimeout(() => {
-    onFinish();
-  }, 5000);
+    const finishTimer = setTimeout(() => {
+      onFinish();
+    }, 5000);
 
-  return () => {
-    clearTimeout(holdTimer);
-    clearTimeout(finishTimer);
-  };
-}, [progress, onFinish]);
+    return () => {
+      clearTimeout(holdTimer);
+      clearTimeout(finishTimer);
+    };
+  }, [progress, onFinish]);
 
   
 

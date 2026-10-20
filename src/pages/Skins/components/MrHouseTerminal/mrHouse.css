@@ -490,3 +490,306 @@
     }
 
 }
+
+
+/* =========================================
+   MR. HOUSE — RESPONSIVE
+   Mantener intactos los efectos CRT
+========================================= */
+
+/* Centrado y control de dimensiones */
+.house-container {
+  width: min(980px, 100%);
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* La pantalla de arranque conserva su centrado */
+.boot-screen-house {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boot-content {
+  width: 80%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+/* Overlay: conservar la imagen y los efectos existentes */
+.house-overlay {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Título */
+.house-title {
+  max-width: calc(100% - 50px);
+  overflow-wrap: anywhere;
+}
+
+/* Lista y preguntas */
+.dialog-scroll {
+  width: 75%;
+  max-width: 760px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dialog-list {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dialog-content {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dialog-item {
+  min-width: 0;
+}
+
+.dialog-item span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Respuestas */
+.dialog-response {
+  width: 75%;
+  max-width: 760px;
+  min-width: 0;
+  box-sizing: border-box;
+  
+}
+
+.dialog-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .house-container {
+    width: 100%;
+  }
+
+  .house-overlay {
+    padding: 16px;
+  }
+
+  .house-title {
+    top: 16px;
+    left: 16px;
+    font-size: clamp(16px, 3vw, 22px);
+    max-width: 55%;
+  }
+
+  .lang-switch {
+    top: 16px;
+    right: 12px;
+    gap: 6px;
+  }
+
+  .lang-switch a {
+    padding: 3px 5px;
+    font-size: 0.7rem;
+  }
+
+  .dialog-scroll,
+  .dialog-response {
+    width: 88%;
+  }
+
+  .dialog-scroll {
+    bottom: 5%;
+  }
+
+  .dialog-response {
+    bottom: 5%;
+    padding: 12px 16px;
+  }
+
+  .dialog-list,
+  .dialog-scroll {
+    height: clamp(125px, 27%, 170px);
+  }
+
+  .boot-content {
+    font-size: clamp(14px, 2.5vw, 20px);
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .house-container {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+
+  .house-overlay {
+    padding: 12px;
+  }
+
+  .house-title {
+    top: 12px;
+    left: 12px;
+    max-width: calc(100% - 24px);
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .lang-switch {
+    top: 48px;
+    left: 12px;
+    right: auto;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .lang-switch a {
+    font-size: 0.68rem;
+  }
+
+  .dialog-scroll {
+    width: calc(100% - 24px);
+    bottom: 12px;
+    height: 38%;
+    max-height: 190px;
+  }
+
+  .dialog-list {
+    height: 100%;
+  }
+
+  .dialog-content {
+    padding-left: 26px;
+  }
+
+  .dialog-item {
+    gap: 6px;
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+
+  .cursor-symbol {
+    width: 14px;
+  }
+
+  .dialog-response {
+    left: 12px;
+    bottom: 12px;
+    transform: none;
+    width: calc(100% - 24px);
+    height: 38%;
+    max-height: 190px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .dialog-text {
+    line-height: 1.45;
+  }
+
+  .boot-content {
+    width: 90%;
+    font-size: 14px;
+  }
+}
+
+/* Móviles estrechos */
+@media (max-width: 360px) {
+  .house-title {
+    font-size: 13px;
+  }
+
+  .lang-switch {
+    gap: 4px;
+  }
+
+  .lang-switch a {
+    padding: 3px 4px;
+    font-size: 0.62rem;
+  }
+
+  .dialog-item {
+    font-size: 0.78rem;
+  }
+
+  .dialog-response {
+    font-size: 0.8rem;
+  }
+}
+
+/* MR. HOUSE — RESPUESTAS SIN BARRA VISIBLE */
+
+.dialog-response {
+  height: auto;
+  min-height: 170px;
+  max-height: 40%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  overflow-wrap: anywhere;
+}
+
+.dialog-response .dialog-text {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Móviles: dar más espacio al texto */
+@media (max-width: 480px) {
+  .dialog-response {
+    height: auto;
+    min-height: 0;
+    max-height: 45%;
+    overflow-y: hidden;
+    padding: 10px 12px;
+  }
+
+  .dialog-response .dialog-text {
+    line-height: 1.4;
+    margin-top: 6px;
+  }
+}
+
+/* MR. HOUSE — RESPUESTA COMPLETA EN PANTALLAS PEQUEÑAS */
+
+.dialog-response {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  justify-content: flex-start;
+}
+
+/* Evitar que el texto se corte */
+.dialog-response .dialog-text {
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .dialog-response {
+    bottom: 8px;
+    width: calc(100% - 24px);
+    padding: 10px 12px;
+  }
+
+  .dialog-response .dialog-text {
+    line-height: 1.4;
+    margin-top: 6px;
+  }
+}
