@@ -2,28 +2,11 @@
 import { useState } from "react";
 import "./crtTelevision.css";
 import generalAtomic from "../../../../assets/icons/generalAtomic.png";
+import defaultChannels from "./dataTV/defaultChannels.js";
 
 
-// Catálogo inicial.
-// Sustituiremos los videoId vacíos por los identificadores
-// reales de los videos de YouTube que elijas.
-const defaultChannels = [
-  {
-    id: "ch-01",
-    name: "ROBCO CLASSICS",
-    videoId: "",
-  },
-  {
-    id: "ch-02",
-    name: "PRE-WAR ARCHIVE",
-    videoId: "",
-  },
-  {
-    id: "ch-03",
-    name: "ATOMIC BROADCAST",
-    videoId: "",
-  },
-];
+
+
 
 const pictureProfiles = [
   { id: "noir", name: "ATOMIC NOIR" },
@@ -106,7 +89,7 @@ function CRTTelevision() {
               <iframe
                 key={`${currentChannel.id}-${currentChannel.videoId}`}
                 className="tv-youtube-player"
-                src={`https://www.youtube-nocookie.com/embed/${currentChannel.videoId}?autoplay=1&rel=0`}
+                src={`https://www.youtube.com/embed/${currentChannel.videoId}`}
                 title={currentChannel.name}
                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                 referrerPolicy="strict-origin-when-cross-origin"

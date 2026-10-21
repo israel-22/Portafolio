@@ -10,6 +10,7 @@ import Projects from "./pages/Proyects/Proyects";
 import Skins from "./pages/Skins/Skins";
 import Contact from "./pages/Contact/Contacts";
 
+
 function App() {
   const [bootDone, setBootDone] = useState(false);
   const [open, setOpen] = useState(false);
@@ -24,8 +25,9 @@ function App() {
       <BootScreen onFinish={() => setBootDone(true)} />
     ) : (
       <>
-        <Layout onOpenPDA={() => setOpen(true)}>
-          <Routes>
+      
+        <Layout onOpenPDA={() => setOpen(true)}> 
+          <Routes >
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />

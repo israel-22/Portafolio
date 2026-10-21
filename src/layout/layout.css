@@ -7,7 +7,7 @@
   flex-direction: column;
   background: black;
   padding-top: 60px;
-  
+  position: relative;
 }
 
 /* ZONA CENTRAL ENTRE NAV Y FOOTER */
@@ -109,5 +109,42 @@
 
   .crt-screen {
     min-height: auto;
+  }
+}
+/* Movimiento breve del conjunto del Layout al cambiar de página */
+.layout-container--jelly .crt-screen {
+  animation: layoutJelly 300ms steps(1, end) both;
+  transform-origin: center center;
+}
+
+@keyframes crtScreenJelly {
+  0% {
+    transform: translateX(-2px) skewX(-0.15deg);
+  }
+
+  20% {
+    transform: translateX(2px) skewX(0.2deg);
+  }
+
+  40% {
+    transform: translateX(-2px) skewX(-0.2deg);
+  }
+
+  60% {
+    transform: translateX(1px) skewX(0.1deg);
+  }
+
+  80% {
+    transform: translateX(-1px) skewX(-0.1deg);
+  }
+
+  100% {
+    transform: translateX(0) skewX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout-container--jelly {
+    animation: none;
   }
 }

@@ -1,0 +1,188 @@
+.crt-transition {
+  position: absolute;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.crt-transition--active {
+  visibility: visible;
+  opacity: 1;
+  animation: crtSignalRecovery 300ms steps(1, end) both;
+}
+
+/* Estática verde */
+.crt-transition__static {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      rgba(0, 255, 0, 0.2) 2px 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 4px,
+      rgba(0, 255, 0, 0.12) 4px 5px
+    );
+}
+
+.crt-transition--active .crt-transition__static {
+  animation: crtSignalStatic 300ms steps(3, end) both;
+}
+
+/* Banda horizontal de sincronización */
+.crt-transition__sync-band {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  top: -15%;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 255, 70, 0.08) 20%,
+    rgba(80, 255, 100, 0.5) 50%,
+    rgba(0, 255, 70, 0.12) 80%,
+    transparent
+  );
+  box-shadow: 0 0 24px rgba(0, 255, 60, 0.25);
+}
+
+.crt-transition--active .crt-transition__sync-band {
+  animation: crtSignalSync 300ms ease-out both;
+}
+
+/* Destello breve de fósforo */
+.crt-transition__flash {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: rgba(0, 255, 40, 0.16);
+}
+
+.crt-transition--active .crt-transition__flash {
+  animation: crtSignalFlash 300ms ease-out both;
+}
+
+@keyframes crtSignalRecovery {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes crtSignalStatic {
+  0% {
+    opacity: 0.9;
+    transform: translateX(-2%);
+  }
+  25% {
+    opacity: 0.45;
+    transform: translateX(2%);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateX(-1%);
+  }
+  75% {
+    opacity: 0.3;
+    transform: translateX(1%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes crtSignalSync {
+  0% {
+    top: -15%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 115%;
+    opacity: 0;
+  }
+}
+
+@keyframes crtSignalFlash {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.25;
+  }
+  55% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-transition,
+  .crt-transition--active,
+  .crt-transition--active .crt-transition__static,
+  .crt-transition--active .crt-transition__sync-band,
+  .crt-transition--active .crt-transition__flash {
+    animation: none;
+  }
+}
+
+/* Temblor gelatinoso de la pantalla CRT durante la transición */
+.crt-transition--active + .layout-container .crt-screen {
+  animation: crtScreenJelly 300ms steps(1, end) both;
+}
+
+@keyframes crtScreenJelly {
+  0% {
+    transform: scale(1.003) translateX(-1px) skewX(-0.15deg);
+  }
+
+  20% {
+    transform: scale(1.005) translateX(2px) skewX(0.2deg);
+  }
+
+  40% {
+    transform: scale(1.002) translateX(-2px) skewX(-0.2deg);
+  }
+
+  60% {
+    transform: scale(1.004) translateX(1px) skewX(0.1deg);
+  }
+
+  80% {
+    transform: scale(1.002) translateX(-1px) skewX(-0.1deg);
+  }
+
+  100% {
+    transform: scale(1) translateX(0) skewX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-transition--active + .layout-container .crt-screen {
+    animation: none;
+  }
+}

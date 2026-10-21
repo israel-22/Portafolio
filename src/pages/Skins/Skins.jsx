@@ -43,6 +43,10 @@ function Skins() {
         <RobcoRadio />
       </section>
 
+      <section className="skins-module skins-television">
+        <CRTTelevision />
+      </section>
+
      {/* <section className="skins-module skins-television">
         <CRTTelevision />
       </section>*/}
