@@ -918,3 +918,165 @@
     max-width: 240px;
   }
 }
+
+/* =========================================
+   TV RESPONSIVE — MÓVIL HORIZONTAL
+   ========================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .tv-console {
+    width: 98%;
+    max-width: 1100px;
+    margin: 8px auto;
+    padding: 8px;
+    border-width: 3px;
+    border-radius: 12px;
+  }
+
+  .tv-header {
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+    padding: 5px 8px 8px;
+  }
+
+  .tv-header h2 {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .tv-edition,
+  .tv-model {
+    font-size: 8px;
+  }
+
+  .tv-body {
+    grid-template-columns: minmax(0, 1fr) 155px;
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .tv-screen-frame {
+    padding: 6px;
+    border-width: 3px;
+    border-radius: 15px;
+  }
+
+  .tv-screen {
+    aspect-ratio: 16 / 9;
+    max-height: 250px;
+    border-width: 3px;
+  }
+
+  .tv-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    justify-items: center;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .tv-brand {
+    grid-column: 1;
+    max-width: none;
+    padding: 3px;
+  }
+
+  .tv-brand .general-atomic-logo {
+    max-width: 55px;
+    max-height: 35px;
+  }
+
+  .tv-brand-symbol,
+  .tv-brand small {
+    display: none;
+  }
+
+  .tv-brand strong {
+    font-size: 7px;
+  }
+
+  .tv-channel-display {
+    grid-column: 2;
+    max-width: none;
+    padding: 5px 3px;
+  }
+
+  .tv-channel-display strong {
+    font-size: 17px;
+  }
+
+  .tv-channel-display span,
+  .tv-channel-display p,
+  .tv-channel-display small {
+    font-size: 7px;
+  }
+
+  .tv-knob-group {
+    gap: 3px;
+  }
+
+  .tv-knob-group > span {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+
+  .tv-knob {
+    width: 42px;
+    height: 42px;
+    border-width: 3px;
+  }
+
+  .tv-knob-marker {
+    top: 3px;
+    height: 11px;
+    width: 3px;
+  }
+
+  .tv-step-controls {
+    gap: 5px;
+  }
+
+  .tv-step-controls button {
+    width: 25px;
+    height: 22px;
+    padding: 1px;
+  }
+
+  .tv-profile-name {
+    font-size: 7px;
+  }
+
+  .tv-volume-control {
+    grid-column: 1;
+    max-width: none;
+    padding: 5px;
+  }
+
+  .tv-volume-control label {
+    margin-bottom: 4px;
+    font-size: 7px;
+  }
+
+  .tv-volume-control input[type="range"] {
+    height: 14px;
+  }
+
+  .tv-power-button {
+    grid-column: 2;
+    width: 100%;
+    max-width: none;
+    min-height: 32px;
+    margin-top: 0;
+    padding: 4px;
+    font-size: 8px;
+  }
+
+  .tv-footer {
+    gap: 5px;
+    padding-top: 6px;
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+}

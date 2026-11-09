@@ -182,3 +182,22 @@
     text-shadow: 0 0 8px rgba(0, 255, 102, 0.9);
   }
 }
+/* NAVBAR RETRÁCTIL */
+.crt-nav {
+  transition: transform 0.35s ease-in-out;
+}
+
+.crt-nav.is-hidden {
+  transform: translateY(-110%);
+  pointer-events: none;
+}
+
+/* ZONA SUPERIOR PARA RECUPERAR EL NAVBAR */
+.nav-reveal-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  z-index: 9998;
+}

@@ -1701,3 +1701,47 @@ box-shadow:
     gap: 10px;
   }
 }
+
+
+/* SIGNAL INFO — DISTRIBUCIÓN ESTABLE */
+.robco-radio .signal-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.robco-radio .signal-meter {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  align-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.robco-radio .meter {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+.robco-radio .meter i {
+  flex: 0 0 14px;
+  box-sizing: border-box;
+}
+
+/* FORMATOS VERTICALES */
+@media (orientation: portrait) {
+  .robco-radio .signal-info {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .robco-radio .signal-meter {
+    width: 100%;
+  }
+}

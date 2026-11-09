@@ -1,4 +1,4 @@
-/*CRT RECICLADO */
+
 .boot-crt {
   width: 90vw;
   position: relative;
@@ -320,4 +320,103 @@
   .boot-footer {
     font-size: 0.55rem;
   }
+}
+
+/* =========================================
+   BOOTSCREEN — HORIZONTAL / POCA ALTURA
+========================================= */
+
+@media (max-height: 450px) and (orientation: landscape) {
+
+  .boot-crt {
+    box-sizing: border-box;
+    width: 95vw;
+    height: calc(100vh - 16px);
+    min-height: 0;
+    max-height: none;
+    margin: 8px auto;
+    padding: 8px 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  /* Canvas: conserva su función sin ocupar espacio */
+  #static-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Conservamos las capas CRT */
+  .boot-crt::before,
+  .boot-crt::after {
+    z-index: 2;
+  }
+
+  /* Contenido por encima del canvas */
+  .boot-logos,
+  .terminal-window,
+  .boot-loading,
+  .boot-footer {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .boot-logos {
+    gap: 15px;
+    margin: 0;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .boot-logos img {
+    width: auto;
+    max-width: 25%;
+    max-height: 7vh;
+    object-fit: contain;
+  }
+
+  .terminal-window {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .terminal-text {
+    font-size: clamp(0.7rem, 2.5vh, 0.9rem);
+    line-height: 1.4;
+  }
+
+  .cursor {
+    width: 7px;
+    height: 14px;
+  }
+
+ .boot-loading {
+  width: 100%;
+  margin-top: 285px;
+  text-align: center;
+}
+
+  .boot-bar {
+    height: 8px;
+  }
+
+  .boot-loading p {
+    font-size: 0.65rem;
+    margin: 3px 0;
+  }
+
+  .boot-footer {
+  width: 100%;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  transform: translateY(-150px);
+}
 }

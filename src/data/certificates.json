@@ -788,6 +788,42 @@
     "IoT Prototyping"
   ],
   "image": "certs/programadorMicroordenadores.jpg"
+},
+{
+  "id": 48,
+  "title": "Drone Construction and Repair Technician",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training focused on the assembly, configuration, maintenance and repair of drones for recreational, commercial and technical applications.",
+  "skills": [
+    "Drone Assembly",
+    "Flight Controller Configuration",
+    "Motor and ESC Installation",
+    "Propeller Balancing",
+    "Battery Management",
+    "Drone Troubleshooting",
+    "Firmware Updates"
+  ],
+  "image": "certs/tecnicoConstruccionReparacionDrones.jpg"
+},
+{
+  "id": 49,
+  "title": "Plasma and LCD TV Repair Technician",
+  "institution": "Fundación Carlos Slim",
+  "year": 2026,
+  "category": "HARDWARE",
+  "desc": "Training specialized in the diagnosis, maintenance and repair of plasma and LCD television sets.",
+  "skills": [
+    "TV Diagnosis",
+    "Power Supply Repair",
+    "Panel Replacement",
+    "Main Board Troubleshooting",
+    "T-Con Board Repair",
+    "Soldering Techniques",
+    "Electronic Component Testing"
+  ],
+  "image": "certs/reparadorTVPlasmaLCD.jpg"
 }
   ]
 }

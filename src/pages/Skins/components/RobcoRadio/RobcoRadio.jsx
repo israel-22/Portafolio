@@ -413,7 +413,7 @@ const handleKnobKeyDown = (event, value, setter) => {
                   <strong>{currentStation?.frequency ?? "--.-"}</strong> MHz
                 </div>
                 <div className="signal-meter">
-                  SIGNAL
+                  <div>SIGNAL</div>
                   <div className="meter">
                     {signal.map((value, index) => (
                       <i key={index} className={value < 40 ? "inactive" : ""} />
