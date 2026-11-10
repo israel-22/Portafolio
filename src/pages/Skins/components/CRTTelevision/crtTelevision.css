@@ -1080,3 +1080,27 @@
     letter-spacing: 0;
   }
 }
+/* FIX: INDICADOR DE PERILLA EN MÓVILES */
+@media (max-width: 480px) {
+  .tv-knob-marker {
+    transform-origin: 50% 24px;
+  }
+}
+
+/* FIX: INDICADOR EN MÓVIL HORIZONTAL */
+@media (max-height: 500px) and (orientation: landscape) {
+  .tv-knob-marker {
+    transform-origin: 50% 18px;
+  }
+}
+/* ESTABILIZAR NOMBRE DEL PERFIL DE IMAGEN */
+.tv-profile-name {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}

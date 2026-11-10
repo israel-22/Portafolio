@@ -12,6 +12,7 @@ import pistolIcon from "../../assets/icons/FO76_iconwheel_pistol.webp";
 import briefcaseIcon from "../../assets/icons/FO76NW_icons_briefcase.webp";
 import specialIcon from "../../assets/icons/FO76_vaultboy_endurance.webp";
 import CRTTelevision from "./components/CRTTelevision/CRTTelevision.jsx";
+import RobcoArcade from "./components/RobcoArcade/RobcoArcade.jsx";
 
 function Skins() {
   return (
@@ -48,6 +49,9 @@ function Skins() {
         <section className="skins-module skins-television">
           <CRTTelevision />
         </section>
+       {/* <section className="skins-module skins-arcade">
+          <RobcoArcade />
+        </section>*/}
       </main>
 
       <footer className="skins-footer">

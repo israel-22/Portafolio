@@ -1,0 +1,322 @@
+
+.robco-console {
+  --shell-red: #8f2923;
+  --shell-red-dark: #511916;
+  --shell-cream: #d8c49b;
+  --shell-metal: #766d5d;
+  --shell-shadow: #241b18;
+
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 18px;
+  box-sizing: border-box;
+
+  color: var(--shell-cream);
+  background:
+    linear-gradient(135deg, #a53a30, var(--shell-red) 45%, #68201c);
+
+  border: 5px solid var(--shell-red-dark);
+  border-radius: 30px 30px 45px 45px;
+
+  box-shadow:
+    inset 3px 3px 5px #d36b55,
+    inset -5px -5px 12px #351512,
+    0 15px 30px #0008;
+
+  font-family: monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.robco-console__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  text-align: center;
+}
+
+.robco-console__brand {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #f0d9a9;
+  text-shadow: 2px 2px 2px #32100d;
+}
+
+.robco-console__model {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+}
+
+.robco-console__serial {
+  font-size: 0.55rem;
+  opacity: 0.7;
+}
+
+.robco-console__layout {
+  display: grid;
+  grid-template-areas:
+    "screen"
+    "controls"
+    "utility";
+  gap: 18px;
+}
+
+.robco-console__screen-frame {
+  grid-area: screen;
+  padding: 14px;
+  background: #302c25;
+  border: 4px solid #4a4033;
+  border-radius: 18px;
+  box-shadow: inset 0 0 12px #000;
+}
+
+.robco-console__screen {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 5px solid #171b16;
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse, #304b27, #101c12 85%);
+  box-shadow:
+    inset 0 0 20px #000,
+    0 0 8px #000;
+}
+
+.robco-console__screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #9bdb66;
+  text-shadow: 0 0 8px #8cff38;
+  text-align: center;
+}
+
+.robco-console__screen-brand {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+}
+
+.robco-console__screen-title {
+  font-size: clamp(1rem, 5vw, 1.6rem);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.robco-console__screen-status {
+  font-size: 0.7rem;
+  animation: robco-blink 1.2s steps(2) infinite;
+}
+
+.robco-console__screen-label {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+}
+
+.robco-console__controls {
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+  padding: 10px 4px;
+}
+
+.robco-console__dpad {
+  width: 112px;
+  height: 112px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  position: relative;
+}
+
+.robco-console__dpad button {
+  z-index: 1;
+  border: 2px solid #29251f;
+  background: #48433b;
+  color: #e2d4b7;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 2px #17130f;
+}
+
+.robco-console__dpad button:nth-child(1) {
+  grid-area: 1 / 2;
+}
+
+.robco-console__dpad button:nth-child(2) {
+  grid-area: 2 / 1;
+}
+
+.robco-console__dpad button:nth-child(3) {
+  grid-area: 2 / 3;
+}
+
+.robco-console__dpad button:nth-child(4) {
+  grid-area: 3 / 2;
+}
+
+.robco-console__dpad-center {
+  grid-area: 2 / 2;
+  background: #48433b;
+  border: 2px solid #29251f;
+}
+
+.robco-console__action-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 48px);
+  gap: 12px;
+  transform: rotate(-15deg);
+}
+
+.robco-console__action-buttons button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid #54201a;
+  background: linear-gradient(145deg, #d6b77c, #927044);
+  color: #321b12;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 3px #24110e;
+}
+
+.robco-console__utility {
+  grid-area: utility;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.robco-console__system-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.robco-console__system-buttons button {
+  padding: 7px 18px;
+  border: 2px solid #383027;
+  border-radius: 12px;
+  background: #6b6254;
+  color: #eee0c1;
+  font-family: monospace;
+  font-size: 0.65rem;
+  transform: rotate(-8deg);
+}
+
+.robco-console__knobs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  gap: 8px;
+}
+
+.robco-console__knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.55rem;
+}
+
+.robco-console__dial {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #40372d;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b7a17a, #625543);
+  box-shadow: 2px 3px 4px #241b18;
+  position: relative;
+}
+
+.robco-console__dial::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 14px;
+  width: 3px;
+  height: 9px;
+  background: #29231d;
+}
+
+.robco-console__bottom {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+@keyframes robco-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Consola horizontal: móviles en orientación apaisada */
+@media (max-width: 760px) and (orientation: landscape) {
+  .robco-console {
+    width: min(100%, 850px);
+    border-radius: 24px;
+    padding: 12px 18px;
+  }
+
+  .robco-console__header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .robco-console__brand {
+    font-size: 1.2rem;
+  }
+
+  .robco-console__layout {
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-areas:
+      "screen controls"
+      "screen utility";
+    gap: 8px 18px;
+    align-items: center;
+  }
+
+  .robco-console__screen {
+    aspect-ratio: 4 / 3;
+  }
+
+  .robco-console__controls {
+    justify-content: space-between;
+  }
+
+  .robco-console__dpad {
+    width: 90px;
+    height: 90px;
+  }
+
+  .robco-console__action-buttons {
+    grid-template-columns: repeat(2, 38px);
+    gap: 8px;
+  }
+
+  .robco-console__action-buttons button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .robco-console__knobs {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .robco-console__bottom {
+    margin-top: 8px;
+  }
+}
