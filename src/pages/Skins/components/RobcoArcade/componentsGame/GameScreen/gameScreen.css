@@ -1,0 +1,106 @@
+
+.robco-console__screen {
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  border: 5px solid #171b16;
+  border-radius: 8px;
+
+  background:
+    radial-gradient(ellipse, #304b27, #101c12 85%);
+
+  box-shadow:
+    inset 0 0 20px #000,
+    0 0 8px #000;
+}
+
+.robco-console__screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  color: #9bdb66;
+  text-shadow: 0 0 8px #8cff38;
+  text-align: center;
+}
+
+.robco-console__screen-brand {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+}
+
+.robco-console__screen-title {
+  font-size: clamp(1rem, 5vw, 1.6rem);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.robco-console__screen-status {
+  font-size: 0.7rem;
+  animation: robco-blink 1.2s steps(2) infinite;
+}
+
+@keyframes robco-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.robco-console__screen {
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  border: 5px solid #171b16;
+  border-radius: 8px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      var(--arcade-crt-core),
+      var(--arcade-crt-mid) 85%
+    );
+
+  box-shadow:
+    inset 0 0 20px #000,
+    0 0 8px #000;
+}
+
+.robco-console__screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--arcade-phosphor);
+  text-shadow: 0 0 8px var(--arcade-phosphor-soft);
+  text-align: center;
+}
+
+.robco-console__screen-brand {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+}
+
+.robco-console__screen-title {
+  font-size: clamp(1rem, 5vw, 1.6rem);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.robco-console__screen-status {
+  font-size: 0.7rem;
+  animation: robco-blink 1.2s steps(2) infinite;
+}
+
+@keyframes robco-blink {
+  50% {
+    opacity: 0;
+  }
+}
+

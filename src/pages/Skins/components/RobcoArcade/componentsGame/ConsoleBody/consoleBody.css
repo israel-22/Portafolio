@@ -51,8 +51,8 @@
 }
 
 .robco-console__serial {
-  font-size: 0.55rem;
-  opacity: 0.7;
+  font-size: 0.85rem;
+  opacity: 0.9;
 }
 
 .robco-console__layout {
@@ -73,45 +73,6 @@
   box-shadow: inset 0 0 12px #000;
 }
 
-.robco-console__screen {
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border: 5px solid #171b16;
-  border-radius: 8px;
-  background:
-    radial-gradient(ellipse, #304b27, #101c12 85%);
-  box-shadow:
-    inset 0 0 20px #000,
-    0 0 8px #000;
-}
-
-.robco-console__screen-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  color: #9bdb66;
-  text-shadow: 0 0 8px #8cff38;
-  text-align: center;
-}
-
-.robco-console__screen-brand {
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-}
-
-.robco-console__screen-title {
-  font-size: clamp(1rem, 5vw, 1.6rem);
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.robco-console__screen-status {
-  font-size: 0.7rem;
-  animation: robco-blink 1.2s steps(2) infinite;
-}
 
 .robco-console__screen-label {
   display: block;
@@ -256,11 +217,78 @@
   opacity: 0.7;
 }
 
-@keyframes robco-blink {
-  50% {
-    opacity: 0;
-  }
+
+
+
+/* =========================================
+   WASTELAND DAMAGE - PRIMERA ETAPA
+   Pintura deteriorada y abandono
+========================================= */
+
+.robco-console--wasteland {
+  filter: saturate(0.72) contrast(1.08);
 }
+
+/* Suciedad, óxido y pintura desgastada */
+
+.robco-console--wasteland::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+
+  background:
+    /* Manchas oscuras de suciedad */
+    radial-gradient(
+      ellipse at 8% 12%,
+      #21150f99 0%,
+      transparent 28%
+    ),
+
+    radial-gradient(
+      ellipse at 92% 85%,
+      #1b120dcc 0%,
+      transparent 30%
+    ),
+
+    /* Óxido acumulado */
+    radial-gradient(
+      ellipse at 15% 92%,
+      #57251caa 0%,
+      transparent 24%
+    ),
+
+    radial-gradient(
+      ellipse at 88% 18%,
+      #71351f88 0%,
+      transparent 22%
+    ),
+
+    /* Desgaste superficial */
+    repeating-linear-gradient(
+      115deg,
+      transparent 0 28px,
+      #26171044 29px 30px,
+      transparent 31px 55px
+    );
+
+  opacity: 0.75;
+  mix-blend-mode: multiply;
+}
+
+/* Bordes con aspecto de pintura antigua */
+
+.robco-console--wasteland {
+  border-color: #38251d;
+
+  box-shadow:
+    inset 5px 5px 12px #1b120dcc,
+    inset -5px -5px 15px #160e0caa,
+    0 15px 30px #000b;
+}
+
 
 /* Consola horizontal: móviles en orientación apaisada */
 @media (max-width: 760px) and (orientation: landscape) {
@@ -289,7 +317,7 @@
   }
 
   .robco-console__screen {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
   }
 
   .robco-console__controls {
@@ -319,4 +347,685 @@
   .robco-console__bottom {
     margin-top: 8px;
   }
+}
+
+/* =========================================
+   ROBCO ARCADE - SPACE AGE TOY DESIGN
+   Inspiración: Nuka-Cola / años 50 y 60
+========================================= */
+
+.robco-console {
+  --nuka-red: #982e27;
+  --nuka-red-dark: #591c19;
+  --nuka-cream: #e5d2aa;
+  --nuka-black: #292723;
+  --nuka-metal: #aaa397;
+  --nuka-shadow: #211815;
+
+  position: relative;
+  overflow: visible;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 7%,
+      #e2cfaa 7%,
+      #e2cfaa 9%,
+      transparent 9%,
+      transparent 91%,
+      #e2cfaa 91%,
+      #e2cfaa 93%,
+      transparent 93%
+    ),
+    linear-gradient(
+      160deg,
+      #bd5140 0%,
+      var(--nuka-red) 35%,
+      #79231e 75%,
+      #481916 100%
+    );
+
+  border: 5px solid var(--nuka-red-dark);
+
+  box-shadow:
+    inset 3px 3px 5px #e47b61,
+    inset -6px -8px 12px #32120f,
+    0 15px 30px #0009;
+}
+
+/* Textura sutil de pintura antigua */
+
+.robco-console::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+
+  background:
+    repeating-linear-gradient(
+      115deg,
+      transparent 0 17px,
+      #321b14 18px,
+      transparent 20px 37px
+    );
+
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+}
+
+/* Los elementos funcionales permanecen por encima de la textura */
+
+.robco-console > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Aletas inspiradas en cohetes y automóviles clásicos */
+
+
+/* =========================================
+   ALETAS TRASERAS - CADILLAC 1950s
+========================================= */
+
+.robco-console__fin {
+  position: absolute !important;
+  z-index: 0 !important;
+
+  top: auto;
+  bottom: 7%;
+
+  width: 48px;
+  height: 125px;
+
+  background: linear-gradient(
+    90deg,
+    #511916,
+    #a83b30 35%,
+    #d9c49b 48%,
+    #a83b30 65%,
+    #511916
+  );
+
+  border: 2px solid #4b201b;
+
+  box-shadow:
+    inset 0 0 8px #e9a17b,
+    3px 4px 8px #0008;
+}
+
+/* Aleta izquierda */
+.robco-console__fin--left {
+  left: -30px;
+
+  clip-path: polygon(
+    100% 100%,
+    100% 0%,
+    72% 18%,
+    42% 68%,
+    0 100%
+  );
+}
+
+/* Aleta derecha */
+.robco-console__fin--right {
+  right: -30px;
+
+  clip-path: polygon(
+    0 100%,
+    0 0%,
+    28% 18%,
+    58% 68%,
+    100% 100%
+  );
+}
+
+
+.robco-console__fin--left {
+  left: -48px;
+  clip-path: polygon(100% 0, 100% 100%, 0 78%, 25% 50%, 0 18%);
+  transform: rotate(-3deg);
+}
+
+.robco-console__fin--right {
+  right: -48px;
+  clip-path: polygon(0 0, 100% 18%, 75% 50%, 100% 78%, 0 100%);
+  transform: rotate(3deg);
+}
+
+/* Antena espacial */
+
+.robco-console__antenna {
+  position: absolute !important;
+  z-index: 0 !important;
+  top: -57px;
+  right: 48px;
+
+  width: 42px;
+  height: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.robco-console__antenna-base {
+  position: absolute;
+  bottom: 0;
+  width: 27px;
+  height: 12px;
+  border-radius: 50% 50% 4px 4px;
+
+  background: linear-gradient(
+    90deg,
+    #554b3d,
+    #c3b49a,
+    #554b3d
+  );
+
+  border: 2px solid #302820;
+}
+
+.robco-console__insulator {
+  width: 25px;
+  height: 6px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  border: 1px solid #786d5b;
+
+  background: linear-gradient(
+    180deg,
+    #f1e4c6,
+    #c5b28e 55%,
+    #81735e
+  );
+
+  box-shadow:
+    inset 0 2px 3px #fff9,
+    0 2px 3px #0008;
+}
+
+.robco-console__antenna-tip {
+  position: absolute;
+  top: -4px;
+  bottom: 8px;
+
+  width: 5px;
+  height: auto;
+
+  background: linear-gradient(
+    90deg,
+    #777,
+    #ddd,
+    #666
+  );
+
+  border-radius: 5px;
+  z-index: -1;
+}
+
+/* Detalles envejecidos */
+
+.robco-console__header {
+  border-bottom: 2px solid #59221b;
+  margin-bottom: 10px;
+  text-shadow: 1px 2px 2px #29120e;
+}
+
+.robco-console__brand {
+  color: var(--nuka-cream);
+  text-shadow:
+    2px 2px 0 #4b1713,
+    0 0 5px #f1b17c;
+}
+
+.robco-console__model {
+  color: #f0dfbd;
+  background: #491a17;
+  padding: 4px 12px;
+  border: 1px solid #c08c65;
+  box-shadow: inset 0 0 5px #0008;
+}
+
+/* Botones de aspecto baquelita */
+
+.robco-console__action-buttons button {
+  background: linear-gradient(
+    145deg,
+    #e0c99c,
+    #aa8c5c 60%,
+    #68513a
+  );
+
+  border-color: #51372b;
+
+  box-shadow:
+    inset 2px 2px 3px #fff8,
+    0 4px 3px #24110e;
+}
+
+/* Tornillos decorativos en las esquinas */
+
+.robco-console__header::before,
+.robco-console__header::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #eee0c0,
+    #887d6a 45%,
+    #332d27 75%
+  );
+
+  box-shadow: inset 0 0 2px #000;
+}
+
+.robco-console__header::before {
+  left: 8px;
+}
+
+.robco-console__header::after {
+  right: 8px;
+}
+
+/* =========================================
+   ATOMIC POWER - INDICADOR DE ENERGIA
+========================================= */
+
+.robco-console__power {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  min-width: 75px;
+  background: linear-gradient(145deg, #6c211c, #351714);
+  border: 2px solid #c2a77b;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 2px 5px #0008,
+    2px 3px 5px #0008;
+}
+
+.robco-console__power-label {
+  color: #e5d2aa;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.robco-console__power-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #8cff62;
+  border: 2px solid #315c25;
+  box-shadow:
+    0 0 5px #8cff62,
+    0 0 12px #8cff62;
+}
+
+.robco-console__power-status {
+  color: #8cff62;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+}
+
+/* Ajustes de antena y aletas en horizontal */
+
+@media (max-width: 760px) and (orientation: landscape) {
+  .robco-console__antenna {
+    right: 35px;
+    top: -48px;
+    transform: scale(0.85);
+  }
+
+  .robco-console__fin {
+    top: 35%;
+    height: 140px;
+    width: 48px;
+  }
+
+  .robco-console__fin--left {
+    left: -36px;
+  }
+
+  .robco-console__fin--right {
+    right: -36px;
+  }
+}
+
+/* =========================================
+   ROBCO SOUND - ALTAVOZ RETRO
+========================================= */
+
+.robco-console__speaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+
+  background: linear-gradient(
+    145deg,
+    #6c211c,
+    #351714
+  );
+
+  border: 2px solid #c2a77b;
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 2px 5px #0008,
+    2px 3px 5px #0008;
+}
+
+.robco-console__speaker-label {
+  color: #e5d2aa;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+}
+
+.robco-console__speaker-grille {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.robco-console__speaker-grille span {
+  width: 5px;
+  height: 24px;
+
+  border-radius: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #171512,
+    #82745e,
+    #171512
+  );
+
+  box-shadow: inset 0 1px 2px #000;
+}
+
+
+/* =========================================
+   ROBCO ARCADE - RESPONSIVE BODY
+   PC vertical / móvil horizontal
+========================================= */
+
+/* PC, laptop y pantallas en formato vertical */
+
+@media (min-width: 761px) {
+  .robco-console {
+    width: min(100%, 560px);
+    margin: 55px auto 35px;
+    padding: 24px 20px;
+    border-radius: 55px 55px 38px 38px;
+  }
+
+  .robco-console__header {
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 12px 0;
+  }
+
+  .robco-console__layout {
+    display: grid;
+    grid-template-columns: 95px minmax(0, 1fr) 95px;
+    grid-template-areas:
+      "dpad screen actions"
+      "utility utility utility";
+    align-items: center;
+    gap: 22px 12px;
+  }
+
+  /* La pantalla ocupa el centro */
+
+  .robco-console__screen-frame {
+    grid-area: screen;
+    width: 95%;
+  }
+
+  /* Separamos visualmente los controles */
+
+  .robco-console__controls {
+    display: contents;
+  }
+
+  .robco-console__dpad {
+    grid-area: dpad;
+    justify-self: center;
+    width: 85px;
+  }
+
+  .robco-console__action-buttons {
+    grid-area: actions;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .robco-console__action-buttons button {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Mandos inferiores */
+
+  .robco-console__utility {
+    grid-area: utility;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .robco-console__knobs {
+    justify-content: space-around;
+  }
+
+  .robco-console__bottom {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Aletas adaptadas al cuerpo vertical */
+
+  .robco-console__fin {
+    top: 42%;
+    height: 210px;
+  }
+}
+
+/* Móvil horizontal: conserva la consola apaisada */
+
+@media (max-width: 760px) and (orientation: landscape) {
+  .robco-console {
+    width: min(100%, 850px);
+    margin: 20px auto;
+  }
+
+  .robco-console__layout {
+    display: grid;
+  }
+
+  .robco-console__controls {
+    display: flex;
+  }
+}
+
+/* =========================================
+   ROBCO ARCADE - HORIZONTAL SPACE CONSOLE
+   Distribución tipo cohete retro
+========================================= */
+
+
+/* Móvil horizontal: consola espacial apaisada */
+
+@media (max-width: 760px) and (orientation: landscape) {
+
+  .robco-console {
+    width: min(100%, 850px);
+    margin: 20px auto;
+    padding: 12px 18px;
+  }
+
+  .robco-console__layout {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr) 105px;
+    grid-template-areas:
+      "dpad screen actions"
+      "utility utility utility";
+    align-items: center;
+    gap: 12px;
+  }
+
+  .robco-console__controls {
+    display: contents;
+  }
+
+  .robco-console__screen-frame {
+    grid-area: screen;
+    width: 100%;
+  }
+
+  .robco-console__dpad {
+    grid-area: dpad;
+    width: 76px;
+    height: 76px;
+  }
+
+  .robco-console__action-buttons {
+    grid-area: actions;
+    grid-template-columns: repeat(2, 36px);
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .robco-console__action-buttons button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .robco-console__utility {
+    grid-area: utility;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+/* =========================================
+   ROBCO ARCADE - CUERPO ALARGADO
+========================================= */
+
+@media (min-width: 761px) {
+
+  .robco-console {
+    width: min(100%, 760px);
+    margin: 45px auto 35px;
+    padding: 22px 28px;
+
+    /* Cuerpo rectangular con esquinas suavizadas */
+    border-radius: 92px 22px 92px 22px;
+  }
+
+  .robco-console__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px;
+    margin-bottom: 18px;
+  }
+
+  .robco-console__layout {
+    grid-template-columns: 110px minmax(0, 1fr) 110px;
+    grid-template-areas:
+      "dpad screen actions"
+      "utility utility utility";
+    gap: 16px 22px;
+  }
+
+  .robco-console__dpad {
+    width: 95px;
+    height: 95px;
+  }
+
+  .robco-console__action-buttons {
+    gap: 12px;
+    
+  }
+
+  .robco-console__action-buttons button {
+    width: 43px;
+    height: 43px;
+    
+  }
+
+  .robco-console__screen-frame {
+    padding: 12px;
+  }
+
+  .robco-console__utility {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .robco-console__knobs {
+    width: 55%;
+  }
+
+  .robco-console__bottom {
+    margin-top: 12px;
+  }
+
+  .robco-console__fin {
+    height: 160px;
+    width: 43px;
+  }
+}
+@media (max-width: 760px) and (orientation: landscape) {
+  .robco-console__fin {
+    bottom: 5%;
+    width: 34px;
+    height: 95px;
+  }
+
+  .robco-console__fin--left {
+    left: -25px;
+  }
+
+  .robco-console__fin--right {
+    right: -25px;
+  }
+}
+@media (min-width: 761px) {
+  .robco-console__speaker {
+    min-width: 75px;
+  }
+}
+
+
+/* COLOR PHOSPHOR - CRUCETA Y BOTONES WASD */
+
+.robco-console__dpad button {
+  color: var(--arcade-phosphor);
+  text-shadow: 0 0 6px var(--arcade-phosphor-soft);
+}
+
+.robco-console__action-buttons button {
+  color: var(--arcade-phosphor);
+  text-shadow: 0 0 6px var(--arcade-phosphor-soft);
 }

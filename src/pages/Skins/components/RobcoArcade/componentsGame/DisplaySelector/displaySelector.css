@@ -1,0 +1,27 @@
+
+.robco-color-selector__dial {
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  transition: transform 0.25s ease;
+}
+
+.robco-color-selector__dial::after {
+  transform: rotate(var(--color-dial-rotation, 0deg));
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.robco-color-selector__dial:hover {
+  filter: brightness(1.2);
+}
+
+.robco-color-selector__dial:active {
+  transform: scale(0.94);
+}
+
+.robco-color-selector__value {
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}

@@ -38,7 +38,7 @@ function Skins() {
         <IconPipboy src={specialIcon} alt="Special Icon" />
       </nav>
       <main className="skins-modules">
-        <section className="skins-module skins-house">
+       <section className="skins-module skins-house">
           <House />
         </section>
 
@@ -48,10 +48,16 @@ function Skins() {
 
         <section className="skins-module skins-television">
           <CRTTelevision />
-        </section>
+        </section> 
+
+         
        {/* <section className="skins-module skins-arcade">
           <RobcoArcade />
         </section>*/}
+
+        <section className="skins-module skins-arcade">
+          <RobcoArcade />
+        </section>
       </main>
 
       <footer className="skins-footer">
