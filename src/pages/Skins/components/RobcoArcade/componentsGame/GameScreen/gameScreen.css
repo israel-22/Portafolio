@@ -14,6 +14,7 @@
   box-shadow:
     inset 0 0 20px #000,
     0 0 8px #000;
+    filter: brightness(var(--arcade-brightness, 1));
 }
 
 .robco-console__screen-content {

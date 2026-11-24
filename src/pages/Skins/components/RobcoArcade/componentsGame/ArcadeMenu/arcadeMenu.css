@@ -1,0 +1,89 @@
+
+.robco-menu {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 5% 7%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: var(--arcade-phosphor);
+  font-family: monospace;
+  text-shadow: 0 0 6px var(--arcade-phosphor-soft);
+  font-size: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+.robco-menu__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--arcade-phosphor);
+  letter-spacing: 1px;
+}
+
+.robco-menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.robco-menu__heading {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.robco-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.robco-menu__item {
+  width: 100%;
+  padding: 4px 6px;
+
+  display: flex;
+  gap: 8px;
+
+  border: none;
+  background: transparent;
+  color: inherit;
+
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.robco-menu__item:hover,
+.robco-menu__item--active {
+  background: var(--arcade-phosphor-soft);
+  outline: 1px solid var(--arcade-phosphor);
+}
+
+.robco-menu__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  padding-top: 6px;
+  border-top: 1px dashed var(--arcade-phosphor-soft);
+  font-size: 0.85em;
+  text-align: center;
+}
+
+.robco-menu__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding-top: 5px;
+  border-top: 1px solid var(--arcade-phosphor);
+  font-size: 0.8em;
+}
