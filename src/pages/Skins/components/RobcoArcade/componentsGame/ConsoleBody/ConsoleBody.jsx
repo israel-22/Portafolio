@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import "./consoleBody.css";
+import useKeyboard from "../../hooks/useKeyboard";
+import useGameControls from "../../hooks/useGameControls";
 import nukaChapa from "../../../../../../assets/icons/nuka-chapa.png";
 import nukaHorizontal from "../../../../../../assets/icons/nuka-horizontal.png";
 import GameScreen from "../GameScreen/GameScreen";
@@ -69,20 +71,29 @@ export default function ConsoleBody() {
     "--arcade-brightness": brightness / 100,
     "--arcade-volume": volume / 100,
   };
+
+  const [isGameActive, setIsGameActive] = useState(false);
+
+  const { pressControl, releaseControl, releaseAllControls } =
+    useGameControls();
+
   const [selectedGame, setSelectedGame] = useState("doom");
 
-  const moveGameSelection = (direction) => {
-    const currentIndex = ARCADE_GAMES.findIndex(
-      (game) => game.id === selectedGame,
-    );
+  const moveGameSelection = useCallback(
+    (direction) => {
+      const currentIndex = ARCADE_GAMES.findIndex(
+        (game) => game.id === selectedGame,
+      );
 
-    const nextIndex =
-      (currentIndex + direction + ARCADE_GAMES.length) % ARCADE_GAMES.length;
+      const nextIndex =
+        (currentIndex + direction + ARCADE_GAMES.length) % ARCADE_GAMES.length;
 
-    setSelectedGame(ARCADE_GAMES[nextIndex].id);
-  };
+      setSelectedGame(ARCADE_GAMES[nextIndex].id);
+    },
+    [selectedGame],
+  );
 
-  const handleStart = () => {
+  const handleStart = useCallback(() => {
     const game = ARCADE_GAMES.find((item) => item.id === selectedGame);
 
     if (game?.status !== "available") {
@@ -90,8 +101,28 @@ export default function ConsoleBody() {
       return;
     }
 
+    setIsGameActive(true);
     console.info(`Iniciando ${game.title}`);
-  };
+  }, [selectedGame]);
+
+  const handleBack = useCallback(() => {
+    if (!isGameActive) return;
+
+    setIsGameActive(false);
+    releaseAllControls();
+
+    console.info("Regresando al menú.");
+  }, [isGameActive, releaseAllControls]);
+
+  useKeyboard({
+    onMoveSelection: moveGameSelection,
+    onStart: handleStart,
+    onBack: handleBack,
+    onControlDown: pressControl,
+    onControlUp: releaseControl,
+    isGameActive,
+  });
+
   return (
     <section
       className="robco-console robco-console--wasteland"
@@ -140,26 +171,61 @@ export default function ConsoleBody() {
             <button
               type="button"
               aria-label="Arriba"
-              onClick={() => moveGameSelection(-1)}
+              onClick={() => {
+                if (!isGameActive) moveGameSelection(-1);
+              }}
+              onPointerDown={() => {
+                if (isGameActive) pressControl("up");
+              }}
+              onPointerUp={() => releaseControl("up")}
+              onPointerLeave={() => releaseControl("up")}
+              onPointerCancel={() => releaseControl("up")}
             >
               ▲
             </button>
 
-            <button type="button" aria-label="Izquierda">
+            <button
+              type="button"
+              aria-label="Izquierda"
+              onPointerDown={() => {
+                if (isGameActive) pressControl("left");
+              }}
+              onPointerUp={() => releaseControl("left")}
+              onPointerLeave={() => releaseControl("left")}
+              onPointerCancel={() => releaseControl("left")}
+            >
               ◀
             </button>
 
-            <button type="button" aria-label="Derecha">
+            <button
+              type="button"
+              aria-label="Derecha"
+              onPointerDown={() => {
+                if (isGameActive) pressControl("right");
+              }}
+              onPointerUp={() => releaseControl("right")}
+              onPointerLeave={() => releaseControl("right")}
+              onPointerCancel={() => releaseControl("right")}
+            >
               ▶
             </button>
 
             <button
               type="button"
               aria-label="Abajo"
-              onClick={() => moveGameSelection(1)}
+              onClick={() => {
+                if (!isGameActive) moveGameSelection(1);
+              }}
+              onPointerDown={() => {
+                if (isGameActive) pressControl("down");
+              }}
+              onPointerUp={() => releaseControl("down")}
+              onPointerLeave={() => releaseControl("down")}
+              onPointerCancel={() => releaseControl("down")}
             >
               ▼
             </button>
+
             <span className="robco-console__dpad-center" />
           </div>
 
